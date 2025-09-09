@@ -23,7 +23,7 @@ export default function Events(){
         setEvents(Array.isArray(data) ? data : []);
       }catch(err){
         console.error(err);
-        setError('تعذّر تحميل قائمة الفعاليات. تأكّد من وجود /public/data/events.json.');
+        setError('تعذّر تحميل قائمة الفعاليات. تأكّد   وجود /public/data/events.json.');
       }finally{
         setLoading(false);
       }
