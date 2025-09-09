@@ -26,7 +26,7 @@ export default function BannerSlider({ items = [], intervalMs = 5000 }) {
       />
       <div className="position-absolute top-50 start-50 translate-middle text-center text-white px-4">
         <h1 className="display-6 fw-bold mb-3 text-shadow">
-          {caption}
+          {""}
         </h1>
         <p className="lead mb-0 opacity-90">Discover, Register, Participate</p>
       </div>
