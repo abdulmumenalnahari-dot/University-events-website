@@ -1,8 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import FilterBar from "../components/FilterBar";
 import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
 import { filterAndSortEvents } from "../utils/filterAndSortEvents";
+
+
 import EventCarousel from "../components/EventCarousel";
-import FilterBar from "../components/FilterBar";
 
 const BASE_URL = process.env.PUBLIC_URL || "";
 
@@ -22,7 +25,10 @@ export default function Events() {
         const sortedEvents = await fetchAndSortEvents("/data/events.json");
         setEvents(sortedEvents);
       } catch (err) {
-        setError("تعذّر تحميل قائمة الفعاليات. تأكّد وجود /public/data/events.json.");
+        console.error(err);
+        setError(
+          "تعذّر تحميل قائمة الفعاليات. تأكّد   وجود /public/data/events.json."
+        );
       } finally {
         setLoading(false);
       }
@@ -78,40 +84,43 @@ export default function Events() {
     <div className="container my-4">
       <h1 className="h3">Event Catalog</h1>
 
-      {error && (
+       {error && (
           <div className="alert alert-danger" role="alert">
             {error}
           </div>
         )}
 
-        <FilterBar
-          search={search}
-          setSearch={setSearch}
-          category={category}
-          setCategory={setCategory}
-          sort={sort}
-          setSort={setSort}
-        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <FilterBar
+                  search={search}
+                  setSearch={setSearch}
+                  category={category}
+                  setCategory={setCategory}
+                  sort={sort}
+                  setSort={setSort}
+                />
 
-        {/* قسم الثقافه */}
-        {events.length > 0 ? (
-          <EventCarousel
-            events={filterAndSortEvents(events, { search, category, sort })}
-            title="الثقافه"
-          />
-        ) : (
-          <div className="text-center py-5">Loading...</div>
-        )}
+                {events.length > 0 && (
+                  <EventCarousel
+                    events={filterAndSortEvents(events, { search, category, sort })}
+                    title="الثقافه"
+                  />
+                )}
 
-        {/* قسم الرياضة */}
-        {sports.length > 0 ? (
-          <EventCarousel
-            events={filterAndSortEvents(sports, { search, category, sort })}
-            title="الرياضة"
+                {sports.length > 0 && (
+                  <EventCarousel
+                    events={filterAndSortEvents(sports, { search, category, sort })}
+                    title="الرياضة"
+                  />
+                )}
+              </>
+            }
           />
-        ) : (
-          <div className="text-center py-5">Loading...</div>
-        )}
+        </Routes>
     </div>
   );
 }

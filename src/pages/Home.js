@@ -42,16 +42,14 @@ export default function Home() {
 
 
   return (
-    <div className="container my-5">
-      {/* Banner */}
+    <>
+    
+    <div >
+      
       <BannerSlider items={banners} />
       
 
-      <header className="bg-light py-4">
-        <div className="container">
-          <h1 className="text-center">الثقافه</h1>
-        </div>
-      </header>
+       
 
         {/* قسم الثقافه */}
         {events.length > 0 ? (
@@ -76,5 +74,6 @@ export default function Home() {
         </p>
       </section>
     </div>
+    </>
   );
 }
