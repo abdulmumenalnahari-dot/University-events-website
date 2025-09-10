@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import FilterBar from "../components/FilterBar";
 import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
-import EventCarousel from "../components/EventCarousel.jsx";
+import EventCarousel from "../components/EventCarousel.js";
 
 const BASE_URL = process.env.PUBLIC_URL || "";
 
@@ -27,10 +27,8 @@ export default function Events() {
         if (!alive) return;
         setEvents(Array.isArray(data) ? data : []);
       } catch (err) {
-        console.error(err);
-        setError(
-          "تعذّر تحميل قائمة الفعاليات. تأكّد   وجود /public/data/events.json."
-        );
+         
+         
       } finally {
         setLoading(false);
       }

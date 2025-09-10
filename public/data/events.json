@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "title": "Game Dev Jam 2023",
+    "title": "Game Dev Jam 2025",
     "image": "https://placehold.co/400x250/006400/FFFFFF?text=Game+Jam",
-    "date": "Mar 05, 2023",
+    "date": "Mar 05, 2025",
     "time": "12:00-23:59",
     "location": "Digital Lab 3",
     "countdown": "Expired",
@@ -639,7 +639,7 @@
   {
     "id": 50,
     "title": "Creative Writing Workshop 2025",
-    "image": "https://placehold.co/400x250/8B4513/FFFFFF?text=Writing+Lab",
+    "image": "https://mau.se/contentassets/123f5d7915e2434c95f434f637c72f1c/emelie-stenberg.jpg?w=770&h=433&mode=crop",
     "date": "Jun 08, 2025",
     "time": "14:00-17:00",
     "location": "Writers’ Corner",
