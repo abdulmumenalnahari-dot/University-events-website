@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import React, { useState, useRef, useEffect } from "react";
+=======
+import React, { useState } from "react";
+>>>>>>> e1d3ef9dfc1b06374782b8067ae006f013b499bd
 import EventCard from "./EventCard";
 
 const EventCarousel = ({ events, title }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+<<<<<<< HEAD
   const carouselRef = useRef(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -91,6 +96,30 @@ const EventCarousel = ({ events, title }) => {
             fontSize: "1rem",
             marginLeft: "-10px",
           }}
+=======
+  const cardsPerView = 3;
+
+  const handlePrev = () => {
+    setCurrentIndex(prev => Math.max(0, prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex(prev => Math.min(events.length - cardsPerView, prev + 1));
+  };
+
+  const visibleEvents = events.slice(currentIndex, currentIndex + cardsPerView);
+
+  return (
+    <div className="container my-5">
+      <h2 className="text-center mb-5 fw-bold text-primary">{title}</h2>
+
+      <div className="d-flex justify-content-center align-items-center flex-column flex-md-row gap-4 position-relative">
+        
+        {/* زر Prev */}
+        <button
+          className="btn btn-outline-secondary rounded-circle p-3 shadow-sm"
+          style={{ width: "60px", height: "60px", fontSize: "1.4rem", transition: "transform 0.2s" }}
+>>>>>>> e1d3ef9dfc1b06374782b8067ae006f013b499bd
           onClick={handlePrev}
           disabled={currentIndex === 0}
           aria-label="Previous"
@@ -98,6 +127,7 @@ const EventCarousel = ({ events, title }) => {
           <i className="bi bi-chevron-left"></i>
         </button>
 
+<<<<<<< HEAD
         {/* كروت الكاروسيل */}
         <div
           ref={carouselRef}
@@ -138,10 +168,26 @@ const EventCarousel = ({ events, title }) => {
           }}
           onClick={handleNext}
           disabled={currentIndex >= maxIndex}
+=======
+        {/* كرتات الكارديا - ثابتة الحجم */}
+        <div className="d-flex gap-4 overflow-x-auto pb-3 flex-shrink-1" style={{ flexGrow: 1 }}>
+          {visibleEvents.map((event) => (
+            <EventCard key={event.id} event={event} />
+          ))}
+        </div>
+
+        {/* زر Next */}
+        <button
+          className="btn btn-outline-secondary rounded-circle p-3 shadow-sm"
+          style={{ width: "60px", height: "60px", fontSize: "1.4rem", transition: "transform 0.2s" }}
+          onClick={handleNext}
+          disabled={currentIndex >= events.length - cardsPerView}
+>>>>>>> e1d3ef9dfc1b06374782b8067ae006f013b499bd
           aria-label="Next"
         >
           <i className="bi bi-chevron-right"></i>
         </button>
+<<<<<<< HEAD
       </div>
 
       {/* أزرار التنقل للشاشات الصغيرة */}
@@ -180,6 +226,10 @@ const EventCarousel = ({ events, title }) => {
           ))}
         </div>
       )}
+=======
+
+      </div>
+>>>>>>> e1d3ef9dfc1b06374782b8067ae006f013b499bd
     </div>
   );
 };

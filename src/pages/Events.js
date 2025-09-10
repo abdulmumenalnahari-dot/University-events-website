@@ -2,10 +2,14 @@ import { useEffect, useMemo, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import FilterBar from "../components/FilterBar";
 import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
+<<<<<<< HEAD
 import { filterAndSortEvents } from "../utils/filterAndSortEvents";
 
 
 import EventCarousel from "../components/EventCarousel";
+=======
+import EventCarousel from "../components/EventCarousel.js";
+>>>>>>> e1d3ef9dfc1b06374782b8067ae006f013b499bd
 
 const BASE_URL = process.env.PUBLIC_URL || "";
 
@@ -25,10 +29,8 @@ export default function Events() {
         const sortedEvents = await fetchAndSortEvents("/data/events.json");
         setEvents(sortedEvents);
       } catch (err) {
-        console.error(err);
-        setError(
-          "تعذّر تحميل قائمة الفعاليات. تأكّد   وجود /public/data/events.json."
-        );
+         
+         
       } finally {
         setLoading(false);
       }
