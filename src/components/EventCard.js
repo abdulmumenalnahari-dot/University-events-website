@@ -1,96 +1,65 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import BookmarkButton from './BookmarkButton';
-import Countdown from './Countdown';
+import React from "react";
 
-const BASE_URL = process.env.PUBLIC_URL || '';
-
-export default function EventCard({ evt, evtId }) {
-  const [data, setData]     = useState(evt || null);
-  const [loading, setLoad]  = useState(!evt && !!evtId);
-  const [error, setError]   = useState('');
-
-  useEffect(()=>{
-    let alive = true;
-    // إذا ما وصل evt لكن عندنا evtId: جيب الحدث من events.json
-    if (!evt && evtId){
-      (async ()=>{
-        try{
-          const res = await fetch(`${BASE_URL}/data/events.json`, { headers:{'Cache-Control':'no-cache'} });
-          if(!res.ok) throw new Error(`events.json ${res.status}`);
-          const list = await res.json();
-          if(!alive) return;
-          const found = Array.isArray(list) ? list.find(x => x.id === evtId) : null;
-          if (!found) { setError('الحدث غير موجود في events.json'); }
-          setData(found || null);
-        }catch(ex){
-          console.error(ex);
-          setError('تعذّر تحميل بيانات الحدث.');
-        }finally{
-          if (alive) setLoad(false);
-        }
-      })();
-    }
-    return ()=>{ alive = false; };
-  }, [evt, evtId]);
-
- 
-
-  
-
-  const dt = new Date(data.date);
-  const pretty = !isNaN(dt)
-    ? dt.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'2-digit' })
-    : data.date || '—';
-
-  const thumb = data.thumbnail?.startsWith('/')
-    ? `${BASE_URL}${data.thumbnail}`
-    : (data.thumbnail || `${BASE_URL} `);
-
+const EventCard = ({ event }) => {
   return (
-    <>
-   
-    <div className="card h-100 shadow-sm border-0 rounded-3 overflow-hidden hover-lift">
-       
-      <img
-        src={thumb}
-        className="card-img-top"
-        alt={data.title}
-        style={{ height: '180px', objectFit: 'cover' }}
-      />
-      <div className="card-body d-flex flex-column p-3">
-        <div className="d-flex justify-content-between align-items-start gap-2 mb-2">
-          <h5 className="card-title mb-1 fw-bold text-dark">{data.title}</h5>
-          <BookmarkButton item={data} />
+    <div
+      className="card border-0 shadow-sm rounded-4 overflow-hidden flex-shrink-0"
+      style={{ minWidth: "300px", maxWidth: "350px" }}
+    >
+      <div className="position-relative">
+        <img
+          src={event.image}
+          alt={event.title}
+          className="card-img-top w-100"
+          style={{ height: "180px", objectFit: "cover", borderRadius: "8px 8px 0 0" }}
+        />
+        <span className="position-absolute top-0 end-0 m-2 bg-warning text-dark p-1 rounded-2 fs-6 fw-bold">
+          ★
+        </span>
+      </div>
+
+      <div className="card-body p-3">
+        <h5 className="card-title mb-2 fw-bold text-truncate" style={{ fontSize: "1rem" }}>
+          {event.title}
+        </h5>
+
+        <div className="d-flex align-items-center mb-2 text-muted small">
+          <i className="bi bi-calendar me-1"></i>
+          <span>{event.date}</span>
+          <i className="bi bi-clock ms-2 me-1"></i>
+          <span>{event.time}</span>
+          <i className="bi bi-geo-alt ms-2 me-1"></i>
+          <span>{event.location}</span>
         </div>
 
-        <div className="d-flex justify-content-between align-items-center mb-2">
-          <div className="text-muted small">
-            📅 {pretty} • ⏰ {data.time} • 📍 {data.venue}
-          </div>
-          <Countdown dateString={data.date} />
+        <div className="mb-2">
+          <span className="badge bg-primary rounded-pill px-2 py-1 text-white text-truncate" style={{ fontSize: "0.75rem" }}>
+            {event.countdown}
+          </span>
         </div>
 
-        <p className="card-text flex-fill text-secondary small mb-3">
-          {data.description}
+        <p className="card-text text-muted small mb-3 text-truncate" style={{ display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+          {event.description}
         </p>
 
-        <div className="d-flex flex-wrap gap-2 mt-auto">
-          {data.department && <span className="badge bg-secondary rounded-pill">{data.department}</span>}
-          {data.category && <span className="badge bg-info text-dark rounded-pill">{data.category}</span>}
-          {typeof data.popularity === 'number' && (
-            <span className="badge bg-light text-dark border rounded-pill">👍 {data.popularity}</span>
-          )}
+        <div className="d-flex flex-wrap gap-1 mb-3">
+          {event.tags.map((tag, i) => (
+            <span key={i} className="badge bg-secondary text-white rounded-pill px-2 py-1 text-truncate" style={{ fontSize: "0.7rem" }}>
+              {tag}
+            </span>
+          ))}
+          <span className="badge bg-light text-dark rounded-pill px-2 py-1 d-flex align-items-center">
+            <i className="bi bi-hand-thumbs-up me-1"></i>
+            {event.likes}
+          </span>
         </div>
 
-        <Link
-          to={`/events/${data.id}`}
-          className="btn btn-sm btn-outline-primary mt-3 rounded-pill"
-        >
-          Learn More →
-        </Link>
+        <button className="btn btn-outline-primary w-100 rounded-3">
+          {event.buttonText} →
+        </button>
       </div>
     </div>
-    </>
   );
-}
+};
+
+export default EventCard;
