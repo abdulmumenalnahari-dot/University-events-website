@@ -1,31 +1,70 @@
-export default function FilterBar({search,setSearch,category,setCategory,sort,setSort}){
+// src/components/FilterBar.jsx
+
+import React from "react";
+
+const FilterBar = ({ search, setSearch, category, setCategory, sort, setSort }) => {
+  // ✅ جمع جميع الفئات من(events + sports)
+  const allCategories = [
+    "culture",
+    "sports",
+    "tech",
+    "arts",
+    "education",
+    "all"
+  ];
+
   return (
-    <form className="row g-2 align-items-end mb-3" onSubmit={e=>e.preventDefault()}>
-      <div className="col-12 col-md-5">
-        <label className="form-label">Search by name or department</label>
-        <input className="form-control" placeholder="e.g. TechFest or CSE" value={search} onChange={e=>setSearch(e.target.value)} />
+    <div className="row g-3 mb-4">
+      {/* بحث */}
+      <div className="col-md-6 col-lg-4">
+        <input
+          type="text"
+          placeholder="ابحث في الأحداث..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="form-control p-3"
+          style={{ borderRadius: "50px", fontSize: "1rem" }}
+        />
       </div>
-      <div className="col-6 col-md-3">
-        <label className="form-label">Category</label>
-        <select className="form-select" value={category} onChange={e=>setCategory(e.target.value)}>
-          <option value="">All</option>
-          <option>Academic</option>
-          <option>Cultural</option>
-          <option>Sports</option>
+
+      {/* تصنيف */}
+      <div className="col-md-6 col-lg-4">
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="form-select p-3"
+          style={{ borderRadius: "50px" }}
+        >
+          <option value="">كل الفئات</option>
+          {allCategories.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat === "culture" && "الثقافه"}
+              {cat === "sports" && "الرياضة"}
+              {cat === "tech" && "التقنية"}
+              {cat === "arts" && "الفنون"}
+              {cat === "education" && "التعليم"}
+              {cat === "all" && "الكل"}
+            </option>
+          ))}
         </select>
       </div>
-      <div className="col-6 col-md-3">
-        <label className="form-label">Sort by</label>
-        <select className="form-select" value={sort} onChange={e=>setSort(e.target.value)}>
-          <option value="date-asc">Date (Upcoming)</option>
-          <option value="date-desc">Date (Recent first)</option>
-          <option value="name-asc">Name (A–Z)</option>
-          <option value="pop-desc">Popularity (high→low)</option>
+
+      {/* ترتيب */}
+      <div className="col-md-6 col-lg-4">
+        <select
+          value={sort}
+          onChange={(e) => setSort(e.target.value)}
+          className="form-select p-3"
+          style={{ borderRadius: "50px" }}
+        >
+          <option value="date-desc">الأحدث أولاً</option>
+          <option value="date-asc">الأقدم أولاً</option>
+          <option value="name-asc">الاسم (أ-ي)</option>
+          <option value="pop-desc">الأكثر شعبية</option>
         </select>
       </div>
-      <div className="col-12 col-md-1">
-        <button className="btn btn-outline-secondary w-100" type="button" onClick={()=>{setSearch('');setCategory('');setSort('date-asc')}}>Reset</button>
-      </div>
-    </form>
-  )
-}
+    </div>
+  );
+};
+
+export default FilterBar;

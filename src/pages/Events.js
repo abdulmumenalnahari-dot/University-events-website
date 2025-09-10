@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import FilterBar from "../components/FilterBar";
 import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
-import EventCarousel from "../components/EventCarousel.jsx";
+import { filterAndSortEvents } from "../utils/filterAndSortEvents";
+import EventCarousel from "../components/EventCarousel";
+import FilterBar from "../components/FilterBar";
 
 const BASE_URL = process.env.PUBLIC_URL || "";
 
@@ -10,82 +11,49 @@ export default function Events() {
   const [sports, setSports] = useState([]);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
-  const [sort, setSort] = useState("date-asc");
+  const [sort, setSort] = useState("date-desc");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  // ✅ تحميل بيانات الثقافه
   useEffect(() => {
-    let alive = true;
-    (async () => {
+    const loadEvents = async () => {
       try {
-        const res = await fetch(`${BASE_URL}/data/events.json`, {
-          headers: { "Cache-Control": "no-cache" },
-        });
-        if (!res.ok)
-          throw new Error(`Failed to load events.json: ${res.status}`);
-        const data = await res.json();
-        if (!alive) return;
-        setEvents(Array.isArray(data) ? data : []);
+        const sortedEvents = await fetchAndSortEvents("/data/events.json");
+        setEvents(sortedEvents);
       } catch (err) {
-        console.error(err);
-        setError(
-          "تعذّر تحميل قائمة الفعاليات. تأكّد   وجود /public/data/events.json."
-        );
+        setError("تعذّر تحميل قائمة الفعاليات. تأكّد وجود /public/data/events.json.");
       } finally {
         setLoading(false);
       }
-    })();
-    return () => {
-      alive = false;
-    };
-  }, []);
-
-  useEffect(() => {
-    const loadEvents = async () => {
-      const sortedEvents = await fetchAndSortEvents("/data/events.json");
-      setEvents(sortedEvents);
     };
     loadEvents();
   }, []);
 
-  // ✅ تحميل البيانات من ملف الرياضة
+  // ✅ تحميل بيانات الرياضة
   useEffect(() => {
     const loadSports = async () => {
-      const sortedSports = await fetchAndSortEvents("/data/sports.json");
-      setSports(sortedSports);
+      try {
+        const sortedSports = await fetchAndSortEvents("/data/sports.json");
+        setSports(sortedSports);
+      } catch (err) {
+        setError("تعذّر تحميل قائمة الرياضة.");
+      }
     };
     loadSports();
   }, []);
 
-  const list = useMemo(() => {
-    const term = search.toLowerCase().trim();
-    const cat = (category || "").toLowerCase().trim();
+  // ✅ دمج البيانات وتصفية وترتيب
+  const combinedEvents = [...events, ...sports];
 
-    let arr = events.filter((e) => {
-      const inCat = !cat || (e.category || "").toLowerCase() === cat;
-      const inTerm =
-        !term ||
-        (e.title || "").toLowerCase().includes(term) ||
-        (e.department || "").toLowerCase().includes(term);
-      return inCat && inTerm;
-    });
-
-    arr.sort((a, b) => {
-      if (sort === "date-asc") return new Date(a.date) - new Date(b.date);
-      if (sort === "date-desc") return new Date(b.date) - new Date(a.date);
-      if (sort === "name-asc")
-        return (a.title || "").localeCompare(b.title || "");
-      if (sort === "pop-desc") return (b.popularity || 0) - (a.popularity || 0);
-      return 0;
-    });
-
-    return arr;
-  }, [events, search, category, sort]);
+  const filteredSortedEvents = useMemo(() => {
+    return filterAndSortEvents(combinedEvents, { search, category, sort });
+  }, [combinedEvents, search, category, sort]);
 
   if (loading) {
     return (
       <div className="container my-4">
-        <h1 className="h3">Event Catalog</h1>
+        <h1 className="h3 text-center">الثقافه</h1>
         <div className="row g-3">
           {[...Array(6)].map((_, i) => (
             <div className="col-sm-6 col-md-4" key={i}>
@@ -105,46 +73,45 @@ export default function Events() {
     );
   }
 
+
   return (
     <div className="container my-4">
       <h1 className="h3">Event Catalog</h1>
 
       {error && (
-        <div className="alert alert-danger" role="alert">
-          {error}
-        </div>
-      )}
+          <div className="alert alert-danger" role="alert">
+            {error}
+          </div>
+        )}
 
-      <FilterBar
-        search={search}
-        setSearch={setSearch}
-        category={category}
-        setCategory={setCategory}
-        sort={sort}
-        setSort={setSort}
-      />
+        <FilterBar
+          search={search}
+          setSearch={setSearch}
+          category={category}
+          setCategory={setCategory}
+          sort={sort}
+          setSort={setSort}
+        />
 
- 
         {/* قسم الثقافه */}
         {events.length > 0 ? (
-          <EventCarousel events={events} title="الثقافه" />
+          <EventCarousel
+            events={filterAndSortEvents(events, { search, category, sort })}
+            title="الثقافه"
+          />
         ) : (
           <div className="text-center py-5">Loading...</div>
         )}
 
         {/* قسم الرياضة */}
         {sports.length > 0 ? (
-          <EventCarousel events={sports} title="الرياضة" />
+          <EventCarousel
+            events={filterAndSortEvents(sports, { search, category, sort })}
+            title="الرياضة"
+          />
         ) : (
           <div className="text-center py-5">Loading...</div>
         )}
-     
-
-      {list.length === 0 && !error && (
-        <p className="mt-3 text-muted">
-          No events found. جرّب إزالة الفلاتر أو ابحث بعنوان/قسم مختلف.
-        </p>
-      )}
     </div>
   );
 }
