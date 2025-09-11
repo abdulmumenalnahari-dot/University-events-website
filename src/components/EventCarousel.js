@@ -23,6 +23,17 @@ const EventCarousel = ({ events = [], title }) => {
 
   const totalCards = events.length;
   const maxIndex = Math.max(0, totalCards - cardsPerView);
+  const showNav = totalCards > cardsPerView;
+
+  // أعِد ضبط المؤشر عند تغيّر القائمة
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [totalCards]);
+
+  // تأكد أن المؤشر داخل الحدود عند تغيّر العرض
+  useEffect(() => {
+    if (currentIndex > maxIndex) setCurrentIndex(maxIndex);
+  }, [cardsPerView, maxIndex, currentIndex]);
 
   const handleTouchStart = (e) => (touchStartX.current = e.targetTouches[0].clientX);
   const handleTouchMove = (e) => (touchEndX.current = e.targetTouches[0].clientX);
@@ -39,6 +50,11 @@ const EventCarousel = ({ events = [], title }) => {
   const handlePrev = () => currentIndex > 0 && setCurrentIndex((p) => Math.max(p - 1, 0));
   const handleNext = () => currentIndex < maxIndex && setCurrentIndex((p) => Math.min(p + 1, maxIndex));
 
+  const onKeyDown = (e) => {
+    if (e.key === "ArrowLeft") handlePrev();
+    if (e.key === "ArrowRight") handleNext();
+  };
+
   useEffect(() => {
     if (!carouselRef.current) return;
     const cardWidth = window.innerWidth < 576 ? 280 : window.innerWidth < 768 ? 320 : 350;
@@ -48,20 +64,30 @@ const EventCarousel = ({ events = [], title }) => {
 
   const cardWidthPx = window.innerWidth < 576 ? "280px" : window.innerWidth < 768 ? "320px" : "350px";
 
+  if (!totalCards) return null;
+
   return (
     <div className="container my-4 my-md-5">
       <h2 className="text-center mb-4 mb-md-5 fw-bold text-primary px-3">{title}</h2>
 
-      <div className="position-relative d-flex justify-content-center align-items-center flex-column flex-md-row gap-4">
-        <button
-          className="btn btn-outline-secondary rounded-circle p-2 p-md-3 shadow-sm position-absolute top-50 start-0 translate-middle-y d-none d-md-flex z-2"
-          style={{ width: "40px", height: "40px", fontSize: "1rem", marginLeft: "-10px" }}
-          onClick={handlePrev}
-          disabled={currentIndex === 0}
-          aria-label="Previous"
-        >
-          <i className="bi bi-chevron-left" />
-        </button>
+      <div
+        className="position-relative d-flex justify-content-center align-items-center flex-column flex-md-row gap-4"
+        role="region"
+        aria-label={`Carousel for ${title}`}
+        onKeyDown={onKeyDown}
+        tabIndex={0}
+      >
+        {showNav && (
+          <button
+            className="btn btn-outline-secondary rounded-circle p-2 p-md-3 shadow-sm position-absolute top-50 start-0 translate-middle-y d-none d-md-flex z-2"
+            style={{ width: "40px", height: "40px", fontSize: "1rem", marginLeft: "-10px" }}
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+            aria-label="Previous"
+          >
+            <i className="bi bi-chevron-left" />
+          </button>
+        )}
 
         <div
           ref={carouselRef}
@@ -77,6 +103,7 @@ const EventCarousel = ({ events = [], title }) => {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          aria-live="polite"
         >
           {events.slice(currentIndex, currentIndex + cardsPerView).map((event) => (
             <div key={event.id} className="flex-shrink-0" style={{ width: cardWidthPx }}>
@@ -85,37 +112,33 @@ const EventCarousel = ({ events = [], title }) => {
           ))}
         </div>
 
-        <button
-          className="btn btn-outline-secondary rounded-circle p-2 p-md-3 shadow-sm position-absolute top-50 end-0 translate-middle-y d-none d-md-flex z-2"
-          style={{ width: "40px", height: "40px", fontSize: "1rem", marginRight: "-10px" }}
-          onClick={handleNext}
-          disabled={currentIndex >= maxIndex}
-          aria-label="Next"
-        >
-          <i className="bi bi-chevron-right" />
-        </button>
+        {showNav && (
+          <button
+            className="btn btn-outline-secondary rounded-circle p-2 p-md-3 shadow-sm position-absolute top-50 end-0 translate-middle-y d-none d-md-flex z-2"
+            style={{ width: "40px", height: "40px", fontSize: "1rem", marginRight: "-10px" }}
+            onClick={handleNext}
+            disabled={currentIndex >= maxIndex}
+            aria-label="Next"
+          >
+            <i className="bi bi-chevron-right" />
+          </button>
+        )}
       </div>
 
       {/* أزرار للشاشات الصغيرة */}
-      <div className="d-flex justify-content-center gap-2 mt-3 d-md-none">
-        <button
-          className="btn btn-sm btn-outline-secondary rounded-circle px-2 py-1"
-          onClick={handlePrev}
-          disabled={currentIndex === 0}
-        >
-          <i className="bi bi-chevron-left"></i>
-        </button>
-        <button
-          className="btn btn-sm btn-outline-secondary rounded-circle px-2 py-1"
-          onClick={handleNext}
-          disabled={currentIndex >= maxIndex}
-        >
-          <i className="bi bi-chevron-right"></i>
-        </button>
-      </div>
+      {showNav && (
+        <div className="d-flex justify-content-center gap-2 mt-3 d-md-none">
+          <button className="btn btn-sm btn-outline-secondary rounded-circle px-2 py-1" onClick={handlePrev} disabled={currentIndex === 0}>
+            <i className="bi bi-chevron-left"></i>
+          </button>
+          <button className="btn btn-sm btn-outline-secondary rounded-circle px-2 py-1" onClick={handleNext} disabled={currentIndex >= maxIndex}>
+            <i className="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      )}
 
       {/* نقاط التقدم */}
-      {totalCards > cardsPerView && (
+      {showNav && (
         <div className="d-flex justify-content-center mt-3 d-md-none">
           {Array.from({ length: maxIndex + 1 }).map((_, i) => (
             <span

@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Routes, Route } from "react-router-dom";
 import FilterBar from "../components/FilterBar";
 import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
 import { filterAndSortEvents } from "../utils/filterAndSortEvents";
 import EventCarousel from "../components/EventCarousel";
+import EventDetail from "../components/EventDetail";
 
 export default function Events() {
   const [events, setEvents] = useState([]);
@@ -19,7 +20,7 @@ export default function Events() {
       try {
         const sortedEvents = await fetchAndSortEvents("/data/events.json");
         setEvents(sortedEvents);
-      } catch (err) {
+      } catch {
         setError("تعذّر تحميل قائمة الفعاليات.");
       } finally {
         setLoading(false);
@@ -33,12 +34,22 @@ export default function Events() {
       try {
         const sortedSports = await fetchAndSortEvents("/data/sports.json");
         setSports(sortedSports);
-      } catch (err) {
+      } catch {
         setError("تعذّر تحميل قائمة الرياضة.");
       }
     };
     loadSports();
   }, []);
+
+  // Hooks غير مشروطة دائمًا
+  const filteredEvents = useMemo(
+    () => filterAndSortEvents(events, { search, category, sort }),
+    [events, search, category, sort]
+  );
+  const filteredSports = useMemo(
+    () => filterAndSortEvents(sports, { search, category, sort }),
+    [sports, search, category, sort]
+  );
 
   if (loading) {
     return (
@@ -63,46 +74,36 @@ export default function Events() {
     );
   }
 
-  return (
-    <div className="container my-4">
+  const Catalog = (
+    <>
       <h1 className="h3">Event Catalog</h1>
 
-      {error && (
-        <div className="alert alert-danger" role="alert">
-          {error}
-        </div>
+      {error && <div className="alert alert-danger" role="alert">{error}</div>}
+
+      <FilterBar
+        search={search}
+        setSearch={setSearch}
+        category={category}
+        setCategory={setCategory}
+        sort={sort}
+        setSort={setSort}
+      />
+
+      {filteredEvents.length > 0 && (
+        <EventCarousel events={filteredEvents} title="الثقافة" />
       )}
 
+      {filteredSports.length > 0 && (
+        <EventCarousel events={filteredSports} title="الرياضة" />
+      )}
+    </>
+  );
+
+  return (
+    <div className="container my-4">
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <FilterBar
-                search={search}
-                setSearch={setSearch}
-                category={category}
-                setCategory={setCategory}
-                sort={sort}
-                setSort={setSort}
-              />
-
-              {events.length > 0 && (
-                <EventCarousel
-                  events={filterAndSortEvents(events, { search, category, sort })}
-                  title="الثقافة"
-                />
-              )}
-
-              {sports.length > 0 && (
-                <EventCarousel
-                  events={filterAndSortEvents(sports, { search, category, sort })}
-                  title="الرياضة"
-                />
-              )}
-            </>
-          }
-        />
+        <Route index element={Catalog} />
+        <Route path=":id" element={<EventDetail />} />
       </Routes>
     </div>
   );
