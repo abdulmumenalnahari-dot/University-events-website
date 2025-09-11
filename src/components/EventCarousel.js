@@ -95,6 +95,38 @@ const EventCarousel = ({ events = [], title }) => {
           <i className="bi bi-chevron-right" />
         </button>
       </div>
+
+      {/* أزرار للشاشات الصغيرة */}
+      <div className="d-flex justify-content-center gap-2 mt-3 d-md-none">
+        <button
+          className="btn btn-sm btn-outline-secondary rounded-circle px-2 py-1"
+          onClick={handlePrev}
+          disabled={currentIndex === 0}
+        >
+          <i className="bi bi-chevron-left"></i>
+        </button>
+        <button
+          className="btn btn-sm btn-outline-secondary rounded-circle px-2 py-1"
+          onClick={handleNext}
+          disabled={currentIndex >= maxIndex}
+        >
+          <i className="bi bi-chevron-right"></i>
+        </button>
+      </div>
+
+      {/* نقاط التقدم */}
+      {totalCards > cardsPerView && (
+        <div className="d-flex justify-content-center mt-3 d-md-none">
+          {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+            <span
+              key={i}
+              className={`mx-1 rounded-circle ${i === currentIndex ? "bg-primary" : "bg-light"}`}
+              style={{ width: "8px", height: "8px", display: "inline-block", cursor: "pointer" }}
+              onClick={() => setCurrentIndex(i)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
