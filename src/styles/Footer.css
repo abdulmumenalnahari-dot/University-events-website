@@ -1,0 +1,86 @@
+/* src/components/Footer.css */
+
+.footer-container {
+  background-color: #0f172a;
+  color: white;
+  padding: 50px 20px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: left;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.footer-description {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.footer-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #e2e8f0;
+}
+
+.footer-link {
+  display: block;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #64748b;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  border-top: 1px solid #1e293b;
+  padding-top: 20px;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+/* تحسينات للهواتف */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer-container {
+    padding: 40px 15px;
+  }
+
+  .footer-title,
+  .footer-subtitle {
+    font-size: 1.2rem;
+  }
+}

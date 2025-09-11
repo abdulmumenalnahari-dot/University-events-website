@@ -1,0 +1,106 @@
+/* src/components/Quick.css */
+
+.quick-access-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.quick-access-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.quick-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.quick-card-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.quick-card {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: left;
+  min-height: 180px;
+}
+
+.quick-card:hover {
+  transform: scale(1.02);
+}
+
+.icon-wrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #000;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* الألوان - كما في الصورة */
+.bg-light-blue {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+}
+
+.bg-light-purple {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.bg-light-green {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+}
+
+.bg-light-orange {
+  background-color: #fff8e1;
+  color: #d84315;
+}
+
+/* تنسيق للهواتف */
+@media (max-width: 768px) {
+  .quick-access-container {
+    padding: 20px;
+  }
+
+  .quick-card {
+    padding: 16px;
+  }
+
+  .icon-wrapper {
+    width: 36px;
+    height: 36px;
+  }
+}
