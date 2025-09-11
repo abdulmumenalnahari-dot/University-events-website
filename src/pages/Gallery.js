@@ -1,61 +1,64 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from "react";
 
-const BASE_URL = process.env.PUBLIC_URL || '';
+const BASE_URL = process.env.PUBLIC_URL || "";
 
-export default function Gallery(){
-  const [list, setList]   = useState([]);
-  const [group, setGroup] = useState('year');       // 'year' | 'category'
-  const [filter, setFilter] = useState('');
+export default function Gallery() {
+  const [list, setList] = useState([]);
+  const [year, setYear] = useState("");        // Academic Year
+  const [category, setCategory] = useState(""); // Category
   const [loading, setLoading] = useState(true);
-  const [error, setError]     = useState('');
+  const [error, setError] = useState("");
 
-  useEffect(()=>{
+  useEffect(() => {
     let alive = true;
-
-    async function load(){
-      try{
-        const res = await fetch(`${BASE_URL}/data/gallery.json`, { headers: { 'Cache-Control': 'no-cache' }});
-        if(!res.ok) throw new Error(`Failed to load gallery.json: ${res.status}`);
+    (async () => {
+      try {
+        const res = await fetch(`${BASE_URL}/data/gallery.json`, {
+          headers: { "Cache-Control": "no-cache" },
+        });
+        if (!res.ok) throw new Error(`gallery.json ${res.status}`);
         const data = await res.json();
-        if(!alive) return;
+        if (!alive) return;
         setList(Array.isArray(data) ? data : []);
-      }catch(err){
-        console.error(err);
-        setError('تعذّر تحميل المعرض. تأكّد من وجود /public/data/gallery.json.');
-      }finally{
+      } catch (e) {
+        console.error(e);
+        setError("Failed to load /public/data/gallery.json.");
+      } finally {
         setLoading(false);
       }
-    }
-    load();
-    return ()=>{ alive = false; };
+    })();
+    return () => {
+      alive = false;
+    };
   }, []);
 
-  const options = useMemo(()=>{
-    const vals = list.map(x => group === 'year' ? x.year : x.category).filter(Boolean);
-    return Array.from(new Set(vals));
-  }, [list, group]);
+  const years = useMemo(() => {
+    return Array.from(new Set(list.map((x) => x.year).filter(Boolean))).sort(
+      (a, b) => String(b).localeCompare(String(a))
+    );
+  }, [list]);
 
-  const groups = useMemo(()=>{
-    const map = new Map();
-    const keyFn = group === 'year' ? (x=>x.year) : (x=>x.category);
-    list.forEach(item=>{
-      const key = keyFn(item) || 'Unspecified';
-      if (filter && key !== filter) return;
-      if (!map.has(key)) map.set(key, []);
-      map.get(key).push(item);
-    });
-    return Array.from(map.entries());
-  }, [list, group, filter]);
+  const categories = useMemo(() => {
+    return Array.from(new Set(list.map((x) => x.category).filter(Boolean))).sort(
+      (a, b) => String(a).localeCompare(String(b))
+    );
+  }, [list]);
 
-  if (loading){
+  const filtered = useMemo(() => {
+    return list.filter(
+      (x) => (!year || x.year === year) && (!category || x.category === category)
+    );
+  }, [list, year, category]);
+
+  if (loading) {
     return (
       <div className="container my-4">
-        <h1 className="h3">Gallery</h1>
+        <h1 className="h3 text-center">Event Gallery</h1>
         <div className="row g-3">
-          {[...Array(6)].map((_,i)=>(
-            <div className="col-sm-6 col-md-4" key={i}>
+          {[...Array(8)].map((_, i) => (
+            <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={i}>
               <div className="card shadow-sm">
-                <div className="placeholder" style={{height:180}}></div>
+                <div className="placeholder" style={{ height: 180 }} />
                 <div className="card-body">
                   <div className="placeholder-glow">
                     <span className="placeholder col-8"></span>
@@ -72,65 +75,105 @@ export default function Gallery(){
 
   return (
     <div className="container my-4">
-      <h1 className="h3">Gallery</h1>
+      {/* Header */}
+      <div className="text-center mb-3">
+        <h1 className="display-6 fw-bold">Event Gallery</h1>
+        <p className="text-muted mb-0">
+          Explore memories from our campus events, organized by academic year and category.
+        </p>
+        <p className="text-muted">Relive the moments that make our university community special.</p>
+      </div>
 
-      {error && <div className="alert alert-danger" role="alert">{error}</div>}
-
-      <div className="row g-2 align-items-end mb-3">
-        <div className="col-6 col-md-3">
-          <label className="form-label">Group by</label>
-          <select
-            className="form-select"
-            value={group}
-            onChange={e=>{ setGroup(e.target.value); setFilter(''); }}
-          >
-            <option value="year">Year</option>
-            <option value="category">Category</option>
-          </select>
+      {error && (
+        <div className="alert alert-danger" role="alert">
+          {error}
         </div>
-        <div className="col-6 col-md-3">
-          <label className="form-label">Filter</label>
-          <select
-            className="form-select"
-            value={filter}
-            onChange={e=>setFilter(e.target.value)}
-          >
-            <option value="">All</option>
-            {options.map(o => <option key={o} value={o}>{o}</option>)}
-          </select>
+      )}
+
+      {/* Filter bar */}
+      <div className="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
+        <div className="d-flex flex-wrap gap-2">
+          <div>
+            <label className="form-label mb-1">Academic Year</label>
+            <select className="form-select" value={year} onChange={(e) => setYear(e.target.value)}>
+              <option value="">All Years</option>
+              {years.map((y) => (
+                <option key={y} value={y}>
+                  {y}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label className="form-label mb-1">Category</label>
+            <select
+              className="form-select"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="">All Categories</option>
+              {categories.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        <div className="text-muted small ms-auto">
+          Showing <strong>{filtered.length}</strong> of <strong>{list.length}</strong> images
         </div>
       </div>
 
-      {groups.length === 0 && !error && (
-        <div className="text-muted">لا توجد عناصر للعرض.</div>
-      )}
-
-      {groups.map(([key, items])=>(
-        <section key={key} className="mb-4">
-          <h2 className="h5">{key}</h2>
-          <div className="grid">
-            {items.map(g=>(
-              <figure key={g.id} className="card shadow-sm">
-                <img
-                  className="card-img-top"
-                  src={
-                    g.image?.startsWith('/')
-                      ? `${BASE_URL}${g.image}`
-                      : (g.image || `${BASE_URL}/images/banner1.svg`)
-                  }
-                  alt={g.title}
-                />
-                <figcaption className="card-body">
-                  <div className="fw-semibold">{g.title}</div>
-                  <div className="text-muted small">
-                    {(g.category || 'Uncategorized')} • {(g.year || 'Unknown')}
+      {/* Cards grid */}
+      {filtered.length === 0 ? (
+        <div className="text-muted">No items to display.</div>
+      ) : (
+        <div className="row g-3">
+          {filtered.map((g) => {
+            const src = g.image?.startsWith("/")
+              ? `${BASE_URL}${g.image}`
+              : g.image || `${BASE_URL}/images/banner1.svg`;
+            return (
+              <div key={g.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div className="card shadow-sm h-100">
+                  <img
+                    src={src}
+                    alt={g.title}
+                    className="card-img-top"
+                    style={{ height: 180, objectFit: "cover" }}
+                  />
+                  <div className="card-body">
+                    <div className="d-flex justify-content-between align-items-center mb-1">
+                      <span className="badge bg-primary-subtle text-primary">
+                        {g.category || "Academic"}
+                      </span>
+                      <span className="text-muted small">{g.year || ""}</span>
+                    </div>
+                    <div className="fw-semibold">{g.title}</div>
+                    <div
+                      className="text-muted small mb-2"
+                      style={{
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {g.description || "—"}
+                    </div>
+                    <div className="text-muted small">
+                      <i className="bi bi-calendar-event me-1"></i>
+                      {g.date || ""}
+                    </div>
                   </div>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
-      ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

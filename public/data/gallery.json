@@ -4,20 +4,26 @@
     "title": "Robotics Showcase 2023",
     "year": "2023-24",
     "category": "Technical",
-    "image": "/images/banner1.svg"
+    "image": "/images/banner1.svg",
+    "date": "May 18, 2023",
+    "description": "Robotics teams presenting their projects."
   },
   {
     "id": "g-2024-01",
     "title": "Spring Cultural Night 2024",
     "year": "2024-25",
     "category": "Cultural",
-    "image": "/images/banner2.svg"
+    "image": "/images/banner2.svg",
+    "date": "May 12, 2024",
+    "description": "Performances and cultural showcases."
   },
   {
     "id": "g-2024-02",
     "title": "City Sports Finals 2024",
     "year": "2024-25",
     "category": "Sports",
-    "image": "/images/banner3.svg"
+    "image": "/images/banner3.svg",
+    "date": "May 16, 2024",
+    "description": "Final matches and award ceremony."
   }
 ]
