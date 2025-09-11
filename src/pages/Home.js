@@ -3,33 +3,35 @@ import { Link } from 'react-router-dom';
 import BannerSlider from '../components/BannerSlider';
 import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
 import EventCarousel from "../components/EventCarousel";
-
+import HomeBegin from './HomeBegin';
+import '../styles/HomeBegin.css'
+import Quick from '../components/Quick';
 const BASE_URL = process.env.PUBLIC_URL || '';
 
 export default function Home() {
-  const [banners, setBanners] = useState([]);
+   
   const [events, setEvents] = useState([]);
   const [sports, setSports] = useState([]);
 
+ const [banners, setBanners] = useState([]);
 
   useEffect(() => {
-    const loadData = async () => {
-      const bannersRes = await fetch(`${BASE_URL}/data/banners.json`, { cache: 'no-store' });
-        const bannersData = await bannersRes.json();
-        setBanners(Array.isArray(bannersData) ? bannersData : []);
-
-    };
-
-    loadData();
+    fetch('/data/banners.json')
+      .then(res => res.json())
+      .then(data => setBanners(data))
+      .catch(err => console.error("Error loading banners:", err));
   }, []);
+    
 
   useEffect(() => {
-    const loadEvents = async () => {
-      const sortedEvents = await fetchAndSortEvents("/data/events.json");
-      setEvents(sortedEvents);
-    };
-    loadEvents();
-  }, []);
+  fetch('/data/banners.json')
+    .then(res => {
+      if (!res.ok) throw new Error("Failed to load banners");
+      return res.json();
+    })
+    .then(data => setBanners(data))
+    .catch(err => console.error("Error loading banners:", err));
+}, []);
 
   // ✅ تحميل البيانات من ملف الرياضة
   useEffect(() => {
@@ -45,11 +47,11 @@ export default function Home() {
     <>
     
     <div >
+       <HomeBegin />
       
-      <BannerSlider items={banners} />
-      
+<BannerSlider items={banners} />      
 
-       
+      
 
         {/* قسم الثقافه */}
         {events.length > 0 ? (
@@ -73,6 +75,7 @@ export default function Home() {
           Centralized event information, department-wise browsing, and dynamic, responsive UI — all powered by lightweight JSON. No backend required.
         </p>
       </section>
+      <Quick />
     </div>
     </>
   );
