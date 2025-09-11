@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import BannerSlider from '../components/BannerSlider';
 import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
 import EventCarousel from "../components/EventCarousel";
-import HomeBegin from './HomeBegin';
+import HomeBegin from '../components/HomeBegin';
 import '../styles/HomeBegin.css'
 import Quick from '../components/Quick';
 const BASE_URL = process.env.PUBLIC_URL || '';

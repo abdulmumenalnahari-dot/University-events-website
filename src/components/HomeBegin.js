@@ -1,4 +1,6 @@
+// src/components/HomeBegin.jsx
 import React from 'react';
+import { Link } from 'react-router-dom'; // ✅ إضافة Link
 import '../styles/HomeBegin.css';
 
 const HomeBegin = () => {
@@ -20,22 +22,17 @@ const HomeBegin = () => {
         <div className="features-container">
           <div className="feature-card">
             <div className="feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="3" y="4" width="18" height="18" rx="2" stroke="#667eea" strokeWidth="2"/>
-                <path d="M7 12H17M7 16H17" stroke="#667eea" strokeWidth="2" strokeLinecap="round"/>
-                <path d="M12 8V12" stroke="#667eea" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
+              <i className="fas fa-calendar-alt" style={{ color: '#667eea' }}></i>
             </div>
+             
             <h3>Campus Events</h3>
+            
             <p>Discover exciting events, workshops, and activities happening across campus. Never miss out on what matters to you.</p>
           </div>
 
           <div className="feature-card">
             <div className="feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17 21V19C17 16.7909 15.2091 15 13 15H11C8.79086 15 7 16.7909 7 19V21" stroke="#bcdbfa" strokeWidth="2" strokeLinecap="round"/>
-                <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="#bcdbfa" strokeWidth="2"/>
-              </svg>
+              <i className="fas fa-users" style={{ color: '#bcdbfa' }}></i>
             </div>
             <h3>Student Organizations</h3>
             <p>Join clubs, societies, and organizations that match your interests. Build connections and develop new skills.</p>
@@ -43,21 +40,23 @@ const HomeBegin = () => {
 
           <div className="feature-card">
             <div className="feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5L19 12L12 19L5 12L12 5Z" stroke="#a8e6cf" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 5V19" stroke="#a8e6cf" strokeWidth="2" strokeLinecap="round"/>
-                <path d="M5 12H19" stroke="#a8e6cf" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
+              <i className="fas fa-book" style={{ color: '#a8e6cf' }}></i>
             </div>
             <h3>Resources & Support</h3>
             <p>Access academic resources, student services, and support systems to help you succeed in your university journey.</p>
           </div>
+
+          
         </div>
 
-        {/* CTA Buttons */}
-        <div className="cta-buttons">
-          <button className="btn-primary">Explore Events</button>
-          <button className="btn-outline">Join Organizations</button>
+         <div className="cta-buttons">
+           <Link to="/events" className="btn-primary">
+            Explore Events
+          </Link>
+          
+           <Link to="/register" className="btn-outline">
+            Join Organizations
+          </Link>
         </div>
       </section>
     </div>

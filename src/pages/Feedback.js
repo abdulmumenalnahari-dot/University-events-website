@@ -1,163 +1,186 @@
-import { useEffect, useMemo, useState } from 'react';
+// src/pages/Feedback.jsx
+import React, { useState } from 'react';
+import { FaUser, FaEnvelope, FaUsers, FaCalendarAlt, FaStar } from 'react-icons/fa';
+import '../styles/Feedback.css';
 
-const BASE_URL = process.env.PUBLIC_URL || '';
+const Feedback = () => {
+  const userTypes = ['Student', 'Faculty', 'Staff', 'Visitor'];
+  const events = ['Fall Festival 2024', 'Campus Music Festival', 'Student Organization Fair', 'Academic Conference 2024'];
 
-export default function Feedback(){
-  const [name,setName]       = useState('');
-  const [email,setEmail]     = useState('');
-  const [role,setRole]       = useState('Student');
-  const [eventId,setEventId] = useState('');
-  const [rating,setRating]   = useState(5);
-  const [comments,setComments] = useState('');
+  // حالة الحقول
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    userType: '',
+    event: '',
+    rating: 0,
+    comments: ''
+  });
 
-  const [events, setEvents]   = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError]     = useState('');
-  const [preview, setPreview] = useState(null); // object | null
-
-  useEffect(()=>{
-    let alive = true;
-    (async ()=>{
-      try{
-        const res = await fetch(`${BASE_URL}/data/events.json`, { headers: { 'Cache-Control': 'no-cache' }});
-        if(!res.ok) throw new Error(`Failed to load events.json: ${res.status}`);
-        const data = await res.json();
-        if(!alive) return;
-
-        // آخر 30 يومًا فقط
-        const now = new Date();
-        const past30 = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 30);
-
-        const filtered = (Array.isArray(data) ? data : [])
-          .filter(e=>{
-            const d = new Date(e.date);
-            return !isNaN(d) && d >= past30 && d <= now;
-          })
-          .sort((a,b)=> new Date(b.date) - new Date(a.date));
-
-        setEvents(filtered);
-      }catch(err){
-        console.error(err);
-        setError('تعذّر تحميل قائمة الفعاليات. تأكّد من وجود /public/data/events.json.');
-      }finally{
-        setLoading(false);
-      }
-    })();
-    return ()=>{ alive = false; };
-  }, []);
-
-  const monthEvents = useMemo(()=> events.map(e=>({
-    id: e.id,
-    label: `${e.title} — ${new Date(e.date).toLocaleDateString()}`
-  })), [events]);
-
-  const handleSubmit = (e)=>{
-    e.preventDefault();
-
-    // تحقّق بسيط إضافي للإيميل
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if(!emailOk){
-      alert('الرجاء إدخال بريد إلكتروني صالح.');
-      return;
-    }
-    if(!eventId){
-      alert('الرجاء اختيار الفعالية التي حضرتها خلال آخر 30 يومًا.');
-      return;
-    }
-
-    // UI Preview فقط — بدون إرسال
-    const selected = events.find(x=>x.id === eventId);
-    setPreview({
-      name, email, role, rating, comments,
-      event: selected ? `${selected.title} — ${new Date(selected.date).toLocaleDateString()}` : '—'
-    });
+  // تحديث التقييم عند النقر على النجوم
+  const handleRating = (value) => {
+    setFormData(prev => ({ ...prev, rating: value }));
   };
 
+  // التحقق من إذا كانت جميع الحقول ممتلئة
+  const isFormComplete = formData.name && formData.email && formData.userType && formData.event && formData.rating > 0;
+
   return (
-    <div className="container my-4">
-      <h1 className="h3">Feedback (UI Demo Only)</h1>
-      <p className="text-muted">
-        هذا النموذج للعرض فقط — لا يتم حفظ أو إرسال أي بيانات.
-      </p>
-
-      {error && <div className="alert alert-danger" role="alert">{error}</div>}
-
-      <form className="row g-3" onSubmit={handleSubmit} noValidate>
-        <div className="col-md-6">
-          <label className="form-label">Name</label>
-          <input className="form-control" value={name} onChange={e=>setName(e.target.value)} required />
+    <div className="feedback-container">
+      <div className="feedback-header">
+        <div className="icon-wrapper">
+          <FaUser size={48} color="#667eea" />
         </div>
-        <div className="col-md-6">
-          <label className="form-label">Email</label>
-          <input type="email" className="form-control" value={email} onChange={e=>setEmail(e.target.value)} required />
-        </div>
+        <h1>Event Feedback</h1>
+        <p className="subtitle">
+          Your feedback helps us improve future events and enhance the campus experience.<br />
+          Share your thoughts about recent events you've attended.
+        </p>
+      </div>
 
-        <div className="col-md-4">
-          <label className="form-label">User Type</label>
-          <select className="form-select" value={role} onChange={e=>setRole(e.target.value)}>
-            <option>Student</option>
-            <option>Faculty</option>
-            <option>Visitor</option>
-          </select>
-        </div>
-
-        <div className="col-md-4">
-          <label className="form-label">
-            Event Attended (last 30 days)
-          </label>
-          <select
-            className="form-select"
-            value={eventId}
-            onChange={e=>setEventId(e.target.value)}
-            disabled={loading || (!!error)}
-            aria-busy={loading ? 'true' : 'false'}
-          >
-            <option value="">{loading ? 'Loading…' : 'Select…'}</option>
-            {monthEvents.map(x=> <option key={x.id} value={x.id}>{x.label}</option>)}
-          </select>
-          {!loading && monthEvents.length === 0 && !error && (
-            <div className="form-text">لا توجد فعاليات ضمن آخر 30 يومًا.</div>
-          )}
-        </div>
-
-        <div className="col-md-4">
-          <label className="form-label">Rating</label>
-          <select className="form-select" value={rating} onChange={e=>setRating(Number(e.target.value))}>
-            {[1,2,3,4,5].map(n=><option key={n} value={n}>{n}</option>)}
-          </select>
-        </div>
-
-        <div className="col-12">
-          <label className="form-label">Comments</label>
-          <textarea className="form-control" rows="4" value={comments} onChange={e=>setComments(e.target.value)}></textarea>
-        </div>
-
-        <div className="col-12 d-flex gap-2">
-          <button className="btn btn-primary" type="submit">Preview (no submit)</button>
-          <button className="btn btn-outline-secondary" type="button" onClick={()=>{
-            setName(''); setEmail(''); setRole('Student'); setEventId(''); setRating(5); setComments(''); setPreview(null);
-          }}>Reset</button>
-        </div>
-      </form>
-
-      {preview && (
-        <div className="card shadow-sm mt-4">
-          <div className="card-header">Preview</div>
-          <div className="card-body">
-            <div className="row g-2">
-              <div className="col-md-4"><strong>Name:</strong> {preview.name}</div>
-              <div className="col-md-4"><strong>Email:</strong> {preview.email}</div>
-              <div className="col-md-4"><strong>User Type:</strong> {preview.role}</div>
-              <div className="col-md-6"><strong>Event:</strong> {preview.event}</div>
-              <div className="col-md-6"><strong>Rating:</strong> {preview.rating}</div>
-              <div className="col-12"><strong>Comments:</strong><br/>{preview.comments || '—'}</div>
-            </div>
-            <div className="mt-3">
-              <button className="btn btn-outline-primary btn-sm" type="button" onClick={()=>setPreview(null)}>Close Preview</button>
-            </div>
+      <div className="feedback-form">
+        {/* Disclaimer */}
+        <div className="info-box">
+          <div className="info-icon">
+            <FaUsers size={16} color="#1976d2" />
+          </div>
+          <div>
+            <strong>UI Demonstration Form</strong>
+            <p>This feedback form is designed for user interface demonstration purposes. Form submissions are not processed or stored in any database.</p>
           </div>
         </div>
-      )}
+
+        <form>
+          {/* Full Name */}
+          <div className="form-group">
+            <label htmlFor="name">
+              <FaUser size={16} color="#667eea" />
+              <span> Full Name *</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your full name"
+              value={formData.name}
+              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+              className="form-input"
+            />
+          </div>
+
+          {/* Email Address */}
+          <div className="form-group">
+            <label htmlFor="email">
+              <FaEnvelope size={16} color="#667eea" />
+              <span> Email Address *</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email address"
+              value={formData.email}
+              onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+              className="form-input"
+            />
+          </div>
+
+          {/* User Type */}
+          <div className="form-group">
+            <label htmlFor="userType">
+              <FaUsers size={16} color="#667eea" />
+              <span> User Type *</span>
+            </label>
+            <select
+              id="userType"
+              value={formData.userType}
+              onChange={(e) => setFormData(prev => ({ ...prev, userType: e.target.value }))}
+              className="form-select"
+            >
+              <option value="">Select your role</option>
+              {userTypes.map(type => (
+                <option key={type} value={type}>{type}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* Event Attended */}
+          <div className="form-group">
+            <label htmlFor="event">
+              <FaCalendarAlt size={16} color="#667eea" />
+              <span> Event Attended *</span>
+            </label>
+            <select
+              id="event"
+              value={formData.event}
+              onChange={(e) => setFormData(prev => ({ ...prev, event: e.target.value }))}
+              className="form-select"
+            >
+              <option value="">Select an event from the past month</option>
+              {events.map(event => (
+                <option key={event} value={event}>{event}</option>
+              ))}
+            </select>
+            <small className="form-note">* Limited to events from the past month only</small>
+          </div>
+
+          {/* Event Rating */}
+          <div className="form-group">
+            <label>
+              <FaStar size={16} color="#667eea" />
+              <span> Event Rating *</span>
+            </label>
+            <div className="rating-stars">
+              {[1, 2, 3, 4, 5].map(star => (
+                <button
+                  key={star}
+                  type="button"
+                  onClick={() => handleRating(star)}
+                  className={`star-icon ${formData.rating >= star ? 'active' : ''}`}
+                  aria-label={`Rate ${star}`}
+                >
+                  <FaStar size={24} color={formData.rating >= star ? '#ffd700' : '#ccc'} />
+                </button>
+              ))}
+            </div>
+
+            {/* نصوص توضيحية حسب التقييم */}
+            <div className="rating-legend">
+              {formData.rating === 1 && <small className="rating-text">Poor - Needs significant improvement</small>}
+              {formData.rating === 2 && <small className="rating-text">Below Average - Some areas need work</small>}
+              {formData.rating === 3 && <small className="rating-text">Average - Decent experience</small>}
+              {formData.rating === 4 && <small className="rating-text">Good - Well organized and enjoyable</small>}
+              {formData.rating === 5 && <small className="rating-text">Excellent - Outstanding experience!</small>}
+            </div>
+          </div>
+
+          {/* Comments */}
+          <div className="form-group">
+            <label htmlFor="comments">
+              <span>Additional Comments & Suggestions</span>
+            </label>
+            <textarea
+              id="comments"
+              placeholder="Please share your detailed feedback, suggestions for improvement, or any additional remarks about the event..."
+              value={formData.comments}
+              onChange={(e) => setFormData(prev => ({ ...prev, comments: e.target.value }))}
+              rows={5}
+              className="form-textarea"
+            ></textarea>
+            <small className="form-note">Optional: Share your thoughts, suggestions, or any specific aspects you'd like to highlight</small>
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className={`submit-btn ${isFormComplete ? 'active' : ''}`}
+            disabled={!isFormComplete}
+          >
+            <FaUser size={16} color="#fff" />
+            <span>Submit Feedback</span>
+          </button>
+        </form>
+      </div>
     </div>
   );
-}
+};
+
+export default Feedback;
