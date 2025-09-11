@@ -22,9 +22,9 @@ const Navbar = ({ navbarScrolled }) => {
  const navItems = [
   { path: PATHS.HOME, label: 'Home', icon: <BsHouseDoor size={16} />, activeKey: 'home' },
   { path: PATHS.ABOUT, label: 'About Us', icon: <BsInfoCircle size={16} />, activeKey: 'about' },
-  { path: PATHS.CALENDAR, label: 'Event Calendar', icon: <BsCalendarEvent size={16} />, activeKey: 'calendar' },
-  { path: PATHS.EVENTS, label: 'Event Details', icon: <IoIosNotificationsOutline size={16} />, activeKey: 'events' },
+   { path: PATHS.EVENTS, label: 'Event Details', icon: <IoIosNotificationsOutline size={16} />, activeKey: 'events' },
   { path: PATHS.REGISTER, label: 'Registration', icon: <BsPerson size={16} />, activeKey: 'register' },
+  { path: PATHS.FEEDBACK, label: 'feedback', icon: <BsPerson size={16} />, activeKey: 'register' },
   { path: PATHS.GALLERY, label: 'Gallery', icon: <BsImages size={16} />, activeKey: 'exhibition' },
   { path: PATHS.CONTACT, label: 'Contact Us', icon: <BsEnvelope size={16} />, activeKey: 'contact' },
 ];
