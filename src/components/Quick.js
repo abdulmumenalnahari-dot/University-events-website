@@ -1,8 +1,4 @@
- HEAD
 
-    
- bc4f49c7449d13330fef415ff209919cb703d591
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaCalendarAlt, FaUsers, FaImages, FaEnvelope } from 'react-icons/fa';
 import '../styles/Quick.css';
