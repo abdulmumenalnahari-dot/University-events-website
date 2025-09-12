@@ -7,8 +7,9 @@ import EventCarousel from "../components/EventCarousel";
 import EventDetail from "../components/EventDetail";
 
 export default function Events() {
-  const [events, setEvents] = useState([]);
+  const [culture, setECulture] = useState([]);
   const [sports, setSports] = useState([]);
+  const [arts, setArts] = useState([]);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
   const [sort, setSort] = useState("date-desc");
@@ -16,17 +17,17 @@ export default function Events() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const loadEvents = async () => {
+    const loadCulture = async () => {
       try {
-        const sortedEvents = await fetchAndSortEvents("/data/events.json");
-        setEvents(sortedEvents);
+        const sortedCulture = await fetchAndSortEvents("/data/culture.json");
+        setECulture(sortedCulture);
       } catch {
         setError("تعذّر تحميل قائمة الفعاليات.");
       } finally {
         setLoading(false);
       }
     };
-    loadEvents();
+    loadCulture();
   }, []);
 
   useEffect(() => {
@@ -35,50 +36,47 @@ export default function Events() {
         const sortedSports = await fetchAndSortEvents("/data/sports.json");
         setSports(sortedSports);
       } catch {
-        setError("تعذّر تحميل قائمة الرياضة.");
+        setError("تعذّر تحميل قائمة SPORTS.");
       }
     };
     loadSports();
   }, []);
 
+  useEffect(() => {
+    const loadArts = async () => {
+      try {
+        const sortedArts = await fetchAndSortEvents("/data/arts.json");
+        setArts(sortedArts);
+      } catch {
+        setError("تعذّر تحميل قائمة SPORTS.");
+      }
+    };
+    loadArts();
+  }, []);
+
   // Hooks غير مشروطة دائمًا
-  const filteredEvents = useMemo(
-    () => filterAndSortEvents(events, { search, category, sort }),
-    [events, search, category, sort]
+  const filteredCulture = useMemo(
+    () => filterAndSortEvents(culture, { search, category, sort }),
+    [culture, search, category, sort]
   );
   const filteredSports = useMemo(
     () => filterAndSortEvents(sports, { search, category, sort }),
     [sports, search, category, sort]
   );
-
-  if (loading) {
-    return (
-      <div className="container my-4">
-        <h1 className="h3 text-center">الثقافة</h1>
-        <div className="row g-3">
-          {[...Array(6)].map((_, i) => (
-            <div className="col-sm-6 col-md-4" key={i}>
-              <div className="card shadow-sm">
-                <div className="placeholder" style={{ height: 160 }} />
-                <div className="card-body">
-                  <div className="placeholder-glow">
-                    <span className="placeholder col-8" />
-                    <span className="placeholder col-6" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
+  const filteredArts = useMemo(
+    () => filterAndSortEvents(arts, { search, category, sort }),
+    [arts, search, category, sort]
+  );
 
   const Catalog = (
     <>
       <h1 className="h3">Event Catalog</h1>
 
-      {error && <div className="alert alert-danger" role="alert">{error}</div>}
+      {error && (
+        <div className="alert alert-danger" role="alert">
+          {error}
+        </div>
+      )}
 
       <FilterBar
         search={search}
@@ -89,12 +87,16 @@ export default function Events() {
         setSort={setSort}
       />
 
-      {filteredEvents.length > 0 && (
-        <EventCarousel events={filteredEvents} title="الثقافة" />
+      {filteredCulture.length > 0 && (
+        <EventCarousel events={filteredCulture} title="CULTURE" />
       )}
 
       {filteredSports.length > 0 && (
-        <EventCarousel events={filteredSports} title="الرياضة" />
+        <EventCarousel events={filteredSports} title="SPORTS" />
+      )}
+
+      {filteredArts.length > 0 && (
+        <EventCarousel events={filteredArts} title="ARTS" />
       )}
     </>
   );

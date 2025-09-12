@@ -2,16 +2,16 @@
 
 import React from "react";
 
-const FilterBar = ({ search, setSearch, category, setCategory, sort, setSort }) => {
+const FilterBar = ({
+  search,
+  setSearch,
+  category,
+  setCategory,
+  sort,
+  setSort,
+}) => {
   // ✅ جمع جميع الفئات من(events + sports)
-  const allCategories = [
-    "culture",
-    "sports",
-    "tech",
-    "arts",
-    "education",
-    "all"
-  ];
+  const allCategories = ["All Categories", "culture", "sports", "arts"];
 
   return (
     <div className="row g-3 mb-4">
@@ -19,7 +19,7 @@ const FilterBar = ({ search, setSearch, category, setCategory, sort, setSort }) 
       <div className="col-md-6 col-lg-4">
         <input
           type="text"
-          placeholder="ابحث في الأحداث..."
+          placeholder="Search in events..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="form-control p-3"
@@ -35,15 +35,12 @@ const FilterBar = ({ search, setSearch, category, setCategory, sort, setSort }) 
           className="form-select p-3"
           style={{ borderRadius: "50px" }}
         >
-          <option value="">كل الفئات</option>
           {allCategories.map((cat) => (
             <option key={cat} value={cat}>
-              {cat === "culture" && "الثقافه"}
-              {cat === "sports" && "الرياضة"}
-              {cat === "tech" && "التقنية"}
-              {cat === "arts" && "الفنون"}
-              {cat === "education" && "التعليم"}
-              {cat === "all" && "الكل"}
+              {cat === "All Categories" && "All Categories"}
+              {cat === "culture" && "CULTURE"}
+              {cat === "sports" && "SPORTS"}
+              {cat === "arts" && "ARTS"}
             </option>
           ))}
         </select>
@@ -57,10 +54,10 @@ const FilterBar = ({ search, setSearch, category, setCategory, sort, setSort }) 
           className="form-select p-3"
           style={{ borderRadius: "50px" }}
         >
-          <option value="date-desc">الأحدث أولاً</option>
-          <option value="date-asc">الأقدم أولاً</option>
-          <option value="name-asc">الاسم (أ-ي)</option>
-          <option value="pop-desc">الأكثر شعبية</option>
+          <option value="date-desc"> Newest First</option>
+          <option value="date-asc">Oldest First</option>
+          <option value="name-asc">Name (A-Z)</option>
+          <option value="pop-desc">Most Popular</option>
         </select>
       </div>
     </div>
