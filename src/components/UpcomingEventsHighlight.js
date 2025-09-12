@@ -1,4 +1,3 @@
-// src/components/UpcomingEventsHighlight.jsx
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/UpcomingEventsHighlight.css"; // يمكنك إنشاء هذا الملف للتنسيق
@@ -16,14 +15,11 @@ const UpcomingEventsHighlight = () => {
       
       let events = await response.json();
       
-      // تصفية الأحداث القادمة
       const now = new Date();
       events = events.filter(event => new Date(event.date) >= now);
       
-      // ترتيب حسب التاريخ
       events.sort((a, b) => new Date(a.date) - new Date(b.date));
       
-      // أخذ أول 3 أحداث
       setUpcomingEvents(events.slice(0, 3));
     } catch (err) {
       setError(err.message);

@@ -5,7 +5,7 @@ const Kalendr = ({ events }) => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [currentMonth, setCurrentMonth] = useState(
     new Date().toISOString().slice(0, 7)
-  ); // YYYY-MM
+  );
 
   const getDaysInMonth = (year, month) => {
     return new Date(year, month + 1, 0).getDate();
@@ -158,7 +158,6 @@ const Kalendr = ({ events }) => {
                           onClick={() => handleEventClick(event)}
                           title={event.title}
                         >
-                          {/* 📷 الصورة الصغيرة كـ icon */}
                           {event.image && (
                             <div
                               style={{
@@ -172,7 +171,6 @@ const Kalendr = ({ events }) => {
                               }}
                             ></div>
                           )}
-                          {/* النص */}
                           <span>
                             {event.title.substring(0, 15)}
                             {event.title.length > 15 ? "..." : ""}
@@ -188,7 +186,6 @@ const Kalendr = ({ events }) => {
         ))}
       </div>
 
-      {/* 👉 MODAL مع عرض الصورة الكاملة */}
       {selectedEvent && (
         <div className="kalendr-modal-overlay" onClick={closeModal}>
           <div
@@ -207,7 +204,6 @@ const Kalendr = ({ events }) => {
             </p>
             <p>{selectedEvent.description}</p>
 
-            {/* 🖼️ الصورة الكاملة هنا — إذا كانت موجودة */}
             {selectedEvent.image && (
               <img
                 src={selectedEvent.image}
