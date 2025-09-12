@@ -17,7 +17,7 @@ export default function Home() {
         return res.json();
       })
       .then((data) => setBanners(data))
-      .catch((err) => console.error("Error loading banners: - Home.js:19", err));
+      .catch((err) => console.error("Error loading banners: - Home.js:20", err));
   }, []);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Home() {
         const sortedSports = await fetchAndSortEvents("/data/sports.json");
         setSports(sortedSports);
       } catch (err) {
-        console.error("Error loading sports: - Home.js:28", err);
+        console.error("Error loading sports: - Home.js:29", err);
       }
     };
     loadSports();
@@ -34,10 +34,9 @@ export default function Home() {
 
   return (
     <div>
-      <BannerSlider items={banners} />
+      <BannerSlider banners={banners} />
       <HomeBegin />
-      <UpcomingEventsHighlight />
-      <Quick />
+       <Quick />
     </div>
   );
 }

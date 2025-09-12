@@ -1,11 +1,12 @@
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import "../styles/gallery.css";
 
 const BASE_URL = process.env.PUBLIC_URL || "";
 
 export default function Gallery() {
   const [list, setList] = useState([]);
-  const [year, setYear] = useState("");        // Academic Year
-  const [category, setCategory] = useState(""); // Category
+  const [year, setYear] = useState("");
+  const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -33,7 +34,7 @@ export default function Gallery() {
   }, []);
 
   const years = useMemo(() => {
-    return Array.from(new Set(list.map((x) => x.year).filter(Boolean))).sort(
+    return Array.from(new Set(list.map((x) => x.academicYear).filter(Boolean))).sort(
       (a, b) => String(b).localeCompare(String(a))
     );
   }, [list]);
@@ -46,7 +47,7 @@ export default function Gallery() {
 
   const filtered = useMemo(() => {
     return list.filter(
-      (x) => (!year || x.year === year) && (!category || x.category === category)
+      (x) => (!year || x.academicYear === year) && (!category || x.category === category)
     );
   }, [list, year, category]);
 
@@ -75,7 +76,6 @@ export default function Gallery() {
 
   return (
     <div className="container my-4">
-      {/* Header */}
       <div className="text-center mb-3">
         <h1 className="display-6 fw-bold">Event Gallery</h1>
         <p className="text-muted mb-0">
@@ -90,7 +90,6 @@ export default function Gallery() {
         </div>
       )}
 
-      {/* Filter bar */}
       <div className="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
         <div className="d-flex flex-wrap gap-2">
           <div>
@@ -126,7 +125,6 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* Cards grid */}
       {filtered.length === 0 ? (
         <div className="text-muted">No items to display.</div>
       ) : (
@@ -147,9 +145,9 @@ export default function Gallery() {
                   <div className="card-body">
                     <div className="d-flex justify-content-between align-items-center mb-1">
                       <span className="badge bg-primary-subtle text-primary">
-                        {g.category || "Academic"}
+                        {g.category}
                       </span>
-                      <span className="text-muted small">{g.year || ""}</span>
+                      <span className="text-muted small">{g.academicYear}</span>
                     </div>
                     <div className="fw-semibold">{g.title}</div>
                     <div
@@ -161,11 +159,11 @@ export default function Gallery() {
                         overflow: "hidden",
                       }}
                     >
-                      {g.description || "—"}
+                      {g.description}
                     </div>
                     <div className="text-muted small">
                       <i className="bi bi-calendar-event me-1"></i>
-                      {g.date || ""}
+                      {g.date}
                     </div>
                   </div>
                 </div>
