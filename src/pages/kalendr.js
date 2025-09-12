@@ -5,7 +5,7 @@ const Kalendr = ({ events }) => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [currentMonth, setCurrentMonth] = useState(
     new Date().toISOString().slice(0, 7)
-  );
+  ); // YYYY-MM
 
   const getDaysInMonth = (year, month) => {
     return new Date(year, month + 1, 0).getDate();
@@ -20,7 +20,7 @@ const Kalendr = ({ events }) => {
   });
 
   const firstDay = new Date(currentMonth + "-01");
-  const startDay = firstDay.getDay();
+  const startDay = firstDay.getDay(); // 0 = Sunday
   const daysInMonth = getDaysInMonth(
     firstDay.getFullYear(),
     firstDay.getMonth()

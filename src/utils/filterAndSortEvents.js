@@ -5,12 +5,15 @@ export const filterAndSortEvents = (events, { search = "", category = "", sort =
   const cat = category.toLowerCase().trim();
 
   let arr = events.filter((e) => {
+    // ✅ إذا لم يكن هناك تصنيف محدد، اعرض الجميع
     if (!cat || cat === "all") return true;
 
+    // ✅ إذا كان هناك تصنيف، تحقق من الحقل `category`
     const eCat = (e.category || "").toLowerCase();
     return eCat === cat;
   });
 
+  // ✅ بحث
   arr = arr.filter((e) => {
     const inTerm =
       !term ||
@@ -20,6 +23,7 @@ export const filterAndSortEvents = (events, { search = "", category = "", sort =
     return inTerm;
   });
 
+  // ✅ الترتيب
   arr.sort((a, b) => {
     if (sort === "date-asc") return new Date(a.date) - new Date(b.date);
     if (sort === "date-desc") return new Date(b.date) - new Date(a.date);

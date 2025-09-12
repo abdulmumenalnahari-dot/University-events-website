@@ -1,3 +1,5 @@
+/* src/styles/Feedback.css */
+
 .feedback-container {
   background-color: #f8f9fa;
   min-height: 100vh;
@@ -184,6 +186,7 @@
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .feedback-header h1 {
     font-size: 2rem;

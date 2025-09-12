@@ -22,7 +22,7 @@ export default function Events() {
         const sortedCulture = await fetchAndSortEvents("/data/culture.json");
         setECulture(sortedCulture);
       } catch {
-        setError("Failed to load the CULTURE list.");
+        setError("تعذّر تحميل قائمة الفعاليات.");
       } finally {
         setLoading(false);
       }
@@ -36,7 +36,7 @@ export default function Events() {
         const sortedSports = await fetchAndSortEvents("/data/sports.json");
         setSports(sortedSports);
       } catch {
-        setError("Failed to load the SPORTS list.");
+        setError("تعذّر تحميل قائمة SPORTS.");
       }
     };
     loadSports();
@@ -48,12 +48,13 @@ export default function Events() {
         const sortedArts = await fetchAndSortEvents("/data/arts.json");
         setArts(sortedArts);
       } catch {
-        setError("Failed to load the ARTS list.");
+        setError("تعذّر تحميل قائمة SPORTS.");
       }
     };
     loadArts();
   }, []);
 
+  // Hooks غير مشروطة دائمًا
   const filteredCulture = useMemo(
     () => filterAndSortEvents(culture, { search, category, sort }),
     [culture, search, category, sort]
