@@ -1,9 +1,7 @@
-
-
+// src/components/FilterBar.jsx
 import React from "react";
 
 const FilterBar = ({
-
   search,
   setSearch,
   category,
@@ -11,7 +9,8 @@ const FilterBar = ({
   sort,
   setSort,
 }) => {
-  const allCategories = ["culture", "sports", "arts"];
+  // التصنيفات المطلوبة في SRS
+  const allCategories = ["academic", "cultural", "sports", "departmental"];
 
   return (
     <div className="row g-3 mb-4">
@@ -21,8 +20,7 @@ const FilterBar = ({
           placeholder="Search in events..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="form-control p-2-5"
-          style={{ borderRadius: "50px" }}
+          className="form-control"
         />
       </div>
 
@@ -30,15 +28,12 @@ const FilterBar = ({
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="form-select p-2"
-          style={{ borderRadius: "50px" }}
+          className="form-select"
         >
-          <option value="">All Categories </option>
+          <option value="">All Categories</option>
           {allCategories.map((cat) => (
             <option key={cat} value={cat}>
-              {cat === "culture" && "CULTURE"}
-              {cat === "sports" && "SPORTS"}
-              {cat === "arts" && "ARTS"}
+              {cat.charAt(0).toUpperCase() + cat.slice(1)}
             </option>
           ))}
         </select>
@@ -48,10 +43,9 @@ const FilterBar = ({
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value)}
-          className="form-select p-2"
-          style={{ borderRadius: "50px" }}
+          className="form-select"
         >
-          <option value="date-desc"> Newest First</option>
+          <option value="date-desc">Newest First</option>
           <option value="date-asc">Oldest First</option>
           <option value="name-asc">Name (A-Z)</option>
           <option value="pop-desc">Most Popular</option>

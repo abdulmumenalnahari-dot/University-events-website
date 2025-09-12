@@ -49,15 +49,14 @@ export default function Home() {
     <>
 
     
-    <div >
-    
+     
       
 <BannerSlider items={banners} />      
      <HomeBegin />
-     
+
       <Quick />
        
-    </div>
+    
 
     </>
   );

@@ -1,3 +1,5 @@
+/* src/components/HomeBegin/HomeBegin.css */
+
 .home-begin {
   background: linear-gradient(135deg, #e6f2ff 0%, #f8f9fa 100%);
   min-height: 100vh;
@@ -150,6 +152,7 @@
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .hero-section h1 {
     font-size: 2.5rem;

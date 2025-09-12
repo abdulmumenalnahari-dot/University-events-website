@@ -1,18 +1,22 @@
+// src/components/HomeBegin.jsx
 import React from 'react';
 import { Link } from 'react-router-dom'; // ✅ إضافة Link
 import '../styles/HomeBegin.css';
-import BannerSlider from './BannerSlider';
-
+import UpcomingEventsHighlight from './UpcomingEventsHighlight.js'
 const HomeBegin = () => {
-  
   return (
     <div className="home-begin">
+      {/* Hero Section */}
       <section className="hero-section">
-        <div className="welcome-badge">
-          <span>✨ Welcome to Campus Life</span>
-        </div>
         
+        <h1>Welcome to Malmö University Event Hub</h1>
+        <p className="subtitle">Stay Updated, Stay Involved!</p>
+        <p className="description">
+          Your gateway to campus life, events, and community engagement. Discover upcoming events, join student organizations, 
+          and stay connected with everything happening at SpringField University.
+        </p>
 
+        {/* Features Cards */}
         <div className="features-container">
           <div className="feature-card">
             <div className="feature-icon">
@@ -53,6 +57,7 @@ const HomeBegin = () => {
           </Link>
         </div>
       </section>
+      <UpcomingEventsHighlight />
     </div>
   );
 };

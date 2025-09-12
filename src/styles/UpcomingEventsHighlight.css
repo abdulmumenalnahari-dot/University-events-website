@@ -1,0 +1,18 @@
+/* src/styles/UpcomingEventsHighlight.css */
+.upcoming-events-section {
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+}
+
+.upcoming-events-section .card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.upcoming-events-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.upcoming-events-section .btn-outline-primary {
+  border-width: 2px;
+}
