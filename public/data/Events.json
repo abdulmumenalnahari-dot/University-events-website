@@ -10,7 +10,7 @@
     "description": "Join us for the biggest technical festival of the year featuring coding competitions, robotics showcases, guest lectures from industry experts, and innovation challenges. This year's theme: AI & Robotics. A celebration of technology, creativity, and problem-solving.",
     "tags": ["technology", "competition", "innovation", "robotics", "AI"],
     "likes": 480,
-    "buttonText": "Explore TechFest",
+    "buttonText": "Learn More",
     "category": "academic",
     "popularity": 480,
     "status": "Expired"
@@ -26,7 +26,7 @@
     "description": "Experience the rich tapestry of cultures represented at our university. Enjoy traditional music and dance performances, international food stalls, art exhibitions, and workshops on cultural storytelling. This week celebrates our global community.",
     "tags": ["culture", "music", "dance", "food", "international"],
     "likes": 350,
-    "buttonText": "Celebrate Cultures",
+    "buttonText": "Learn More",
     "category": "cultural",
     "popularity": 350,
     "status": "Upcoming"
@@ -42,7 +42,7 @@
     "description": "The climax of our inter-college sports season! Watch the finals of the highly anticipated football tournament. Cheer for your favorite team and enjoy the competitive spirit. Prizes and trophies await the winners!",
     "tags": ["sports", "football", "tournament", "finals"],
     "likes": 510,
-    "buttonText": "Get Tickets",
+    "buttonText": "Learn More",
     "category": "sports",
     "popularity": 510,
     "status": "Upcoming"
@@ -58,7 +58,7 @@
     "description": "An opportunity for undergraduate and graduate students to present their research projects. Topics range from machine learning to software engineering. Come learn about the cutting-edge work being done by your peers!",
     "tags": ["computer science", "research", "poster session", "students"],
     "likes": 190,
-    "buttonText": "View Posters",
+    "buttonText": "Learn More",
     "category": "departmental",
     "popularity": 190,
     "status": "Started"
@@ -74,7 +74,7 @@
     "description": "A vibrant display of artwork created by our talented students from the School of Arts and Communication. Featuring paintings, sculptures, digital art, and installations. Celebrate creativity and support our emerging artists.",
     "tags": ["art", "exhibition", "student", "showcase"],
     "likes": 280,
-    "buttonText": "Visit Gallery",
+    "buttonText": "Learn More",
     "category": "cultural",
     "popularity": 280,
     "status": "Expired"
@@ -90,7 +90,7 @@
     "description": "Learn practical ways to make our campus more sustainable. Topics include waste reduction, energy conservation, and sustainable transportation. Join the Green Campus Initiative and be part of the solution for a greener future.",
     "tags": ["sustainability", "workshop", "environment", "campus"],
     "likes": 210,
-    "buttonText": "Register Now",
+    "buttonText": "Learn More",
     "category": "academic",
     "popularity": 210,
     "status": "Started"
@@ -106,7 +106,7 @@
     "description": "Get into the holiday spirit with our annual Winter Sports Carnival! Enjoy ice skating, snowball fights, tug-of-war, and a festive market. Hot chocolate and mulled wine will be served.",
     "tags": ["winter", "sports", "carnival", "fun"],
     "likes": 450,
-    "buttonText": "See Highlights",
+    "buttonText": "Learn More",
     "category": "sports",
     "popularity": 450,
     "status": "Expired"
@@ -122,7 +122,7 @@
     "description": "Join us for a talk by Dr. Jane Smith on 'Biodiversity Conservation in a Changing Climate'. Open to all students and faculty interested in ecology and environmental science.",
     "tags": ["biology", "lecture", "ecology", "conservation"],
     "likes": 160,
-    "buttonText": "Add to Calendar",
+    "buttonText": "Learn More",
     "category": "departmental",
     "popularity": 160,
     "status": "Upcoming"
@@ -138,7 +138,7 @@
     "description": "Connect with fellow alumni and current students in a relaxed setting. Share experiences, build professional relationships, and discover new opportunities. Light refreshments will be served. Hosted by the Alumni & Friends Network.",
     "tags": ["alumni", "networking", "mixer", "social"],
     "likes": 180,
-    "buttonText": "View Photos",
+    "buttonText": "Learn More",
     "category": "departmental",
     "popularity": 180,
     "status": "Expired"
@@ -154,7 +154,7 @@
     "description": "Learn the art of capturing stunning photos in low light conditions. Topics include camera settings, composition, and post-processing tips for night scenes. Bring your camera and tripod!",
     "tags": ["photography", "workshop", "night", "club"],
     "likes": 140,
-    "buttonText": "Join Workshop",
+    "buttonText": "Learn More",
     "category": "cultural",
     "popularity": 140,
     "status": "Upcoming"
@@ -170,7 +170,7 @@
     "description": "Celebrate the achievements of our students, faculty, and researchers. Enjoy performances, awards ceremony, and inspiring keynote speeches. A formal event to honor academic excellence.",
     "tags": ["academic", "celebration", "awards", "performance"],
     "likes": 320,
-    "buttonText": "More Info",
+    "buttonText": "Learn More",
     "category": "academic",
     "popularity": 320,
     "status": "Started"
@@ -186,7 +186,7 @@
     "description": "Join the fun and competitive spirit of our intramural basketball league! Open to all students, staff, and faculty. Form a team or join as a free agent. Games will be held every Wednesday and Friday.",
     "tags": ["sports", "basketball", "league", "intramural"],
     "likes": 250,
-    "buttonText": "Sign Up Now",
+    "buttonText": "Learn More",
     "category": "sports",
     "popularity": 250,
     "status": "Upcoming"
@@ -202,7 +202,7 @@
     "description": "Join us for a screening of the award-winning documentary 'Voices of the City'. Followed by a discussion with the director and local community leaders featured in the film.",
     "tags": ["film", "documentary", "screening", "discussion"],
     "likes": 130,
-    "buttonText": "Watch Trailer",
+    "buttonText": "Learn More",
     "category": "departmental",
     "popularity": 130,
     "status": "Expired"
@@ -218,7 +218,7 @@
     "description": "48-hour coding marathon to develop innovative solutions for sustainability challenges. Prizes for the best projects. Open to students from all disciplines. Form your team and register now!",
     "tags": ["hackathon", "coding", "sustainability", "competition"],
     "likes": 410,
-    "buttonText": "Form Team",
+    "buttonText": "Learn More",
     "category": "academic",
     "popularity": 410,
     "status": "Upcoming"
@@ -234,7 +234,7 @@
     "description": "Showcase your spoken word artistry or come to listen and be inspired. An open mic event where poets compete for the title and audience applause. Themes: Identity, Future, and Hope.",
     "tags": ["poetry", "slam", "performance", "literature"],
     "likes": 220,
-    "buttonText": "Perform or Attend",
+    "buttonText": "Learn More",
     "category": "cultural",
     "popularity": 220,
     "status": "Upcoming"
@@ -250,7 +250,7 @@
     "description": "Join our weekly yoga and meditation session to relax your mind and body. Suitable for all levels. Mats and props will be provided. A great way to de-stress during exam week.",
     "tags": ["yoga", "meditation", "wellness", "stress relief"],
     "likes": 190,
-    "buttonText": "Join Session",
+    "buttonText": "Learn More",
     "category": "sports",
     "popularity": 190,
     "status": "Started"
@@ -266,7 +266,7 @@
     "description": "Professor John Doe will present his latest research on 'The Mysteries of Quantum Entanglement'. An engaging talk for anyone curious about the frontiers of physics.",
     "tags": ["science", "lecture", "physics", "quantum"],
     "likes": 170,
-    "buttonText": "RSVP",
+    "buttonText": "Learn More",
     "category": "departmental",
     "popularity": 170,
     "status": "Upcoming"
@@ -282,7 +282,7 @@
     "description": "A delicious journey around the world! Sample dishes from different cultures prepared by our international student community. Live music and cultural performances throughout the day.",
     "tags": ["food", "festival", "international", "culture"],
     "likes": 530,
-    "buttonText": "See Menu",
+    "buttonText": "Learn More",
     "category": "cultural",
     "popularity": 530,
     "status": "Expired"
@@ -298,7 +298,7 @@
     "description": "Meet potential employers, explore internship and job opportunities, and network with industry professionals. Resume reviews and mock interviews available. Don't miss this chance to kickstart your career!",
     "tags": ["career", "fair", "jobs", "networking"],
     "likes": 380,
-    "buttonText": "Get Your Ticket",
+    "buttonText": "Learn More",
     "category": "academic",
     "popularity": 380,
     "status": "Upcoming"
@@ -314,7 +314,7 @@
     "description": "Learn about pool chemistry, cleaning techniques, and safety protocols. Open to all students interested in becoming pool lifeguards or maintaining their own pools.",
     "tags": ["swimming", "workshop", "maintenance", "safety"],
     "likes": 90,
-    "buttonText": "Certificate Info",
+    "buttonText": "Learn More",
     "category": "sports",
     "popularity": 90,
     "status": "Expired"
@@ -330,7 +330,7 @@
     "description": "A seminar for students, parents, and educators on 'Effective Communication with Children'. Led by Dr. Anna Karlsson, expert in child psychology.",
     "tags": ["education", "seminar", "parenting", "child psychology"],
     "likes": 150,
-    "buttonText": "Register",
+    "buttonText": "Learn More",
     "category": "departmental",
     "popularity": 150,
     "status": "Upcoming"
@@ -346,7 +346,7 @@
     "description": "Smooth sounds and cool vibes. Enjoy live jazz performed by the University Jazz Ensemble. Grab a coffee or a snack and unwind after a busy day.",
     "tags": ["music", "jazz", "performance", "relax"],
     "likes": 200,
-    "buttonText": "See Setlist",
+    "buttonText": "Learn More",
     "category": "cultural",
     "popularity": 200,
     "status": "Started"
@@ -362,7 +362,7 @@
     "description": "A comprehensive workshop covering structure, citation styles, clarity, and avoiding plagiarism for your final thesis or dissertation. Led by the Academic Writing Center.",
     "tags": ["writing", "workshop", "thesis", "academic support"],
     "likes": 240,
-    "buttonText": "Enroll Now",
+    "buttonText": "Learn More",
     "category": "academic",
     "popularity": 240,
     "status": "Upcoming"
@@ -378,7 +378,7 @@
     "description": "Fun in the sun with our annual beach volleyball tournament! Open to all skill levels. Register your team of 4-6 players. Prizes for 1st, 2nd, and 3rd places.",
     "tags": ["sports", "volleyball", "tournament", "beach"],
     "likes": 310,
-    "buttonText": "See Results",
+    "buttonText": "Learn More",
     "category": "sports",
     "popularity": 310,
     "status": "Expired"
@@ -394,7 +394,7 @@
     "description": "Guest speaker Maria Lindqvist, Urban Planner, will discuss 'Sustainable Mobility Solutions for Future Cities'. Learn about innovative approaches to public transportation and cycling infrastructure.",
     "tags": ["urban studies", "planning", "sustainability", "talk"],
     "likes": 120,
-    "buttonText": "Add to Calendar",
+    "buttonText": "Learn More",
     "category": "departmental",
     "popularity": 120,
     "status": "Upcoming"
@@ -410,7 +410,7 @@
     "description": "Share a personal story, a folk tale, or a short fiction piece. A warm and welcoming space for all storytellers. Audience participation and applause guaranteed!",
     "tags": ["storytelling", "open mic", "performance", "community"],
     "likes": 180,
-    "buttonText": "Attend",
+    "buttonText": "Learn More",
     "category": "cultural",
     "popularity": 180,
     "status": "Expired"
@@ -426,7 +426,7 @@
     "description": "Test your problem-solving skills in our annual mathematics competition. Individual and team rounds. Prizes for top performers. Open to all students interested in math!",
     "tags": ["mathematics", "competition", "Pi Day", "problem solving"],
     "likes": 260,
-    "buttonText": "Practice Problems",
+    "buttonText": "Learn More",
     "category": "academic",
     "popularity": 260,
     "status": "Upcoming"
@@ -442,7 +442,7 @@
     "description": "Run, walk, or jog for a cause! All proceeds from registration fees will be donated to the University Food Pantry. Get your friends and family involved. T-shirts and medals for all participants.",
     "tags": ["sports", "running", "charity", "5K"],
     "likes": 340,
-    "buttonText": "Register & Donate",
+    "buttonText": "Learn More",
     "category": "sports",
     "popularity": 340,
     "status": "Upcoming"
@@ -458,7 +458,7 @@
     "description": "Prepare for the upcoming Model United Nations conference. Learn about committee procedures, research techniques, and diplomatic negotiation skills. Open to all interested students.",
     "tags": ["political studies", "Model UN", "workshop", "diplomacy"],
     "likes": 140,
-    "buttonText": "Join Prep Group",
+    "buttonText": "Learn More",
     "category": "departmental",
     "popularity": 140,
     "status": "Started"
@@ -474,7 +474,7 @@
     "description": "Local student bands take the stage! From indie rock to alternative, enjoy an evening of live music. Food trucks will be available. Bring your friends and dancing shoes!",
     "tags": ["music", "concert", "bands", "showcase"],
     "likes": 290,
-    "buttonText": "See Lineup",
+    "buttonText": "Learn More",
     "category": "cultural",
     "popularity": 290,
     "status": "Upcoming"
