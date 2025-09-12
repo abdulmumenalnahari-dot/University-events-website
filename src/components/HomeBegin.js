@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/HomeBegin.css";
-import UpcomingEventsHighlight from "./UpcomingEventsHighlight";
+import UpcomingEvent from "./UpcomingEvent";
 
 // Lightweight inline SVG icons
 const Icon = ({ name, color = "#6366f1", size = 28 }) => {
@@ -80,7 +80,7 @@ export default function HomeBegin() {
         </div>
       </section>
 
-      <UpcomingEventsHighlight />
+      <UpcomingEvent />
     </div>
   );
 }

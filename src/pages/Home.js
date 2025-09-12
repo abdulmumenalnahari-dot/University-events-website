@@ -4,8 +4,7 @@ import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
 import "../styles/HomeBegin.css";
 import Quick from "../components/Quick";
 import HomeBegin from "../components/HomeBegin";
-import UpcomingEventsHighlight from "../components/UpcomingEventsHighlight";
-
+ 
 export default function Home() {
   const [banners, setBanners] = useState([]);
   const [sports, setSports] = useState([]);
@@ -17,7 +16,7 @@ export default function Home() {
         return res.json();
       })
       .then((data) => setBanners(data))
-      .catch((err) => console.error("Error loading banners: - Home.js:20", err));
+      .catch((err) => console.error("Error loading banners: - Home.js:19", err));
   }, []);
 
   useEffect(() => {
@@ -26,7 +25,7 @@ export default function Home() {
         const sortedSports = await fetchAndSortEvents("/data/sports.json");
         setSports(sortedSports);
       } catch (err) {
-        console.error("Error loading sports: - Home.js:29", err);
+        console.error("Error loading sports: - Home.js:28", err);
       }
     };
     loadSports();

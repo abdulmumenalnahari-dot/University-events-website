@@ -3,10 +3,7 @@
     "name": "Malmö University",
     "location": "Malmö, Sweden",
     "founded": 1998,
-<<<<<<< HEAD
     "affiliations": "Public University",
-=======
->>>>>>> 4808164078e6ae9e40f92e17e97e0b86e7e4d591
     "recognitions": [
       "27,667 students and 2,199 employees",
       "250+ global partner universities",
@@ -19,14 +16,11 @@
       "role": "Coordinates student governance and cross-campus events"
     },
     {
-<<<<<<< HEAD
       "name": "Technical Club",
       "role": "Organizer of technical events",
       "description": "Promotes technical learning through workshops, competitions, and innovation challenges."
     },
     {
-=======
->>>>>>> 4808164078e6ae9e40f92e17e97e0b86e7e4d591
       "name": "Cultural Committee",
       "role": "Manages arts, music, theatre, and cultural events including Verdi's Requiem"
     },
@@ -39,7 +33,6 @@
       "role": "Connects graduates with current students and the university community"
     }
   ],
-<<<<<<< HEAD
   "annual_events_by_type": {
     "technical": [
       {
@@ -85,11 +78,6 @@
       "Inclusivity",
       "Innovation",
       "Collaboration",
-=======
-  "strategy": {
-    "vision": "Contribute to a sustainable and just society through research-based knowledge, critical thinking, and readiness for action.",
-    "core_values": [
->>>>>>> 4808164078e6ae9e40f92e17e97e0b86e7e4d591
       "Academic freedom",
       "Academic integrity",
       "Academic quality",
@@ -105,13 +93,10 @@
   "alumni": {
     "purpose": "Keep lifelong ties, support students, and foster professional development",
     "network_features": [
-<<<<<<< HEAD
       "Career development events",
       "Mentorship programs",
       "Networking opportunities",
       "Alumni newsletters",
-=======
->>>>>>> 4808164078e6ae9e40f92e17e97e0b86e7e4d591
       "Career events and job fairs",
       "Theme days for professional groups",
       "Seminars with top researchers",
