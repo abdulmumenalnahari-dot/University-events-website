@@ -78,11 +78,7 @@ const Footer = () => {
           </div>
         </div>
 
-         <div className="border-top border-secondary-subtle mt-4 pt-3">
-          <p className="small text-center text-secondary mb-0">
-            &copy; {new Date().getFullYear()} Springfield University CampusConnect. All rights reserved.
-          </p>
-        </div>
+        
       </div>
     </footer>
   );
