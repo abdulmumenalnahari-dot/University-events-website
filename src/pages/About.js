@@ -81,9 +81,18 @@ export default function About() {
   const { college, organizers, strategy, alumni, contacts } = about;
 
   return (
+    
     <div className="container my-4">
       {/* Hero Section */}
-      <h1 className="h3 about-hero">About {college.name} & Events</h1>
+     <div className="d-flex align-items-center">
+  <img 
+    src="/images/mau_en_logotype.svg" 
+    alt="Malmö University Logo" 
+    className="me-3" 
+    style={{ height: '40px', width: 'auto' }} 
+  />
+  <h1 className="h3 about-hero mb-0">About {college.name} & Events</h1>
+</div>
       <p className="lead">
         {college.name}, {college.location}. Founded in {college.founded}.
       </p>
