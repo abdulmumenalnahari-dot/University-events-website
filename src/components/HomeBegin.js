@@ -1,4 +1,3 @@
-// src/components/HomeBegin.jsx
 import React from 'react';
 import { Link } from 'react-router-dom'; // ✅ إضافة Link
 import '../styles/HomeBegin.css';
@@ -8,14 +7,12 @@ const HomeBegin = () => {
   
   return (
     <div className="home-begin">
-      {/* Hero Section */}
       <section className="hero-section">
         <div className="welcome-badge">
           <span>✨ Welcome to Campus Life</span>
         </div>
         
 
-        {/* Features Cards */}
         <div className="features-container">
           <div className="feature-card">
             <div className="feature-icon">

@@ -1,4 +1,3 @@
-// src/pages/Contact.jsx
 import React, { useState, useEffect } from 'react';
 import CoordinatorsList from '../components/CoordinatorsList';
 import MapEmbed from '../components/MapEmbed';

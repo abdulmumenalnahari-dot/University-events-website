@@ -5,11 +5,10 @@ export const fetchAndSortEvents = async (url) => {
     if (!response.ok) throw new Error("Failed to load events");
     const data = await response.json();
 
-    // ✅ الترتيب: من الأحدث إلى الأقدم (حسب التاريخ)
     const sortedEvents = data.sort((a, b) => {
       const dateA = new Date(a.date);
       const dateB = new Date(b.date);
-      return dateB - dateA; // الأحدث أولًا
+      return dateB - dateA;
     });
 
     return sortedEvents;

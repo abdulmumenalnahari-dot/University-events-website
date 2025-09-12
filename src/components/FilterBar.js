@@ -1,8 +1,9 @@
-// src/components/FilterBar.jsx
+
 
 import React from "react";
 
 const FilterBar = ({
+
   search,
   setSearch,
   category,
@@ -10,12 +11,10 @@ const FilterBar = ({
   sort,
   setSort,
 }) => {
-  // ✅ جمع جميع الفئات من(events + sports)
   const allCategories = ["culture", "sports", "arts"];
 
   return (
     <div className="row g-3 mb-4">
-      {/* بحث */}
       <div className="col-md-6 col-lg-4">
         <input
           type="text"
@@ -27,7 +26,6 @@ const FilterBar = ({
         />
       </div>
 
-      {/* تصنيف */}
       <div className="col-md-6 col-lg-4">
         <select
           value={category}
@@ -46,7 +44,6 @@ const FilterBar = ({
         </select>
       </div>
 
-      {/* ترتيب */}
       <div className="col-md-6 col-lg-4">
         <select
           value={sort}

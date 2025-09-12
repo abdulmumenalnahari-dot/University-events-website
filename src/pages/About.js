@@ -38,7 +38,6 @@ export default function About() {
       .catch((e) => setErr(e.message));
   }, []);
 
-  // ---- parse dates
   const parseDate = (s) => {
     if (!s) return null;
     const cleaned = String(s).replace(/–/g, "-");
@@ -55,7 +54,6 @@ export default function About() {
     return t;
   }, []);
 
-  // ✅ تعريف events مرة واحدة فقط
   const events = about?.events ?? [];
 
   const decorated = useMemo(
@@ -82,7 +80,6 @@ export default function About() {
   return (
     
     <div className="container my-4">
-      {/* Hero Section */}
      <div className="d-flex align-items-center">
   <img 
     src="/images/mau_en_logotype.svg" 
@@ -96,7 +93,6 @@ export default function About() {
         {college.name}, {college.location}. Founded in {college.founded}.
       </p>
 
-      {/* Recognitions */}
       <div className="kpis">
         {college.recognitions.map((r, i) => (
           <div key={i} className="kpi">
@@ -106,7 +102,6 @@ export default function About() {
       </div>
       <div className="divider"></div>
 
-      {/* Upcoming Highlights */}
       <div className="row g-4 mt-3">
         <div className="col-md-7">
           <h2 className="h5">Upcoming Highlights</h2>
@@ -195,7 +190,6 @@ export default function About() {
         </div>
       </div>
 
-      {/* Traditions */}
       <div className="section">
         <h2 className="h5">Traditions</h2>
         <ul>
@@ -206,7 +200,6 @@ export default function About() {
         </ul>
       </div>
 
-      {/* Vision & Strategy */}
       <div className="section">
         <h2 className="h5">Vision & Strategy</h2>
         <p>{strategy.vision}</p>
@@ -224,13 +217,11 @@ export default function About() {
         </ul>
       </div>
 
-      {/* Calendar (Kalendr) */}
       <div className="section">
         <h2 className="h5">Event Timeline (Monthly Calendar)</h2>
         <Kalendr events={events} />
       </div>
 
-      {/* Alumni */}
       <div className="section">
         <h2 className="h5">Alumni & Friends</h2>
         <ul>
@@ -254,7 +245,6 @@ export default function About() {
         </a>
       </div>
 
-      {/* Contact */}
       <div className="section">
         <h2 className="h5">Contact</h2>
         <p>
@@ -269,7 +259,6 @@ export default function About() {
         {contacts.notes && <p className="small text-muted">{contacts.notes}</p>}
       </div>
 
-      {/* Footer */}
       <footer className="text-center mt-6 pt-4 text-muted small">
         © Aptech Limited
       </footer>
