@@ -10,21 +10,7 @@ const AlumniFriends = ({ alumni }) => {
           <li key={i}>{n}</li>
         ))}
       </ul>
-      <a
-        href="https://mau.se/en/collaboration-and-innovation/alumni--friends/"
-        target="_blank"
-        rel="noreferrer"
-        style={{
-          display: "inline-block",
-          marginTop: "12px",
-          color: "#0d6efd",
-          textDecoration: "none",
-          fontWeight: "600",
-        }}
-      >
-        Join the Alumni Network →
-      </a>
-    </div>
+     </div>
   );
 };
 

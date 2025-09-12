@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "../styles/about.css";
+import React, { useState, useMemo } from "react";
+import "../styles/about.css"; // تأكد من وجود ملف التنسيق
 
 const Kalendr = ({ events }) => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -7,19 +7,41 @@ const Kalendr = ({ events }) => {
     new Date().toISOString().slice(0, 7)
   );
 
+  // معالجة الأحداث لاستخراج الشهر واليوم من حقل date
+  const processedEvents = useMemo(() => {
+    if (!events || !Array.isArray(events)) return [];
+    
+    return events.map(event => {
+      // استخراج التاريخ من حقل date
+      const dateObj = new Date(event.date);
+      if (isNaN(dateObj)) return null;
+      
+      return {
+        ...event,
+        month: `${dateObj.getFullYear()}-${String(dateObj.getMonth() + 1).padStart(2, '0')}`,
+        day: dateObj.getDate(),
+        _processedDate: dateObj,
+      };
+    }).filter(event => event !== null);
+  }, [events]);
+
   // تصفية الأحداث لعرض الأحداث الخاصة بالشهر الحالي فقط
-  const eventsInMonth = events.filter((e) => e.month === currentMonth);
+  const eventsInMonth = useMemo(() => {
+    return processedEvents.filter((e) => e.month === currentMonth);
+  }, [processedEvents, currentMonth]);
 
   // تجميع الأحداث حسب اليوم
-  const dayEvents = {};
-  eventsInMonth.forEach((e) => {
-    // تأكد من أن e.day موجود ورقمي
-    const dayNumber = parseInt(e.day, 10);
-    if (!isNaN(dayNumber) && dayNumber > 0 && dayNumber <= 31) {
-      if (!dayEvents[dayNumber]) dayEvents[dayNumber] = [];
-      dayEvents[dayNumber].push(e);
-    }
-  });
+  const dayEvents = useMemo(() => {
+    const dayEventsMap = {};
+    eventsInMonth.forEach((e) => {
+      const dayNumber = parseInt(e.day, 10);
+      if (!isNaN(dayNumber) && dayNumber > 0 && dayNumber <= 31) {
+        if (!dayEventsMap[dayNumber]) dayEventsMap[dayNumber] = [];
+        dayEventsMap[dayNumber].push(e);
+      }
+    });
+    return dayEventsMap;
+  }, [eventsInMonth]);
 
   // حساب أيام الشهر لعرضها في التقويم
   const firstDay = new Date(currentMonth + "-01");
@@ -51,25 +73,26 @@ const Kalendr = ({ events }) => {
 
   // ألوان الفئات
   const getCategoryColor = (category) => {
-    switch (category) {
-      case "Academic":
+    switch (category?.toLowerCase()) {
+      case "academic":
         return "#0d6efd";
-      case "Conference":
+      case "conference":
         return "#6f42c1";
-      case "Workshop":
+      case "workshop":
         return "#20c997";
-      case "Seminar":
+      case "seminar":
         return "#fd7e14";
-      case "Education":
+      case "education":
         return "#dc3545";
-      case "Culture":
+      case "culture":
+      case "cultural":
         return "#d63384";
-      case "School event":
+      case "school event":
         return "#198754";
-      case "Research":
-        return "#0dcaf0"; // أزرق فاتح للبحث
+      case "research":
+        return "#0dcaf0";
       default:
-        return "#adb5bd";
+        return "#6c757d";
     }
   };
 
@@ -93,16 +116,11 @@ const Kalendr = ({ events }) => {
             d.setMonth(d.getMonth() - 1);
             setCurrentMonth(d.toISOString().slice(0, 7));
           }}
-          style={{
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            fontSize: "1.5rem",
-          }}
+          className="kalendr-nav-btn"
         >
           ‹
         </button>
-        <h3>
+        <h3 className="kalendr-month-title">
           {new Date(currentMonth + "-01").toLocaleDateString("en-GB", {
             month: "long",
             year: "numeric",
@@ -114,12 +132,7 @@ const Kalendr = ({ events }) => {
             d.setMonth(d.getMonth() + 1);
             setCurrentMonth(d.toISOString().slice(0, 7));
           }}
-          style={{
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            fontSize: "1.5rem",
-          }}
+          className="kalendr-nav-btn"
         >
           ›
         </button>
@@ -167,7 +180,7 @@ const Kalendr = ({ events }) => {
                             gap: "4px",
                           }}
                           onClick={() => handleEventClick(event)}
-                          title={event.title}
+                          title={`${event.title} - ${event.category}`}
                         >
                           {/* عرض صورة صغيرة إذا كانت موجودة */}
                           {event.image && (
@@ -211,6 +224,7 @@ const Kalendr = ({ events }) => {
             <h4>{selectedEvent.title}</h4>
             <p><strong>Category:</strong> {selectedEvent.category}</p>
             <p><strong>Date:</strong> {selectedEvent.date}</p>
+            {selectedEvent.time && <p><strong>Time:</strong> {selectedEvent.time}</p>}
             <p><strong>Location:</strong> {selectedEvent.location}</p>
             <p>{selectedEvent.description}</p>
 
@@ -260,7 +274,7 @@ const Kalendr = ({ events }) => {
           { category: "Workshop", color: "#20c997" },
           { category: "Seminar", color: "#fd7e14" },
           { category: "Education", color: "#dc3545" },
-          { category: "Culture", color: "#d63384" },
+          { category: "Cultural", color: "#d63384" },
           { category: "School event", color: "#198754" },
           { category: "Research", color: "#0dcaf0" },
         ].map((item) => (

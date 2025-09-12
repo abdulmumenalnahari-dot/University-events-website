@@ -119,9 +119,7 @@ export default function About() {
       <AlumniFriends alumni={alumni} />
       <Contact contacts={contacts} />
 
-      <footer className="text-center mt-6 pt-4 text-muted small">
-        © Aptech Limited
-      </footer>
+      
     </div>
   );
 
