@@ -1,3 +1,4 @@
+// src/components/EventDetail.jsx
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
@@ -32,6 +33,7 @@ export default function EventDetail() {
           />
         )}
 
+        {/* date & time under the image */}
         <div className="d-flex justify-content-center text-muted small mb-4 gap-3 flex-wrap">
           <span><i className="bi bi-calendar-event"></i> {event.date}</span>
           <span><i className="bi bi-clock"></i> {event.time}</span>

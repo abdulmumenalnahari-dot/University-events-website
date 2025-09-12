@@ -1,3 +1,4 @@
+// src/components/CoordinatorCard.jsx
 import React from 'react';
  
 const CoordinatorCard = ({ coordinator }) => {

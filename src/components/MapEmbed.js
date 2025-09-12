@@ -1,3 +1,4 @@
+// src/components/MapEmbed.jsx
 import React from 'react';
 import '../styles/MapEmbed.css';
 

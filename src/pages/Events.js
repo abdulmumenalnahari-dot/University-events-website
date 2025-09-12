@@ -24,7 +24,7 @@ export default function Events() {
         setSports(all.filter(e => e.category === "sports"));
         setArts(all.filter(e => e.category === "arts"));
       } catch {
-        setError("Failed to load events.");
+        setError("تعذّر تحميل قائمة الفعاليات.");
       } finally {
         setLoading(false);
       }
