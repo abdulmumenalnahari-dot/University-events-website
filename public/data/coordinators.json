@@ -1,0 +1,34 @@
+ [
+  {
+    "id": 1,
+    "name": "Dr. Sarah Mitchell",
+    "title": "Dean",
+    "department": "College of Engineering & Technology",
+    "phone": "+1 (413) 555-0101",
+    "email": "sarah.mitchell@sfcet.edu"
+  },
+   {
+    "id": 2,
+    "name": "Ahmed Al-Mubarak",
+    "title": "Student Coordinator",
+    "department": "Student Council",
+    "phone": "+1 (413) 555-0201",
+    "email": "ahmed.student@sfcet.edu"
+  },
+  {
+    "id": 3,
+    "name": "Dr. Emily Rodriguez",
+    "title": "Faculty Event Coordinator",
+    "department": "Student Affairs",
+    "phone": "+1 (413) 555-0103",
+    "email": "emily.rodriguez@sfcet.edu"
+  },
+  {
+    "id": 4,
+    "name": "Prof. David Thompson",
+    "title": "Cultural Activities Coordinator",
+    "department": "Arts & Humanities",
+    "phone": "+1 (413) 555-0104",
+    "email": "david.thompson@sfcet.edu"
+  }
+]
