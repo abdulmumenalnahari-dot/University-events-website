@@ -1,4 +1,3 @@
-// src/components/BannerSlider.jsx
 import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight, FaDownload, FaCalendarAlt } from 'react-icons/fa';
 import '../styles/BannerSlider.css';
@@ -7,7 +6,6 @@ const BannerSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [bannerItems, setBannerItems] = useState([]);
 
-  // جلب البيانات مباشرة من arts.json
   useEffect(() => {
     const fetchBannerData = async () => {
       try {
@@ -15,11 +13,9 @@ const BannerSlider = () => {
         if (!response.ok) throw new Error('Failed to fetch banner data');
         
         const data = await response.json();
-        // أخذ أول 3 أحداث من ملف arts.json
         setBannerItems(data.slice(0, 3));
       } catch (error) {
         console.error('Error loading banner data:', error);
-        // بيانات افتراضية في حالة الخطأ
         setBannerItems([
           {
             id: 1,
@@ -36,7 +32,6 @@ const BannerSlider = () => {
     fetchBannerData();
   }, []);
 
-  // التحكم التلقائي في التمرير
   useEffect(() => {
     if (bannerItems.length > 0) {
       const timer = setInterval(() => {
