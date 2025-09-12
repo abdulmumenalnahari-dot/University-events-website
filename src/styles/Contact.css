@@ -1,0 +1,55 @@
+/* src/styles/Contact.css */
+:root{
+  --bg1:#f6fbff;
+  --bg2:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --ring:#e2e8f0;
+  --brand1:#6366f1;
+  --brand2:#3b82f6;
+  --brand3:#22c55e;
+}
+
+.contact-page{
+  background: linear-gradient(180deg,var(--ring),var(  --ring));
+}
+
+
+
+.contact-title{
+  text-align: center;
+  margin: 0 auto 10px;
+  font-weight: 900;
+ 
+  font-size: clamp(1.8rem, 3.2vw + 1rem, 3rem);
+
+  width: fit-content;
+  position: relative;
+}
+.contact-title::after{
+  content:"";
+  display:block;
+  height:6px;
+  width:70%;
+  margin:.6rem auto 0;
+  border-radius:999px;
+  background: linear-gradient(90deg,var(--brand1),var(--brand2) 45%,var(--brand3));
+ 
+}
+.contact-subtitle{
+  text-align:center;
+  margin:0 auto;
+  max-width:820px;
+ 
+  line-height:1.8;
+  font-size: clamp(.95rem,.35vw + .85rem,1.05rem);
+}
+
+.map-embed-section{
+  margin:40px auto 20px;
+  max-width:900px;
+  box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -2px rgb(0 0 0 / .05);
+  border-radius:8px;
+  overflow:hidden;
+  background:var(--bg2);
+}

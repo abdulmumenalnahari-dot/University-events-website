@@ -13,7 +13,7 @@ const MapEmbed = () => {
       "Sunday: Closed"
     ],
     // تحديث رابط الخريطة لجامعة Malmö
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2914.510256315163!2d44.17173926337391!3d15.359849803621387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1603ddd3aa42ec8f%3A0x945d25ab2494c6d!2z2KzYp9mF2LnYqSDYp9mE2YbYp9i12LEg2KfZhNin2K_Yp9ix2Kkg2KfZhNi52KfZhdip!5e0!3m2!1sar!2s!4v1757706191316!5m2!1sar!2s"
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39292.03941324358!2d13.086280315863755!3d55.582223439613024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653a1559b147d81%3A0xa2379237f618d968!2z2KzYp9mF2LnYqSDZhdin2YTZhdmI!5e0!3m2!1sar!2s!4v1757716190445!5m2!1sar!2s"
   };
 
   return (
