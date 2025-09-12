@@ -18,7 +18,7 @@
   {
     "id": 1002,
     "title": "Cultural Heritage Week: Global Voices",
-    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+    "image": "  https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
     "date": "2024-10-25",
     "time": "10:00 AM - 09:00 PM",
     "location": "Campus Grounds & Cultural Center",
@@ -34,8 +34,8 @@
   {
     "id": 1003,
     "title": "Inter-College Football Finals",
-    "image": "https://media.istockphoto.com/id/1055084580/photo/cheering-american-football-team-raising-a-championship-trophy-in-victory.jpg?s=612x612&w=0&k=20&c=Y7JFPM88sh4qDt8cXOkGBKzJ8F1gMxketh_z5jRbWYA=",
-    "date": "2024-11-02",
+    "image": "  https://media.istockphoto.com/id/1055084580/photo/cheering-american-football-team-raising-a-championship-trophy-in-victory.jpg?s=612x612&w=0&k=20&c=Y7JFPM88sh4qDt8cXOkGBKzJ8F1gMxketh_z5jRbWYA=",
+    "date": "2025-11-02",
     "time": "02:00 PM - 06:00 PM",
     "location": "University Sports Field",
     "countdown": "18d 0h 0m 0s",
@@ -50,7 +50,7 @@
   {
     "id": 1004,
     "title": "Department of Computer Science: Research Poster Session",
-    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+    "image": "  https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
     "date": "2024-10-18",
     "time": "01:00 PM - 04:00 PM",
     "location": "CS Department Building, Lobby",
@@ -66,8 +66,8 @@
   {
     "id": 1005,
     "title": "Contemporary Art Exhibition: Student Showcase",
-    "image": "https://media.istockphoto.com/id/1854862359/photo/young-visitor-at-an-art-exhibition-looks-at-the-artists-collection.jpg?s=612x612&w=0&k=20&c=WNUkUACUD7SHBsy_J2JXWy-t0h-wU54nuLD6YYoB_6I=",
-    "date": "2024-09-28",
+    "image": "  https://media.istockphoto.com/id/1854862359/photo/young-visitor-at-an-art-exhibition-looks-at-the-artists-collection.jpg?s=612x612&w=0&k=20&c=WNUkUACUD7SHBsy_J2JXWy-t0h-wU54nuLD6YYoB_6I=",
+    "date": "2023-09-28",
     "time": "10:00 AM - 08:00 PM",
     "location": "University Art Gallery",
     "countdown": "0d 0h 0m 0s",
@@ -82,7 +82,7 @@
   {
     "id": 1006,
     "title": "Sustainability Workshop: Green Campus Initiative",
-    "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+    "image": "  https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
     "date": "2024-10-20",
     "time": "11:00 AM - 01:00 PM",
     "location": "Environmental Science Building, Room 101",
@@ -98,7 +98,7 @@
   {
     "id": 1007,
     "title": "Winter Sports Carnival",
-    "image": "https://media.istockphoto.com/id/1194322682/photo/pond-hockey-game-on-lake-nokomis-in-minneapolis.jpg?s=612x612&w=0&k=20&c=MK_IJrJJHEYRC0QIENgPOeJPC_FnfYV_YP9cUZ1MjfY=",
+    "image": "  https://media.istockphoto.com/id/1194322682/photo/pond-hockey-game-on-lake-nokomis-in-minneapolis.jpg?s=612x612&w=0&k=20&c=MK_IJrJJHEYRC0QIENgPOeJPC_FnfYV_YP9cUZ1MjfY=",
     "date": "2023-12-15",
     "time": "12:00 PM - 10:00 PM",
     "location": "Central Park & Ice Rink",
@@ -114,8 +114,8 @@
   {
     "id": 1008,
     "title": "Department of Biology Guest Lecture Series",
-    "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
-    "date": "2024-11-05",
+    "image": "  https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+    "date": "2025-11-05",
     "time": "04:00 PM - 06:00 PM",
     "location": "Biology Department, Lecture Hall 2",
     "countdown": "20d 0h 0m 0s",
@@ -130,8 +130,8 @@
   {
     "id": 1009,
     "title": "Alumni Networking Mixer",
-    "image": "https://images.unsplash.com/photo-1511798616182-aab3698ac53e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV0d29ya2luZyUyMGV2ZW50fGVufDB8fDB8fHww",
-    "date": "2024-08-22",
+    "image": "  https://images.unsplash.com/photo-1511798616182-aab3698ac53e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV0d29ya2luZyUyMGV2ZW50fGVufDB8fDB8fHww",
+    "date": "2023-08-22",
     "time": "06:00 PM - 09:00 PM",
     "location": "Grand Hall, Student Union",
     "countdown": "0d 0h 0m 0s",
@@ -146,7 +146,7 @@
   {
     "id": 1010,
     "title": "Photography Club: Night Photography Workshop",
-    "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmlnaHQlMjBwaG90b2dyYXBoeXxlbnwwfHwwfHx8MA%3D%3D",
+    "image": "  https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmlnaHQlMjBwaG90b2dyYXBoeXxlbnwwfHwwfHx8MA%3D%3D",
     "date": "2024-10-27",
     "time": "07:00 PM - 10:00 PM",
     "location": "Photography Club House & Campus Grounds",
@@ -162,7 +162,7 @@
   {
     "id": 1011,
     "title": "Annual Academic Celebration",
-    "image": "https://mau.se/contentassets/c4d07b1bdd9f40fb8e534061fbf000ea/_dsc85532.jpg?w=570&h=320&mode=crop&quality=10",
+    "image": "  https://mau.se/contentassets/c4d07b1bdd9f40fb8e534061fbf000ea/_dsc85532.jpg?w=570&h=320&mode=crop&quality=10",
     "date": "2024-10-19",
     "time": "03:00 PM - 08:00 PM",
     "location": "University Main Hall",
@@ -178,7 +178,7 @@
   {
     "id": 1012,
     "title": "Basketball Intramural League",
-    "image": "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFza2V0YmFsbHxlbnwwfHwwfHx8MA%3D%3D",
+    "image": "  https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFza2V0YmFsbHxlbnwwfHwwfHx8MA%3D%3D",
     "date": "2024-10-30",
     "time": "05:00 PM - 08:00 PM",
     "location": "University Gymnasium",
@@ -194,8 +194,8 @@
   {
     "id": 1013,
     "title": "Department of Culture, Languages and Media: Film Screening",
-    "image": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW92aWUlMjBzY3JlZW5pbmd8ZW58MHx8MHx8fDA%3D",
-    "date": "2024-09-12",
+    "image": "  https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW92aWUlMjBzY3JlZW5pbmd8ZW58MHx8MHx8fDA%3D",
+    "date": "2023-09-12",
     "time": "07:00 PM - 09:30 PM",
     "location": "Media Department Screening Room",
     "countdown": "0d 0h 0m 0s",
@@ -210,8 +210,8 @@
   {
     "id": 1014,
     "title": "Hackathon 2024: Sustainable Solutions",
-    "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFja2F0aG9ufGVufDB8fDB8fHww",
-    "date": "2024-11-08",
+    "image": "  https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFja2F0aG9ufGVufDB8fDB8fHww",
+    "date": "2025-11-08",
     "time": "09:00 AM - 06:00 PM",
     "location": "Innovation Hub & Computer Labs",
     "countdown": "23d 0h 0m 0s",
@@ -226,7 +226,7 @@
   {
     "id": 1015,
     "title": "Poetry Slam Night",
-    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ldHJ5fGVufDB8fDB8fHww",
+    "image": "  https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ldHJ5fGVufDB8fDB8fHx8MA%3D%3D",
     "date": "2024-10-22",
     "time": "08:00 PM - 10:00 PM",
     "location": "Student Lounge",
@@ -242,7 +242,7 @@
   {
     "id": 1016,
     "title": "Yoga & Meditation for Stress Relief",
-    "image": "https://media.istockphoto.com/id/2182805095/photo/relaxing-meditation-exercises-in-yoga-studio.jpg?s=612x612&w=0&k=20&c=Ur_ttv5u_QzWyees8-vR-3TPnwlGGmR1Lu-ObFgO2xM=",
+    "image": "  https://images.unsplash.com/photo-1544367563-00fcf361f2d6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8eW9nYXxlbnwwfHwwfHx8MA%3D%3D",
     "date": "2024-10-17",
     "time": "12:00 PM - 01:30 PM",
     "location": "Campus Green Lawn",
@@ -258,8 +258,8 @@
   {
     "id": 1017,
     "title": "Department of Natural Science: Public Science Lecture",
-    "image": "https://media.istockphoto.com/id/2229961376/photo/a-group-of-interns-stands-in-an-auditorium-where-a-man-in-a-white-lab-coat-is-giving-a.jpg?s=612x612&w=0&k=20&c=s69Tnyzlsl_vJCOHqvItRVG2GvtIQtSPvfAKdrYLl-o=",
-    "date": "2024-11-12",
+    "image": "  https://media.istockphoto.com/id/2229961376/photo/a-group-of-interns-stands-in-an-auditorium-where-a-man-in-a-white-lab-coat-is-giving-a.jpg?s=612x612&w=0&k=20&c=s69Tnyzlsl_vJCOHqvItRVG2GvtIQtSPvfAKdrYLl-o=",
+    "date": "2025-11-12",
     "time": "06:00 PM - 07:30 PM",
     "location": "Natural Science Building, Auditorium A",
     "countdown": "27d 0h 0m 0s",
@@ -274,8 +274,8 @@
   {
     "id": 1018,
     "title": "International Food Festival",
-    "image": "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D",
-    "date": "2024-05-18",
+    "image": "  https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D",
+    "date": "2023-05-18",
     "time": "11:00 AM - 07:00 PM",
     "location": "Central Plaza",
     "countdown": "0d 0h 0m 0s",
@@ -290,7 +290,7 @@
   {
     "id": 1019,
     "title": "Career Fair 2024",
-    "image": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyZWVyJTIwZmFpcnxlbnwwfHwwfHx8MA%3D%3D",
+    "image": "  https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyZWVyJTIwZmFpcnxlbnwwfHwwfHx8MA%3D%3D",
     "date": "2024-10-31",
     "time": "10:00 AM - 04:00 PM",
     "location": "Student Union Building",
@@ -306,8 +306,8 @@
   {
     "id": 1020,
     "title": "Swimming Pool Maintenance Workshop",
-    "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3dpc3xlbnwwfHwwfHx8MA%3D%3D",
-    "date": "2024-07-20",
+    "image": "  https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3dpc3xlbnwwfHwwfHx8MA%3D%3D",
+    "date": "2023-07-20",
     "time": "09:00 AM - 12:00 PM",
     "location": "Aquatics Center",
     "countdown": "0d 0h 0m 0s",
@@ -322,7 +322,7 @@
   {
     "id": 1021,
     "title": "Department of Childhood, Education and Society: Parenting Seminar",
-    "image": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpbGRyZW58ZW58MHx8MHx8fDA%3D",
+    "image": "  https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpbGRyZW58ZW58MHx8MHx8fDA%3D",
     "date": "2024-10-24",
     "time": "05:30 PM - 07:30 PM",
     "location": "Education Department, Room 202",
@@ -338,7 +338,7 @@
   {
     "id": 1022,
     "title": "Jazz Night at the Student Café",
-    "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8amF6enxlbnwwfHwwfHx8MA%3D%3D",
+    "image": "  https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8amF6enxlbnwwfHwwfHx8MA%3D%3D",
     "date": "2024-10-16",
     "time": "08:00 PM - 11:00 PM",
     "location": "Student Café",
@@ -354,8 +354,8 @@
   {
     "id": 1023,
     "title": "Academic Writing Workshop for Thesis",
-    "image": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d3JpdGluZ3xlbnwwfHwwfHx8MA%3D%3D",
-    "date": "2024-11-15",
+    "image": "  https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d3JpdGluZ3xlbnwwfHwwfHx8MA%3D%3D",
+    "date": "2025-11-15",
     "time": "10:00 AM - 03:00 PM",
     "location": "Library Conference Rooms",
     "countdown": "30d 0h 0m 0s",
@@ -370,8 +370,8 @@
   {
     "id": 1024,
     "title": "Volleyball Tournament: Beach Edition",
-    "image": "https://media.istockphoto.com/id/672146122/photo/summer-fun.jpg?s=612x612&w=0&k=20&c=P2D84cc575vkCxZYBH-vYOauRLs7o8BfyOugoPUgZIE=",
-    "date": "2024-06-22",
+    "image": "  https://images.unsplash.com/photo-1540442200306-954a10f1a4d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dm9sbGV5YmFsbHxlbnwwfHwwfHx8MA%3D%3D",
+    "date": "2023-06-22",
     "time": "01:00 PM - 06:00 PM",
     "location": "Campus Beach Volleyball Courts",
     "countdown": "0d 0h 0m 0s",
@@ -386,7 +386,7 @@
   {
     "id": 1025,
     "title": "Department of Urban Studies: City Planning Talk",
-    "image": "https://images.unsplash.com/photo-1472289065668-ce650ac443d2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2l0eXxlbnwwfHwwfHx8MA%3D%3D",
+    "image": "  https://images.unsplash.com/photo-1472289065668-ce650ac443d2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2l0eXxlbnwwfHwwfHx8MA%3D%3D",
     "date": "2024-10-29",
     "time": "12:00 PM - 01:30 PM",
     "location": "Urban Studies Building, Room 150",
@@ -402,8 +402,8 @@
   {
     "id": 1026,
     "title": "Open Mic Night: Storytelling Special",
-    "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3Rvcnl8ZW58MHx8MHx8fDA%3D",
-    "date": "2024-10-13",
+    "image": "  https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3Rvcnl8ZW58MHx8MHx8fDA%3D",
+    "date": "2023-10-13",
     "time": "07:30 PM - 09:30 PM",
     "location": "Campus Library Courtyard",
     "countdown": "0d 0h 0m 0s",
@@ -418,8 +418,8 @@
   {
     "id": 1027,
     "title": "Mathematics Competition: Pi Day Challenge",
-    "image": "https://media.istockphoto.com/id/501221160/photo/the-young-businessman.jpg?s=612x612&w=0&k=20&c=dX2ejg9sSZ9_sh932K-85ux11KeGczNDHJHxMNUr9z4=",
-    "date": "2024-11-01",
+    "image": "  https://images.unsplash.com/photo-1635805737707-575885ab0820?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWF0aHxlbnwwfHwwfHx8MA%3D%3D",
+    "date": "2025-11-01",
     "time": "02:00 PM - 05:00 PM",
     "location": "Mathematics Department, Rooms 101-105",
     "countdown": "16d 0h 0m 0s",
@@ -434,7 +434,7 @@
   {
     "id": 1028,
     "title": "5K Charity Fun Run",
-    "image": "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cnVufGVufDB8fDB8fHww",
+    "image": "  https://images.unsplash.com/photo-1534008897995-27a23e859048?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cnVufGVufDB8fDB8fHx8MA%3D%3D",
     "date": "2024-10-26",
     "time": "09:00 AM - 12:00 PM",
     "location": "Campus Grounds & Surrounding Park",
@@ -450,7 +450,7 @@
   {
     "id": 1029,
     "title": "Department of Global Political Studies: Model UN Prep",
-    "image": "https://bestdelegate.com/wp-content/uploads/2021/11/MUN-Conference-500x333.jpeg.webp",
+    "image": "  https://images.unsplash.com/photo-1588670832123-744c71945a3d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dW5pdGVkfGVufDB8fDB8fHww",
     "date": "2024-10-15",
     "time": "04:00 PM - 06:00 PM",
     "location": "GPS Department, Seminar Room",
@@ -466,8 +466,8 @@
   {
     "id": 1030,
     "title": "Rock Band Showcase",
-    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
-    "date": "2024-11-09",
+    "image": "  https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+    "date": "2025-11-09",
     "time": "07:00 PM - 10:00 PM",
     "location": "Campus Amphitheater",
     "countdown": "24d 0h 0m 0s",

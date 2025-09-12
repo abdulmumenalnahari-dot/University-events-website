@@ -1,4 +1,3 @@
-// src/components/CoordinatorsList.jsx
 import React, { useState } from 'react';
 import CoordinatorCard from './CoordinatorCard';
 import '../styles/CoordinatorsList.css';
@@ -6,7 +5,6 @@ import '../styles/CoordinatorsList.css';
 const CoordinatorsList = ({ coordinators, tab }) => {
   const [activeTab, setActiveTab] = useState('faculty');
 
-  // التبديل بين علامتي التبويب
   const handleTabChange = (tabName) => {
     setActiveTab(tabName);
   };

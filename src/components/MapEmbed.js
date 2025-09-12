@@ -1,17 +1,19 @@
- import React from 'react';
-import { FaMapMarkerAlt, FaCalendarAlt, FaExternalLinkAlt } from 'react-icons/fa';  
+// src/components/MapEmbed.jsx
+import React from 'react';
+import { FaMapMarkerAlt, FaCalendarAlt, FaExternalLinkAlt } from 'react-icons/fa'; // استيراد الأيقونات
 import '../styles/MapEmbed.css';
 
 const MapEmbed = () => {
   const campusInfo = {
     name: "Malmö University",
-    address: "Universitetsgatan 10, 211 19 Malmö, Sweden",  
+    address: "Universitetsgatan 10, 211 19 Malmö, Sweden", // تحديث العنوان
     officeHours: [
       "Monday - Friday: 9:00 AM - 5:00 PM",
       "Saturday: 9:00 AM - 1:00 PM",
       "Sunday: Closed"
     ],
-     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2220.098291517993!2d13.000160377544966!3d55.60037099209096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653a52e8451c7d7%3A0x4019078290e7c40!2sMalm%C3%B6%20University!5e0!3m2!1sen!2sse!4v1718574820277!5m2!1sen!2sse"
+    // تحديث رابط الخريطة لجامعة Malmö
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2220.098291517993!2d13.000160377544966!3d55.60037099209096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653a52e8451c7d7%3A0x4019078290e7c40!2sMalm%C3%B6%20University!5e0!3m2!1sen!2sse!4v1718574820277!5m2!1sen!2sse"
   };
 
   return (
@@ -21,7 +23,7 @@ const MapEmbed = () => {
         <div className="info-panel">
           <h3>{campusInfo.name}</h3>
           <div className="info-item">
-            
+            {/* استخدام أيقونة react-icons */}
             <FaMapMarkerAlt className="info-icon" />
             <div>
               <strong>Address</strong>
@@ -29,9 +31,8 @@ const MapEmbed = () => {
             </div>
           </div>
           <div className="info-item">
-
-
-             <FaCalendarAlt className="info-icon" />
+            {/* استخدام أيقونة react-icons */}
+            <FaCalendarAlt className="info-icon" />
             <div>
               <strong>Office Hours</strong>
               <ul>
@@ -42,7 +43,8 @@ const MapEmbed = () => {
             </div>
           </div>
           <div className="map-link">
-             <a href={`https://www.google.com/maps?q=${encodeURIComponent(campusInfo.address)}`} target="_blank" rel="noopener noreferrer">
+            {/* استخدام أيقونة react-icons */}
+            <a href={`https://www.google.com/maps?q=${encodeURIComponent(campusInfo.address)}`} target="_blank" rel="noopener noreferrer">
               <FaExternalLinkAlt className="link-icon" />
               Open in Google Maps
             </a>

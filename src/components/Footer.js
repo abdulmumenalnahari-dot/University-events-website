@@ -1,5 +1,5 @@
  import React, { useState, useEffect } from 'react';
-import { FaFacebookF, FaWhatsapp, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaWhatsapp, FaInstagram } from 'react-icons/fa';  
 import '../styles/Footer.css';
 
 const Footer = () => {
@@ -13,7 +13,9 @@ const Footer = () => {
         setDevelopers(Array.isArray(data) ? data : []);
       } catch (error) {
         console.error("Failed to load developers data:", error);
-         
+         setDevelopers([
+          { id: 1, name: "Towheeb algafri", email: "towheebalgafri@gmail.com" },
+        ]);
       }
     };
 
@@ -76,7 +78,11 @@ const Footer = () => {
           </div>
         </div>
 
-         
+         <div className="border-top border-secondary-subtle mt-4 pt-3">
+          <p className="small text-center text-secondary mb-0">
+            &copy; {new Date().getFullYear()} Springfield University CampusConnect. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );
