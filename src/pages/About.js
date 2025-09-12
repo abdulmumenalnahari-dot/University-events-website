@@ -44,7 +44,8 @@ export default function About() {
     const cleaned = String(s).replace(/–/g, "-");
     const first = cleaned.split("-")[0].trim();
     const y = cleaned.match(/\b(20\d{2})\b/);
-    const candidate = y && !/\b20\d{2}\b/.test(first) ? `${first} ${y[1]}` : first;
+    const candidate =
+      y && !/\b20\d{2}\b/.test(first) ? `${first} ${y[1]}` : first;
     const d = new Date(candidate);
     return isNaN(d) ? null : d;
   };
@@ -80,18 +81,9 @@ export default function About() {
   const { college, organizers, strategy, alumni, contacts } = about;
 
   return (
-    
     <div className="container my-4">
       {/* Hero Section */}
-     <div className="d-flex align-items-center">
-  <img 
-    src="/images/mau_en_logotype.svg" 
-    alt="Malmö University Logo" 
-    className="me-3" 
-    style={{ height: '40px', width: 'auto' }} 
-  />
-  <h1 className="h3 about-hero mb-0">About {college.name} & Events</h1>
-</div>
+      <h1 className="h3 about-hero">About {college.name} & Events</h1>
       <p className="lead">
         {college.name}, {college.location}. Founded in {college.founded}.
       </p>

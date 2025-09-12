@@ -1,5 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
-import "../styles/gallery.css";
+import { useEffect, useMemo, useState } from "react";
 
 const BASE_URL = process.env.PUBLIC_URL || "";
 
@@ -34,7 +33,7 @@ export default function Gallery() {
   }, []);
 
   const years = useMemo(() => {
-    return Array.from(new Set(list.map((x) => x.academicYear).filter(Boolean))).sort(
+    return Array.from(new Set(list.map((x) => x.year).filter(Boolean))).sort(
       (a, b) => String(b).localeCompare(String(a))
     );
   }, [list]);
@@ -47,7 +46,7 @@ export default function Gallery() {
 
   const filtered = useMemo(() => {
     return list.filter(
-      (x) => (!year || x.academicYear === year) && (!category || x.category === category)
+      (x) => (!year || x.year === year) && (!category || x.category === category)
     );
   }, [list, year, category]);
 
@@ -145,9 +144,9 @@ export default function Gallery() {
                   <div className="card-body">
                     <div className="d-flex justify-content-between align-items-center mb-1">
                       <span className="badge bg-primary-subtle text-primary">
-                        {g.category}
+                        {g.category || "Academic"}
                       </span>
-                      <span className="text-muted small">{g.academicYear}</span>
+                      <span className="text-muted small">{g.year || ""}</span>
                     </div>
                     <div className="fw-semibold">{g.title}</div>
                     <div
@@ -159,11 +158,11 @@ export default function Gallery() {
                         overflow: "hidden",
                       }}
                     >
-                      {g.description}
+                      {g.description || "—"}
                     </div>
                     <div className="text-muted small">
                       <i className="bi bi-calendar-event me-1"></i>
-                      {g.date}
+                      {g.date || ""}
                     </div>
                   </div>
                 </div>
