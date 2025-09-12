@@ -14,8 +14,7 @@ export default function Home() {
   const [sports, setSports] = useState([]);
 
  const [banners, setBanners] = useState([]);
- HEAD
-
+ 
   useEffect(() => {
     fetch('/data/banners.json')
       .then(res => res.json())
@@ -25,8 +24,7 @@ export default function Home() {
     
 
  
- bc4f49c7449d13330fef415ff209919cb703d591
-
+ 
   useEffect(() => {
   fetch('/data/banners.json')
     .then(res => {
