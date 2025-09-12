@@ -44,8 +44,7 @@ export default function About() {
     const cleaned = String(s).replace(/–/g, "-");
     const first = cleaned.split("-")[0].trim();
     const y = cleaned.match(/\b(20\d{2})\b/);
-    const candidate =
-      y && !/\b20\d{2}\b/.test(first) ? `${first} ${y[1]}` : first;
+    const candidate = y && !/\b20\d{2}\b/.test(first) ? `${first} ${y[1]}` : first;
     const d = new Date(candidate);
     return isNaN(d) ? null : d;
   };
