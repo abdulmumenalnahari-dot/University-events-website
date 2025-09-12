@@ -10,7 +10,6 @@
   --text-color: #ffffff;
   --hover-bg: rgba(255, 255, 255, 0.1);
 
-  /* Animation Keyframes */
   @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -25,7 +24,7 @@
 
 body {
   font-family: 'Cairo', sans-serif;
-  direction: ltr; /* تغيير من rtl إلى ltr */
+  direction: ltr;
   background-color: var(--secondary-color);
   overflow-x: hidden;
   margin: 0;
@@ -47,32 +46,57 @@ body {
   width: 100%;
 }
 
-.navbar .logo-container {
+/* ========================
+   LOGO + BRAND SECTION — مع المحاذاة الدقيقة
+======================== */
+.left-section {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  margin-right: auto;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  padding: 20px;
 }
 
-.navbar .logo-container:hover {
-  animation: spin 0.5s ease-in-out forwards;
-}
-
-.navbar .logo-icon {
-  font-size: 1.4rem;
+.spin-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s ease;
 }
 
-.navbar .logo-icon:hover {
-  animation: spin 0.5s ease-in-out forwards;
+.spin-button:hover {
+  background-color: var(--hover-bg);
+  animation: spin 0.5s ease-in-out 1;
 }
 
+.spin-button-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+.brand {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+/* ========================
+   NAVIGATION LINKS
+======================== */
 .navbar .nav-links {
   display: flex;
   gap: 20px;
@@ -105,43 +129,15 @@ body {
 
 .navbar .nav-link:hover {
   background-color: var(--hover-bg);
-  transform: translateX(-5px); /* تغيير من translateX(5px) إلى translateX(-5px) */
+  transform: translateX(-5px);
 }
 
 .navbar .nav-link.active {
   background-color: var(--active-bg);
   color: var(--primary-color);
   font-weight: 600;
-}
-
-.navbar .btn-primary {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.navbar .btn-primary:hover {
-  background-color: var(--active-bg);
-  color: var(--primary-color);
-  transform: translateY(-2px);
-}
-
-.navbar .badge {
-  background-color: #ff5c5c;
-  color: white;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  font-size: 0.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 5px; /* تغيير من margin-left إلى margin-right */
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+  transform: scale(1.02);
 }
 
 .navbar .nav-link.active::after {
@@ -155,15 +151,9 @@ body {
   border-radius: 1px;
 }
 
-.navbar .nav-link.active {
-  background-color: white;
-  color: var(--primary-color);
-  font-weight: 600;
-  box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
-  transform: scale(1.02);
-}
-
-/* Mobile Menu Button */
+/* ========================
+   MOBILE MENU
+======================== */
 .navbar .mobile-menu-btn {
   display: none;
   background: none;
@@ -180,7 +170,6 @@ body {
   background-color: var(--hover-bg);
 }
 
-/* Mobile Menu */
 .navbar .mobile-menu {
   display: none;
   position: absolute;
@@ -228,12 +217,12 @@ body {
   border: none;
   outline: none;
   width: 100%;
-  text-align: left; /* تغيير من text-align: right إلى text-align: left */
+  text-align: left;
 }
 
 .navbar .mobile-nav-link:hover {
   background-color: var(--hover-bg);
-  transform: translateX(-5px); /* تغيير من translateX(5px) إلى translateX(-5px) */
+  transform: translateX(-5px);
 }
 
 .navbar .mobile-nav-link.active {
@@ -242,7 +231,6 @@ body {
   font-weight: 600;
 }
 
-/* Animation for mobile menu */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -254,7 +242,9 @@ body {
   }
 }
 
-/* Media Query for Mobile */
+/* ========================
+   MEDIA QUERIES
+======================== */
 @media (max-width: 768px) {
   .navbar .nav-links {
     display: none;
@@ -274,67 +264,3 @@ body {
     display: none !important;
   }
 }
-/* ... الكود السابق كما هو ... */
-
-/* زر الدوران الجديد */
-  .spin-button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 25%;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2px;
-  height: 24px;
-    
-        
-}
-
-.spin-button:hover {
-  background-color: var(--hover-bg);
-  animation: spin 0.5s ease-in-out forwards;
-  transform: rotate(360deg);
-  padding: 8px;
-  margin: 10px;
-}
-
-/* تحديث ترتيب العناصر في الشريط */
- 
-
-.navbar .left-section {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
- 
-
-.navbar .logo-icon {
-  font-size: 1.4rem;
-  transition: all 0.3s ease;
-}
-
-.navbar .spin-button-img {
-  
-  width: 34px;
-  height: 34px;
-  border-radius: 20%;
-  object-fit: cover;
-  display: block;
-  transition: transform 1s ease;
-}
-.navbar .spin-button:hover {
-  background-color: var(--hover-bg);
-  animation: spin 0.5s ease-in-out 1; /* 1 = يدور مرة واحدة فقط */
-}
-.navbar .logo-container:hover {
-  background-color: var(--hover-bg);
-  border-radius: 8px;
-  padding: 10px 8px; /* زيادة padding */
-}
-/* ... باقي الكود كما هو ... */
