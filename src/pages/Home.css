@@ -1,21 +1,14 @@
-/* ملف خاص بصفحة Home فقط */
-
-/* جذر الصفحة */
 .home {
-  direction: rtl; /* اختياري إذا مشروعك عربي */
+  direction: rtl;
 }
 
-/* قسم الغرض (Purpose) */
 .purpose-section {
-  background: rgba(248, 249, 250, 0.65); /* بديل لـ bg-light + opacity */
+  background: rgba(248, 249, 250, 0.65);
 }
-
-/* نص الفقرة تحت العنوان في الـ Purpose */
 .purpose-text {
   max-width: 700px;
 }
 
-/* تحسين بسيط للمساحات العامة */
 section + section {
   margin-top: 1.5rem;
 }

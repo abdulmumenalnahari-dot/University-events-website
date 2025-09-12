@@ -1,5 +1,3 @@
-/* src/components/MapEmbed.css */
-
 .map-embed-container {
   padding: 40px 20px;
   max-width: 1200px;
@@ -95,7 +93,6 @@
   border: none;
 }
 
-/* تحسينات للهواتف */
 @media (max-width: 768px) {
   .map-content {
     flex-direction: column;

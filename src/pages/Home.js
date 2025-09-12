@@ -3,11 +3,11 @@ import BannerSlider from '../components/BannerSlider';
 import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
 import '../styles/HomeBegin.css'
 import Quick from '../components/Quick';
+import HomeBegin from '../components/HomeBegin';
 const BASE_URL = process.env.PUBLIC_URL || '';
 
 export default function Home() {
    
-  const [events, setEvents] = useState([]);
   const [sports, setSports] = useState([]);
 
 
@@ -36,7 +36,6 @@ export default function Home() {
 }, []);
 
 
-  // ✅ تحميل البيانات من ملف الرياضة
   useEffect(() => {
     const loadSports = async () => {
       const sortedSports = await fetchAndSortEvents("/data/sports.json");
@@ -54,9 +53,7 @@ export default function Home() {
     
       
 <BannerSlider items={banners} />      
-
-
-      {/* Purpose */}
+     <HomeBegin />
      
       <Quick />
        

@@ -1,4 +1,3 @@
-// src/components/EventCarousel.js
 import React, { useState, useRef, useEffect } from "react";
 import EventCard from "./EventCard";
 
@@ -7,11 +6,9 @@ const EventCarousel = ({ events = [], title }) => {
   const [cardsPerView, setCardsPerView] = useState(getCardsPerView());
   const carouselRef = useRef(null);
 
-  // لمس
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
 
-  // ماوس
   const isDragging = useRef(false);
   const startX = useRef(0);
   const startScrollLeft = useRef(0);
@@ -41,19 +38,16 @@ const EventCarousel = ({ events = [], title }) => {
   const totalCards = events.length;
   const maxIndex = Math.max(0, totalCards - cardsPerView);
 
-  // ثبّت المؤشر داخل الحدود عند تغيّر العرض/البيانات
   useEffect(() => {
     if (currentIndex > maxIndex) setCurrentIndex(maxIndex);
   }, [cardsPerView, totalCards, maxIndex, currentIndex]);
 
-  // حرّك الشريط عند تغيّر currentIndex
   useEffect(() => {
     if (!carouselRef.current) return;
     const step = getCardWidth() + gap;
     carouselRef.current.scrollTo({ left: currentIndex * step, behavior: "smooth" });
   }, [currentIndex, cardsPerView]);
 
-  // لمس
   const handleTouchStart = (e) => (touchStartX.current = e.targetTouches[0].clientX);
   const handleTouchMove  = (e) => (touchEndX.current   = e.targetTouches[0].clientX);
   const handleTouchEnd   = () => {
@@ -66,7 +60,6 @@ const EventCarousel = ({ events = [], title }) => {
     touchEndX.current = null;
   };
 
-  // ماوس: سحب حر + التقط لأقرب صفحة
   const onMouseDown = (e) => {
     if (!carouselRef.current) return;
     isDragging.current = true;
@@ -144,7 +137,6 @@ const EventCarousel = ({ events = [], title }) => {
         >
           {events.map((event) => (
             <div key={event.id} className="flex-shrink-0" style={{ width: `${getCardWidth()}px` }}>
-              {/* منع سحب صورة المتصفح */}
               <div onDragStart={(e) => e.preventDefault()}>
                 <EventCard event={event} />
               </div>
@@ -165,7 +157,6 @@ const EventCarousel = ({ events = [], title }) => {
         )}
       </div>
 
-      {/* نقاط للشاشات الصغيرة */}
       {totalCards > cardsPerView && (
         <div className="d-flex justify-content-center mt-3 d-md-none">
           {Array.from({ length: maxIndex + 1 }).map((_, i) => (
