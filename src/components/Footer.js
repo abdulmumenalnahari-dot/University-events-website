@@ -1,11 +1,13 @@
- import React, { useState, useEffect } from 'react';
-import { FaFacebookF, FaWhatsapp, FaInstagram } from 'react-icons/fa';
+// src/components/Footer.jsx
+import React, { useState, useEffect } from 'react';
+import { FaFacebookF, FaWhatsapp, FaInstagram } from 'react-icons/fa'; // استيراد الأيقونات
 import '../styles/Footer.css';
 
 const Footer = () => {
   const [developers, setDevelopers] = useState([]);
 
-   useEffect(() => {
+  // جلب بيانات المطورين من ملف JSON
+  useEffect(() => {
     const fetchDevelopers = async () => {
       try {
         const response = await fetch('/data/coordinators.json');
@@ -13,7 +15,10 @@ const Footer = () => {
         setDevelopers(Array.isArray(data) ? data : []);
       } catch (error) {
         console.error("Failed to load developers data:", error);
-         
+        // بيانات افتراضية في حالة الخطأ
+        setDevelopers([
+          { id: 1, name: "Towheeb algafri", email: "towheebalgafri@gmail.com" },
+        ]);
       }
     };
 
@@ -30,7 +35,8 @@ const Footer = () => {
     <footer className="bg-dark text-light w-100 mt-auto">
       <div className="container py-4">
         <div className="row gy-4 align-items-start">
-           <div className="col-12 col-md-6">
+          {/* المطورون */}
+          <div className="col-12 col-md-6">
             <h4 className="h6 text-uppercase fw-semibold mb-3">Developed by</h4>
             {developers.length > 0 ? (
               <ul className="list-group list-group-flush">
@@ -55,7 +61,8 @@ const Footer = () => {
             )}
           </div>
 
-           <div className="col-12 col-md-6">
+          {/* روابط السوشيال */}
+          <div className="col-12 col-md-6">
             <h4 className="h6 text-uppercase fw-semibold mb-3">Connect with us</h4>
             <div className="d-flex flex-wrap gap-2">
               {socialLinks.map((social, index) => (
@@ -76,7 +83,12 @@ const Footer = () => {
           </div>
         </div>
 
-         
+        {/* السطر السفلي */}
+        <div className="border-top border-secondary-subtle mt-4 pt-3">
+          <p className="small text-center text-secondary mb-0">
+            &copy; {new Date().getFullYear()} Springfield University CampusConnect. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

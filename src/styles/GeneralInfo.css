@@ -1,5 +1,3 @@
-/* src/components/GeneralInfo.css */
-
 .general-info-container {
   padding: 40px 20px;
   max-width: 1200px;
@@ -88,7 +86,6 @@
   text-decoration: underline;
 }
 
-/* تحسينات للهواتف */
 @media (max-width: 768px) {
   .info-grid {
     grid-template-columns: 1fr;
