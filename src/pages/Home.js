@@ -12,6 +12,7 @@ export default function Home() {
   const [events, setEvents] = useState([]);
   const [sports, setSports] = useState([]);
 
+<<<<<<< HEAD
   const [banners, setBanners] = useState([]);
 
   useEffect(() => {
@@ -19,9 +20,23 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => setBanners(data))
       .catch((err) => console.error("Error loading banners:", err));
-  }, []);
+=======
+ const [banners, setBanners] = useState([]);
+ HEAD
 
   useEffect(() => {
+    fetch('/data/banners.json')
+      .then(res => res.json())
+      .then(data => setBanners(data))
+      .catch(err => console.error("Error loading banners: - Home.js:23", err));
+>>>>>>> 333d7c9cbab92bd0ffdcd91b3b48744ea991bb79
+  }, []);
+
+ 
+ bc4f49c7449d13330fef415ff209919cb703d591
+
+  useEffect(() => {
+<<<<<<< HEAD
     fetch("/data/banners.json")
       .then((res) => {
         if (!res.ok) throw new Error("Failed to load banners");
@@ -30,6 +45,16 @@ export default function Home() {
       .then((data) => setBanners(data))
       .catch((err) => console.error("Error loading banners:", err));
   }, []);
+=======
+  fetch('/data/banners.json')
+    .then(res => {
+      if (!res.ok) throw new Error("Failed to load banners");
+      return res.json();
+    })
+    .then(data => setBanners(data))
+    .catch(err => console.error("Error loading banners: - Home.js:37", err));
+}, []);
+>>>>>>> 333d7c9cbab92bd0ffdcd91b3b48744ea991bb79
 
   // ✅ تحميل البيانات من ملف SPORTS
   useEffect(() => {
@@ -42,6 +67,7 @@ export default function Home() {
 
   return (
     <>
+<<<<<<< HEAD
       <div>
         <HomeBegin />
 
@@ -75,6 +101,20 @@ export default function Home() {
         </section>
         <Quick />
       </div>
+=======
+    
+    <div >
+    
+      
+<BannerSlider items={banners} />      
+
+
+      {/* Purpose */}
+     
+      <Quick />
+       
+    </div>
+>>>>>>> 333d7c9cbab92bd0ffdcd91b3b48744ea991bb79
     </>
   );
 }
