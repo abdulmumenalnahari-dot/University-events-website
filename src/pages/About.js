@@ -1,3 +1,4 @@
+// src/pages/About.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import "../styles/about.css";
 import Kalendr from "./kalendr.js";
@@ -27,6 +28,7 @@ export default function About() {
   const [err, setErr] = useState(null);
 
   useEffect(() => {
+    // ✅ تعديل المسار لجلب ملف about.json
     fetch(`${process.env.PUBLIC_URL || ""}/data/about.json`, {
       cache: "no-store",
     })
@@ -55,7 +57,7 @@ export default function About() {
     return t;
   }, []);
 
-  // ✅ تعريف events مرة واحدة فقط
+  // ✅ استخدام events من ملف about.json
   const events = about?.events ?? [];
 
   const decorated = useMemo(
@@ -77,23 +79,25 @@ export default function About() {
     return <div className="container my-4 text-danger">Error: {err}</div>;
   if (!about) return <div className="container my-4">Loading…</div>;
 
-  const { college, organizers, strategy, alumni, contacts } = about;
+  // ✅ استخدام البيانات من ملف about.json
+  const { college, organizers, strategy, alumni, contacts, annual_events_by_type } = about;
 
   return (
-    
     <div className="container my-4">
       {/* Hero Section */}
-     <div className="d-flex align-items-center">
-  <img 
-    src="/images/mau_en_logotype.svg" 
-    alt="Malmö University Logo" 
-    className="me-3" 
-    style={{ height: '40px', width: 'auto' }} 
-  />
-  <h1 className="h3 about-hero mb-0">About {college.name} & Events</h1>
-</div>
+      <div className="d-flex align-items-center">
+        <img 
+          src="/images/mau_en_logotype.svg" 
+          alt="Malmö University Logo" 
+          className="me-3" 
+          style={{ height: '40px', width: 'auto' }} 
+        />
+        <h1 className="h3 about-hero mb-0">About {college.name} & Events</h1>
+      </div>
       <p className="lead">
         {college.name}, {college.location}. Founded in {college.founded}.
+        <br />
+        <small className="text-muted">{college.affiliations}</small>
       </p>
 
       {/* Recognitions */}
@@ -169,13 +173,16 @@ export default function About() {
 
         <div className="col-md-5 section">
           <h2 className="h5">Organizing Bodies</h2>
-          <ul className="org-list">
+          {/* ✅ عرض الوصف الكامل للجهات المنظمة */}
+          <div className="org-list">
             {organizers.map((o, i) => (
-              <li key={i}>
-                {o.name} — {o.role}
-              </li>
+              <div key={i} className="mb-3">
+                <h6 className="mb-1">{o.name}</h6>
+                <p className="small text-muted mb-1">{o.role}</p>
+                <p className="small">{o.description}</p>
+              </div>
             ))}
-          </ul>
+          </div>
 
           <div className="cta mt-3">
             <h6 className="mb-1">Partners & Sponsors</h6>
@@ -195,15 +202,47 @@ export default function About() {
         </div>
       </div>
 
-      {/* Traditions */}
+      {/* ✅ إضافة قسم الأحداث السنوية المصنفة حسب النوع */}
       <div className="section">
-        <h2 className="h5">Traditions</h2>
-        <ul>
-          <li>Annual Academic Celebration (October)</li>
-          <li>Faculty symposia and public lectures</li>
-          <li>Europe Day activities</li>
-          <li>Malmö Academic Choir performances</li>
-        </ul>
+        <h2 className="h5">Annual Events by Type</h2>
+        
+        <div className="row g-4">
+          <div className="col-md-4">
+            <h6 className="text-primary">Technical Events</h6>
+            <ul className="small">
+              {annual_events_by_type?.technical?.map((event, i) => (
+                <li key={i}>
+                  <strong>{event.name}</strong> ({event.timing})<br/>
+                  <span className="text-muted">{event.description}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="col-md-4">
+            <h6 className="text-success">Cultural Events</h6>
+            <ul className="small">
+              {annual_events_by_type?.cultural?.map((event, i) => (
+                <li key={i}>
+                  <strong>{event.name}</strong> ({event.timing})<br/>
+                  <span className="text-muted">{event.description}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="col-md-4">
+            <h6 className="text-warning">Sports & Other Activities</h6>
+            <ul className="small">
+              {annual_events_by_type?.sports_other?.map((event, i) => (
+                <li key={i}>
+                  <strong>{event.name}</strong> ({event.timing})<br/>
+                  <span className="text-muted">{event.description}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
 
       {/* Vision & Strategy */}
@@ -266,7 +305,6 @@ export default function About() {
         <p>
           <strong>Address:</strong> {contacts.address}
         </p>
-        {contacts.notes && <p className="small text-muted">{contacts.notes}</p>}
       </div>
 
       {/* Footer */}

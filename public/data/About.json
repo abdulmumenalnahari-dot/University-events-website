@@ -1,7 +1,7 @@
 {
   "college": {
     "name": "Malmö University",
-    "location": "Malmö, Sweden",
+    "location": "Malmö, Sweden", 
     "founded": "1998",
     "affiliations": "Public University",
     "recognitions": [
@@ -16,7 +16,7 @@
       "description": "Represents student interests and organizes major cultural and social events throughout the academic year."
     },
     {
-      "name": "Technical Club",
+      "name": "Technical Club", 
       "role": "Organizer of technical events",
       "description": "Promotes technical learning through workshops, competitions, and innovation challenges."
     }
@@ -29,7 +29,7 @@
         "timing": "July"
       },
       {
-        "name": "Hackathon",
+        "name": "Hackathon", 
         "description": "24-hour coding competition to solve real-world problems.",
         "timing": "March"
       }
@@ -63,7 +63,7 @@
     "vision": "To be a leading university in sustainable urban development and digital innovation.",
     "core_values": [
       "Sustainability",
-      "Inclusivity",
+      "Inclusivity", 
       "Innovation",
       "Collaboration"
     ],
@@ -78,7 +78,7 @@
     "network_features": [
       "Career development events",
       "Mentorship programs",
-      "Networking opportunities",
+      "Networking opportunities", 
       "Alumni newsletters"
     ]
   },

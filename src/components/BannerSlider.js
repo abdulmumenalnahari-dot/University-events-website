@@ -11,7 +11,7 @@ const BannerSlider = () => {
   useEffect(() => {
     const fetchBannerData = async () => {
       try {
-        const response = await fetch('/data/arts.json');
+        const response = await fetch('/data/events.json');
         if (!response.ok) throw new Error('Failed to fetch banner data');
         
         const data = await response.json();
