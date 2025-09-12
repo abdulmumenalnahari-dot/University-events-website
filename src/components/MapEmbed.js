@@ -44,7 +44,7 @@ const MapEmbed = () => {
           </div>
           <div className="map-link">
             {/* استخدام أيقونة react-icons */}
-            <a href={`https://www.google.com/maps?q=${encodeURIComponent(campusInfo.address)}`} target="_blank" rel="noopener noreferrer">
+            <a href='https://maps.app.goo.gl/cbSxNemCKMksAG3h7' >
               <FaExternalLinkAlt className="link-icon" />
               Open in Google Maps
             </a>
