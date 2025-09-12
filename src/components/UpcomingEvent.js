@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import "../styles/UpcomingEventsHighlight.css";
 
-const UpcomingEventsHighlight = () => {
+const UpcomingEvent = () => {
   const [eventsToShow, setEventsToShow] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -104,4 +104,4 @@ const UpcomingEventsHighlight = () => {
   );
 };
 
-export default UpcomingEventsHighlight;
+export default UpcomingEvent;

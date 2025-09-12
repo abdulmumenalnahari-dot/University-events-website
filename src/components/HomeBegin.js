@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // ✅ إضافة Link
 import '../styles/HomeBegin.css';
-import UpcomingEventsHighlight from './UpcomingEventsHighlight'
+import UpcomingEvent from './UpcomingEvent'
 const HomeBegin = () => {
   return (
     <div className="home-begin">
@@ -54,7 +54,7 @@ const HomeBegin = () => {
           </Link>
         </div>
       </section>
-      <UpcomingEventsHighlight />
+      <UpcomingEvent />
     </div>
   );
 };
