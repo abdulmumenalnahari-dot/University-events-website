@@ -1,13 +1,11 @@
-// src/components/HomeBegin.jsx
-import React from 'react';
-import { Link } from 'react-router-dom'; // ✅ إضافة Link
+ import React from 'react';
+import { Link } from 'react-router-dom'; 
 import '../styles/HomeBegin.css';
 import UpcomingEvent from './UpcomingEvent'
 const HomeBegin = () => {
   return (
     <div className="home-begin">
-      {/* Hero Section */}
-      <section className="hero-section">
+       <section className="hero-section">
         
         <h1>Welcome to Malmö University Event Hub</h1>
         <p className="subtitle">Stay Updated, Stay Involved!</p>
@@ -16,8 +14,7 @@ const HomeBegin = () => {
           and stay connected with everything happening at SpringField University.
         </p>
 
-        {/* Features Cards */}
-        <div className="features-container">
+         <div className="features-container">
           <div className="feature-card">
             <div className="feature-icon">
               <i className="fas fa-calendar-alt" style={{ color: '#667eea' }}></i>

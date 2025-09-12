@@ -1,5 +1,4 @@
-// src/pages/Feedback.jsx
-import React from 'react';
+ import React from 'react';
 import { FaUser, FaEnvelope, FaUsers, FaCalendarAlt, FaStar } from 'react-icons/fa';
 import '../styles/Feedback.css';
 
@@ -32,7 +31,7 @@ const Feedback = () => {
       </div>
 
       <div className="feedback-form">
-        {/* Disclaimer */}
+         
         <div className="info-box">
           <div className="info-icon">
             <FaUsers size={16} color="#1976d2" />
@@ -44,8 +43,7 @@ const Feedback = () => {
         </div>
 
         <form>
-          {/* Full Name */}
-          <div className="form-group">
+           <div className="form-group">
             <label htmlFor="name">
               <FaUser size={16} color="#667eea" />
               <span> Full Name *</span>
@@ -58,8 +56,7 @@ const Feedback = () => {
             />
           </div>
 
-          {/* Email Address */}
-          <div className="form-group">
+           <div className="form-group">
             <label htmlFor="email">
               <FaEnvelope size={16} color="#667eea" />
               <span> Email Address *</span>
@@ -72,8 +69,7 @@ const Feedback = () => {
             />
           </div>
 
-          {/* User Type */}
-          <div className="form-group">
+           <div className="form-group">
             <label htmlFor="userType">
               <FaUsers size={16} color="#667eea" />
               <span> User Type *</span>
@@ -86,8 +82,7 @@ const Feedback = () => {
             </select>
           </div>
 
-          {/* Event Attended */}
-          <div className="form-group">
+           <div className="form-group">
             <label htmlFor="event">
               <FaCalendarAlt size={16} color="#667eea" />
               <span> Event Attended *</span>
@@ -101,8 +96,7 @@ const Feedback = () => {
             <small className="form-note">* Limited to events from the past month only</small>
           </div>
 
-          {/* Event Rating */}
-          <div className="form-group">
+           <div className="form-group">
             <label>
               <FaStar size={16} color="#667eea" />
               <span> Event Rating *</span>
@@ -120,7 +114,7 @@ const Feedback = () => {
             <small className="form-note">Rate your overall experience with the event (1 = Poor, 5 = Excellent)</small>
           </div>
 
-          {/* Comments */}
+ 
           <div className="form-group">
             <label htmlFor="comments">
               <span>Additional Comments & Suggestions</span>
@@ -134,8 +128,7 @@ const Feedback = () => {
             <small className="form-note">Optional: Share your thoughts, suggestions, or any specific aspects you'd like to highlight</small>
           </div>
 
-          {/* Submit Button */}
-          <button type="submit" className="submit-btn">
+           <button type="submit" className="submit-btn">
             <FaUser size={16} color="#fff" />
             <span>Submit Feedback</span>
           </button>

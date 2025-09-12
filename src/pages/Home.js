@@ -4,8 +4,7 @@ import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
 import "../styles/HomeBegin.css";
 import Quick from "../components/Quick";
 import HomeBegin from "../components/HomeBegin";
-import UpcomingEventsHighlight from "../components/UpcomingEvent";
-
+ 
 export default function Home() {
   const [banners, setBanners] = useState([]);
   const [sports, setSports] = useState([]);

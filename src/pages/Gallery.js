@@ -14,7 +14,7 @@ export default function Gallery() {
     let alive = true;
     (async () => {
       try {
-        const res = await fetch(`${BASE_URL}/data/gallery.json`, {
+        const res = await fetch(`${BASE_URL}/data/events.json`, {
           headers: { "Cache-Control": "no-cache" },
         });
         if (!res.ok) throw new Error(`gallery.json ${res.status}`);

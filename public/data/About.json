@@ -1,14 +1,8 @@
 {
   "college": {
     "name": "Malmö University",
-<<<<<<< HEAD
-    "location": "Malmö, Sweden", 
-    "founded": "1998",
-    "affiliations": "Public University",
-=======
     "location": "Malmö, Sweden",
     "founded": 1998,
->>>>>>> 1090705245f751414db6be4b082c0f619413eee2
     "recognitions": [
       "27,667 students and 2,199 employees",
       "250+ global partner universities",
@@ -21,51 +15,6 @@
       "role": "Coordinates student governance and cross-campus events"
     },
     {
-<<<<<<< HEAD
-      "name": "Technical Club", 
-      "role": "Organizer of technical events",
-      "description": "Promotes technical learning through workshops, competitions, and innovation challenges."
-    }
-  ],
-  "annual_events_by_type": {
-    "technical": [
-      {
-        "name": "TechFest",
-        "description": "Annual technical festival showcasing student projects and innovations.",
-        "timing": "July"
-      },
-      {
-        "name": "Hackathon", 
-        "description": "24-hour coding competition to solve real-world problems.",
-        "timing": "March"
-      }
-    ],
-    "cultural": [
-      {
-        "name": "Annual Day",
-        "description": "Celebration of student talent in arts, music, and drama.",
-        "timing": "October"
-      },
-      {
-        "name": "Music Nights",
-        "description": "Monthly informal concerts featuring student bands and performers.",
-        "timing": "Monthly"
-      }
-    ],
-    "sports_other": [
-      {
-        "name": "Inter-college Sports Meet",
-        "description": "Competitive sports event against other colleges.",
-        "timing": "September"
-      },
-      {
-        "name": "Alumni Meet",
-        "description": "Annual gathering of graduates to network and share experiences.",
-        "timing": "June"
-      }
-    ]
-  },
-=======
       "name": "Cultural Committee",
       "role": "Manages arts, music, theatre, and cultural events including Verdi's Requiem"
     },
@@ -78,22 +27,14 @@
       "role": "Connects graduates with current students and the university community"
     }
   ],
->>>>>>> 1090705245f751414db6be4b082c0f619413eee2
   "strategy": {
     "vision": "Contribute to a sustainable and just society through research-based knowledge, critical thinking, and readiness for action.",
     "core_values": [
-<<<<<<< HEAD
-      "Sustainability",
-      "Inclusivity", 
-      "Innovation",
-      "Collaboration"
-=======
       "Academic freedom",
       "Academic integrity",
       "Academic quality",
       "Academic accountability",
       "Academic collegiality"
->>>>>>> 1090705245f751414db6be4b082c0f619413eee2
     ],
     "focus_areas": [
       "Openness and interdisciplinarity",
@@ -104,18 +45,11 @@
   "alumni": {
     "purpose": "Keep lifelong ties, support students, and foster professional development",
     "network_features": [
-<<<<<<< HEAD
-      "Career development events",
-      "Mentorship programs",
-      "Networking opportunities", 
-      "Alumni newsletters"
-=======
       "Career events and job fairs",
       "Theme days for professional groups",
       "Seminars with top researchers",
       "Alumni & Friends newsletter (4 times per year)",
       "Opportunities to mentor students or speak at campus events"
->>>>>>> 1090705245f751414db6be4b082c0f619413eee2
     ]
   },
   "contacts": {

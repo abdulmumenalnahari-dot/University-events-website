@@ -1,5 +1,4 @@
-// src/pages/Events.jsx
-import { useEffect, useState, useMemo } from "react";
+ import { useEffect, useState, useMemo } from "react";
 import { Routes, Route } from "react-router-dom";
 import FilterBar from "../components/FilterBar";
 import { filterAndSortEvents } from "../utils/filterAndSortEvents";
@@ -14,13 +13,10 @@ export default function Events() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   
-  // States for pagination
-  const [displayedEvents, setDisplayedEvents] = useState([]);
+   const [displayedEvents, setDisplayedEvents] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const eventsPerPage = 6; // Show 6 events per page/load
-
-  // Load all events
-  useEffect(() => {
+  const eventsPerPage = 6;  
+   useEffect(() => {
     const loadAllEvents = async () => {
       try {
         const response = await fetch("/data/events.json");
@@ -38,26 +34,22 @@ export default function Events() {
     loadAllEvents();
   }, []);
 
-  // Filter and sort events
-  const filteredAndSortedEvents = useMemo(
+   const filteredAndSortedEvents = useMemo(
     () => filterAndSortEvents(allEvents, { search, category, sort }),
     [allEvents, search, category, sort]
   );
 
-  // Handle pagination: update displayed events when filtered/sorted events or page changes
-  useEffect(() => {
+   useEffect(() => {
     const startIndex = 0;
     const endIndex = currentPage * eventsPerPage;
     setDisplayedEvents(filteredAndSortedEvents.slice(startIndex, endIndex));
   }, [filteredAndSortedEvents, currentPage]);
 
-  // Function to load more events
-  const loadMoreEvents = () => {
+   const loadMoreEvents = () => {
     setCurrentPage(prevPage => prevPage + 1);
   };
 
-  // Check if there are more events to load
-  const hasMoreEvents = displayedEvents.length < filteredAndSortedEvents.length;
+   const hasMoreEvents = displayedEvents.length < filteredAndSortedEvents.length;
 
   const EventList = (
     <div className="container my-4">
@@ -96,7 +88,7 @@ export default function Events() {
                 ))}
               </div>
               
-              {/* Load More Button - Responsive */}
+              
               {hasMoreEvents && (
                 <div className="d-flex justify-content-center mt-4">
                   <button
@@ -116,8 +108,7 @@ export default function Events() {
                 </div>
               )}
               
-              {/* Message when no more events to load */}
-              {!hasMoreEvents && filteredAndSortedEvents.length > 0 && (
+               {!hasMoreEvents && filteredAndSortedEvents.length > 0 && (
                 <div className="text-center mt-4">
                   <p className="text-muted">You've reached the end of the list.</p>
                 </div>
