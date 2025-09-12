@@ -2,8 +2,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // ✅ إضافة Link
 import '../styles/HomeBegin.css';
+import BannerSlider from './BannerSlider';
 
 const HomeBegin = () => {
+  
   return (
     <div className="home-begin">
       {/* Hero Section */}
@@ -17,6 +19,7 @@ const HomeBegin = () => {
           Your gateway to campus life, events, and community engagement. Discover upcoming events, join student organizations, 
           and stay connected with everything happening at SpringField University.
         </p>
+ 
 
         {/* Features Cards */}
         <div className="features-container">

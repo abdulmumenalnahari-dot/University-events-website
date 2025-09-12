@@ -14,14 +14,7 @@ export default function Home() {
   const [sports, setSports] = useState([]);
 
  const [banners, setBanners] = useState([]);
-
-  useEffect(() => {
-    fetch('/data/banners.json')
-      .then(res => res.json())
-      .then(data => setBanners(data))
-      .catch(err => console.error("Error loading banners:", err));
-  }, []);
-    
+ 
 
   useEffect(() => {
   fetch('/data/banners.json')

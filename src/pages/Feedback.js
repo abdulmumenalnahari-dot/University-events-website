@@ -1,29 +1,22 @@
 // src/pages/Feedback.jsx
-import React, { useState } from 'react';
+import React from 'react';
 import { FaUser, FaEnvelope, FaUsers, FaCalendarAlt, FaStar } from 'react-icons/fa';
 import '../styles/Feedback.css';
 
 const Feedback = () => {
-  const userTypes = ['Student', 'Faculty', 'Staff', 'Visitor'];
-  const events = ['Fall Festival 2024', 'Campus Music Festival', 'Student Organization Fair', 'Academic Conference 2024'];
+  const userTypes = [
+    'Student',
+    'Faculty',
+    'Staff',
+    'Visitor'
+  ];
 
-  // حالة الحقول
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    userType: '',
-    event: '',
-    rating: 0,
-    comments: ''
-  });
-
-  // تحديث التقييم عند النقر على النجوم
-  const handleRating = (value) => {
-    setFormData(prev => ({ ...prev, rating: value }));
-  };
-
-  // التحقق من إذا كانت جميع الحقول ممتلئة
-  const isFormComplete = formData.name && formData.email && formData.userType && formData.event && formData.rating > 0;
+  const events = [
+    'Fall Festival 2024',
+    'Campus Music Festival',
+    'Student Organization Fair',
+    'Academic Conference 2024'
+  ];
 
   return (
     <div className="feedback-container">
@@ -61,8 +54,6 @@ const Feedback = () => {
               type="text"
               id="name"
               placeholder="Enter your full name"
-              value={formData.name}
-              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
               className="form-input"
             />
           </div>
@@ -77,8 +68,6 @@ const Feedback = () => {
               type="email"
               id="email"
               placeholder="Enter your email address"
-              value={formData.email}
-              onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
               className="form-input"
             />
           </div>
@@ -89,12 +78,7 @@ const Feedback = () => {
               <FaUsers size={16} color="#667eea" />
               <span> User Type *</span>
             </label>
-            <select
-              id="userType"
-              value={formData.userType}
-              onChange={(e) => setFormData(prev => ({ ...prev, userType: e.target.value }))}
-              className="form-select"
-            >
+            <select id="userType" className="form-select">
               <option value="">Select your role</option>
               {userTypes.map(type => (
                 <option key={type} value={type}>{type}</option>
@@ -108,12 +92,7 @@ const Feedback = () => {
               <FaCalendarAlt size={16} color="#667eea" />
               <span> Event Attended *</span>
             </label>
-            <select
-              id="event"
-              value={formData.event}
-              onChange={(e) => setFormData(prev => ({ ...prev, event: e.target.value }))}
-              className="form-select"
-            >
+            <select id="event" className="form-select">
               <option value="">Select an event from the past month</option>
               {events.map(event => (
                 <option key={event} value={event}>{event}</option>
@@ -130,26 +109,15 @@ const Feedback = () => {
             </label>
             <div className="rating-stars">
               {[1, 2, 3, 4, 5].map(star => (
-                <button
+                <FaStar
                   key={star}
-                  type="button"
-                  onClick={() => handleRating(star)}
-                  className={`star-icon ${formData.rating >= star ? 'active' : ''}`}
-                  aria-label={`Rate ${star}`}
-                >
-                  <FaStar size={24} color={formData.rating >= star ? '#ffd700' : '#ccc'} />
-                </button>
+                  size={24}
+                  color="#ccc"
+                  className="star-icon"
+                />
               ))}
             </div>
-
-            {/* نصوص توضيحية حسب التقييم */}
-            <div className="rating-legend">
-              {formData.rating === 1 && <small className="rating-text">Poor - Needs significant improvement</small>}
-              {formData.rating === 2 && <small className="rating-text">Below Average - Some areas need work</small>}
-              {formData.rating === 3 && <small className="rating-text">Average - Decent experience</small>}
-              {formData.rating === 4 && <small className="rating-text">Good - Well organized and enjoyable</small>}
-              {formData.rating === 5 && <small className="rating-text">Excellent - Outstanding experience!</small>}
-            </div>
+            <small className="form-note">Rate your overall experience with the event (1 = Poor, 5 = Excellent)</small>
           </div>
 
           {/* Comments */}
@@ -160,8 +128,6 @@ const Feedback = () => {
             <textarea
               id="comments"
               placeholder="Please share your detailed feedback, suggestions for improvement, or any additional remarks about the event..."
-              value={formData.comments}
-              onChange={(e) => setFormData(prev => ({ ...prev, comments: e.target.value }))}
               rows={5}
               className="form-textarea"
             ></textarea>
@@ -169,11 +135,7 @@ const Feedback = () => {
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
-            className={`submit-btn ${isFormComplete ? 'active' : ''}`}
-            disabled={!isFormComplete}
-          >
+          <button type="submit" className="submit-btn">
             <FaUser size={16} color="#fff" />
             <span>Submit Feedback</span>
           </button>
