@@ -7,32 +7,34 @@ const Kalendr = ({ events }) => {
     new Date().toISOString().slice(0, 7)
   );
 
-  const getDaysInMonth = (year, month) => {
-    return new Date(year, month + 1, 0).getDate();
-  };
-
+  // تصفية الأحداث لعرض الأحداث الخاصة بالشهر الحالي فقط
   const eventsInMonth = events.filter((e) => e.month === currentMonth);
 
+  // تجميع الأحداث حسب اليوم
   const dayEvents = {};
   eventsInMonth.forEach((e) => {
-    if (!dayEvents[e.day]) dayEvents[e.day] = [];
-    dayEvents[e.day].push(e);
+    // تأكد من أن e.day موجود ورقمي
+    const dayNumber = parseInt(e.day, 10);
+    if (!isNaN(dayNumber) && dayNumber > 0 && dayNumber <= 31) {
+      if (!dayEvents[dayNumber]) dayEvents[dayNumber] = [];
+      dayEvents[dayNumber].push(e);
+    }
   });
 
+  // حساب أيام الشهر لعرضها في التقويم
   const firstDay = new Date(currentMonth + "-01");
   const startDay = firstDay.getDay(); // 0 = Sunday
-  const daysInMonth = getDaysInMonth(
-    firstDay.getFullYear(),
-    firstDay.getMonth()
-  );
+  const daysInMonth = new Date(firstDay.getFullYear(), firstDay.getMonth() + 1, 0).getDate();
 
   const calendarRows = [];
   let week = [];
 
+  // ملء الأيام الفارغة في بداية الشهر
   for (let i = 0; i < startDay; i++) {
     week.push(null);
   }
 
+  // ملء أيام الشهر
   for (let d = 1; d <= daysInMonth; d++) {
     week.push(d);
     if (week.length === 7) {
@@ -41,11 +43,13 @@ const Kalendr = ({ events }) => {
     }
   }
 
+  // ملء الأيام الفارغة في نهاية الأسبوع الأخير
   while (week.length < 7) {
     week.push(null);
   }
   calendarRows.push(week);
 
+  // ألوان الفئات
   const getCategoryColor = (category) => {
     switch (category) {
       case "Academic":
@@ -62,21 +66,26 @@ const Kalendr = ({ events }) => {
         return "#d63384";
       case "School event":
         return "#198754";
+      case "Research":
+        return "#0dcaf0"; // أزرق فاتح للبحث
       default:
         return "#adb5bd";
     }
   };
 
+  // عند النقر على حدث
   const handleEventClick = (event) => {
     setSelectedEvent(event);
   };
 
+  // إغلاق النافذة المنبثقة
   const closeModal = () => {
     setSelectedEvent(null);
   };
 
   return (
     <div className="kalendr-container">
+      {/* رأس التقويم مع أزرار التنقل */}
       <div className="kalendr-header">
         <button
           onClick={() => {
@@ -116,6 +125,7 @@ const Kalendr = ({ events }) => {
         </button>
       </div>
 
+      {/* عناوين الأيام */}
       <div className="kalendr-weekdays">
         {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
           <div key={day} className="kalendr-day-header">
@@ -124,6 +134,7 @@ const Kalendr = ({ events }) => {
         ))}
       </div>
 
+      {/* شبكة التقويم */}
       <div className="kalendr-grid">
         {calendarRows.map((week, wIdx) => (
           <React.Fragment key={wIdx}>
@@ -158,6 +169,7 @@ const Kalendr = ({ events }) => {
                           onClick={() => handleEventClick(event)}
                           title={event.title}
                         >
+                          {/* عرض صورة صغيرة إذا كانت موجودة */}
                           {event.image && (
                             <div
                               style={{
@@ -186,6 +198,7 @@ const Kalendr = ({ events }) => {
         ))}
       </div>
 
+      {/* نافذة منبثقة لعرض تفاصيل الحدث */}
       {selectedEvent && (
         <div className="kalendr-modal-overlay" onClick={closeModal}>
           <div
@@ -196,12 +209,9 @@ const Kalendr = ({ events }) => {
               ×
             </button>
             <h4>{selectedEvent.title}</h4>
-            <p>
-              <strong>Date:</strong> {selectedEvent.date}
-            </p>
-            <p>
-              <strong>Location:</strong> {selectedEvent.location}
-            </p>
+            <p><strong>Category:</strong> {selectedEvent.category}</p>
+            <p><strong>Date:</strong> {selectedEvent.date}</p>
+            <p><strong>Location:</strong> {selectedEvent.location}</p>
             <p>{selectedEvent.description}</p>
 
             {selectedEvent.image && (
@@ -218,27 +228,30 @@ const Kalendr = ({ events }) => {
               />
             )}
 
-            <a
-              href={selectedEvent.url}
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                display: "inline-block",
-                marginTop: "10px",
-                padding: "6px 12px",
-                backgroundColor: "#0d6efd",
-                color: "white",
-                textDecoration: "none",
-                borderRadius: "4px",
-                fontSize: "0.9rem",
-              }}
-            >
-              View Event Page
-            </a>
+            {selectedEvent.url && (
+              <a
+                href={selectedEvent.url}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: "inline-block",
+                  marginTop: "10px",
+                  padding: "6px 12px",
+                  backgroundColor: "#0d6efd",
+                  color: "white",
+                  textDecoration: "none",
+                  borderRadius: "4px",
+                  fontSize: "0.9rem",
+                }}
+              >
+                View Event Page
+              </a>
+            )}
           </div>
         </div>
       )}
 
+      {/* مفتاح الألوان */}
       <div className="kalendr-legend">
         <h6>Event Types</h6>
         {[
@@ -249,6 +262,7 @@ const Kalendr = ({ events }) => {
           { category: "Education", color: "#dc3545" },
           { category: "Culture", color: "#d63384" },
           { category: "School event", color: "#198754" },
+          { category: "Research", color: "#0dcaf0" },
         ].map((item) => (
           <div key={item.category} className="kalendr-legend-item">
             <span

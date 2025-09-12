@@ -1,6 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react";
-import "../styles/about.css";
-import Kalendr from "./kalendr.js";
+import Header from "../components/aboutcomponents/HeadeAboutr";
+import Kpis from "../components/aboutcomponents/Kpis";
+import UpcomingHighlights from "../components/aboutcomponents/UpcomingHighlights";
+import OrganizingBodies from "../components/aboutcomponents/OrganizingBodies";
+import Traditions from "../components/aboutcomponents/Traditions";
+import VisionStrategy from "../components/aboutcomponents/VisionStrategy";
+import EventTimeline from "../components/aboutcomponents/EventTimeline";
+import AlumniFriends from "../components/aboutcomponents/AlumniFriends";
+import Contact from "../components/aboutcomponents/Contact";
 
 const CATEGORY_IMAGE = {
   Academic: "/images/arshogtid_2023_41.jpg",
@@ -37,6 +44,17 @@ export default function About() {
       .then(setAbout)
       .catch((e) => setErr(e.message));
   }, []);
+
+  useEffect(() => {
+    if (window.location.hash === "#event-calendar-section") {
+      const element = document.getElementById("event-calendar-section");
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [about]);
 
   const parseDate = (s) => {
     if (!s) return null;
@@ -78,190 +96,33 @@ export default function About() {
   const { college, organizers, strategy, alumni, contacts } = about;
 
   return (
-    
     <div className="container my-4">
-     <div className="d-flex align-items-center">
-  <img 
-    src="/images/mau_en_logotype.svg" 
-    alt="Malmö University Logo" 
-    className="me-3" 
-    style={{ height: '40px', width: 'auto' }} 
-  />
-  <h1 className="h3 about-hero mb-0">About {college.name} & Events</h1>
-</div>
-      <p className="lead">
-        {college.name}, {college.location}. Founded in {college.founded}.
-      </p>
-
-      <div className="kpis">
-        {college.recognitions.map((r, i) => (
-          <div key={i} className="kpi">
-            {r}
-          </div>
-        ))}
-      </div>
-      <div className="divider"></div>
+      <Header college={college} />
+      <Kpis college={college} />
 
       <div className="row g-4 mt-3">
         <div className="col-md-7">
-          <h2 className="h5">Upcoming Highlights</h2>
-          {highlights.length === 0 ? (
-            <p className="text-muted">No upcoming events.</p>
-          ) : (
-            <div className="card-grid">
-              {highlights.map((ev) => (
-                <div className="card h-100" key={ev.title}>
-                  <img
-                    src={ev.image}
-                    alt={ev.title}
-                    className="card-img-top"
-                    style={{ height: 160, objectFit: "cover" }}
-                    onError={(e) => {
-                      e.currentTarget.src = DEFAULT_IMG;
-                    }}
-                  />
-                  <div className="card-body">
-                    <span
-                      className={
-                        "badge-cat " +
-                        (ev.category === "Academic"
-                          ? "badge-tech"
-                          : ev.category === "Conference"
-                          ? "badge-cult"
-                          : ev.category === "Workshop"
-                          ? "badge-sport"
-                          : ev.category === "Seminar"
-                          ? "badge-tech"
-                          : ev.category === "Education"
-                          ? "badge-cult"
-                          : ev.category === "Culture"
-                          ? "badge-sport"
-                          : "badge-tech")
-                      }
-                    >
-                      {ev.category}
-                    </span>
-                    <h6 className="card-title mt-2">{ev.title}</h6>
-                    <div className="text-muted small">
-                      {ev.date} · {ev.location}
-                    </div>
-                    {ev.url && (
-                      <a
-                        href={ev.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="small"
-                      >
-                        Details
-                      </a>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
+          <UpcomingHighlights highlights={highlights} />
         </div>
-
-        <div className="col-md-5 section">
-          <h2 className="h5">Organizing Bodies</h2>
-          <ul className="org-list">
-            {organizers.map((o, i) => (
-              <li key={i}>
-                {o.name} — {o.role}
-              </li>
-            ))}
-          </ul>
-
-          <div className="cta mt-3">
-            <h6 className="mb-1">Partners & Sponsors</h6>
-            <p className="small mb-2">
-              Support research, education, and cultural initiatives at Malmö
-              University.
-            </p>
-            <a
-              className="btn btn-outline-primary btn-sm"
-              href="https://mau.se/en/collaboration-and-innovation/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Get in touch
-            </a>
-          </div>
+        <div className="col-md-5">
+          <OrganizingBodies organizers={organizers} />
         </div>
       </div>
 
-      <div className="section">
-        <h2 className="h5">Traditions</h2>
-        <ul>
-          <li>Annual Academic Celebration (October)</li>
-          <li>Faculty symposia and public lectures</li>
-          <li>Europe Day activities</li>
-          <li>Malmö Academic Choir performances</li>
-        </ul>
+      <Traditions />
+      <VisionStrategy strategy={strategy} />
+
+      <div id="event-calendar-section">
+        <EventTimeline events={decorated} />
       </div>
 
-      <div className="section">
-        <h2 className="h5">Vision & Strategy</h2>
-        <p>{strategy.vision}</p>
-        <h6>Core Values</h6>
-        <ul>
-          {strategy.core_values.map((v, i) => (
-            <li key={i}>{v}</li>
-          ))}
-        </ul>
-        <h6>Focus Areas</h6>
-        <ul>
-          {strategy.focus_areas.map((f, i) => (
-            <li key={i}>{f}</li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="section">
-        <h2 className="h5">Event Timeline (Monthly Calendar)</h2>
-        <Kalendr events={events} />
-      </div>
-
-      <div className="section">
-        <h2 className="h5">Alumni & Friends</h2>
-        <ul>
-          {alumni.network_features.map((n, i) => (
-            <li key={i}>{n}</li>
-          ))}
-        </ul>
-        <a
-          href="https://mau.se/en/collaboration-and-innovation/alumni--friends/"
-          target="_blank"
-          rel="noreferrer"
-          style={{
-            display: "inline-block",
-            marginTop: "12px",
-            color: "#0d6efd",
-            textDecoration: "none",
-            fontWeight: "600",
-          }}
-        >
-          Join the Alumni Network →
-        </a>
-      </div>
-
-      <div className="section">
-        <h2 className="h5">Contact</h2>
-        <p>
-          <strong>Email:</strong> {contacts.email}
-        </p>
-        <p>
-          <strong>Phone:</strong> {contacts.phone}
-        </p>
-        <p>
-          <strong>Address:</strong> {contacts.address}
-        </p>
-        {contacts.notes && <p className="small text-muted">{contacts.notes}</p>}
-      </div>
+      <AlumniFriends alumni={alumni} />
+      <Contact contacts={contacts} />
 
       <footer className="text-center mt-6 pt-4 text-muted small">
         © Aptech Limited
       </footer>
     </div>
   );
+
 }
