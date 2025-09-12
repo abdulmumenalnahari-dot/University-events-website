@@ -134,6 +134,7 @@ export default function Events() {
   );
 
   return (
+    
     <Routes>
       <Route index element={EventList} />
       <Route path=":id" element={<EventDetail />} />

@@ -67,11 +67,19 @@ const EventCard = ({ event }) => {
   };
 
   return (
-    <div className="card border-0 shadow-sm rounded-4 overflow-hidden h-100 d-flex flex-column"
+   <div className="card border-0 shadow-sm rounded-4 overflow-hidden h-100 d-flex flex-column"
          style={{ width: "100%", minWidth: "280px", maxWidth: "350px" }}>
       <div className="position-relative">
-        <img src={event.image} alt={event.title} className="card-img-top w-100"
-             style={{ height: "160px", objectFit: "cover", borderRadius: "8px 8px 0 0" }} />
+        <img 
+          src={event.image} 
+          alt={event.title} 
+          className="card-img-top w-100"
+          style={{ 
+            height: "160px", 
+            objectFit: "cover", // ✅ هذا هو الحل!
+            borderRadius: "8px 8px 0 0" 
+          }} 
+        />
         <span className="position-absolute top-0 end-0 m-1 p-1 rounded-2 fs-6 fw-bold cursor-pointer"
               style={{ backgroundColor: isFavorite ? "#FFD700" : "#fff", color: "#000", border: "1px solid #ddd", fontSize: "0.9rem" }}
               onClick={toggleFavorite}>★</span>
