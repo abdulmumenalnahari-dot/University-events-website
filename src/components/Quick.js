@@ -10,25 +10,25 @@ const Quick = () => {
       title: 'Event Calendar',
       description: 'View all upcoming events and important dates',
       icon: <FaCalendarAlt size={20} color="#1976d2" />,
-      link: '/calendar'
+      link:  PATHS.EVENTS
     },
     {
       title: 'Registration',
       description: 'Register for events and join activities',
       icon: <FaUsers size={20} color="#7b1fa2" />,
-      link: '/register'
+      link: PATHS.FEEDBACK
     },
     {
       title: 'Gallery',
       description: 'Browse photos from past events and activities',
       icon: <FaImages size={20} color="#2e7d32" />,
-      link: '/gallery'
+      link:  PATHS.GALLERY
     },
     {
       title: 'Contact Us',
       description: 'Get in touch with event organizers',
       icon: <FaEnvelope size={20} color="#d84315" />,
-      link: '/contact'
+      link:  PATHS.CONTACT
     }
   ];
 

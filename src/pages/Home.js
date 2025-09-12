@@ -22,8 +22,7 @@ export default function Home() {
       .catch((err) => console.error("Error loading banners:", err));
 =======
  const [banners, setBanners] = useState([]);
- HEAD
-
+ 
   useEffect(() => {
     fetch('/data/banners.json')
       .then(res => res.json())
@@ -33,8 +32,7 @@ export default function Home() {
   }, []);
 
  
- bc4f49c7449d13330fef415ff209919cb703d591
-
+ 
   useEffect(() => {
 <<<<<<< HEAD
     fetch("/data/banners.json")

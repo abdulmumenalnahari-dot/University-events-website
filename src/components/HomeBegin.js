@@ -13,13 +13,7 @@ const HomeBegin = () => {
         <div className="welcome-badge">
           <span>✨ Welcome to Campus Life</span>
         </div>
-        <h1>Welcome to SpringField University Event Hub</h1>
-        <p className="subtitle">Stay Updated, Stay Involved!</p>
-        <p className="description">
-          Your gateway to campus life, events, and community engagement. Discover upcoming events, join student organizations, 
-          and stay connected with everything happening at SpringField University.
-        </p>
- 
+        
 
         {/* Features Cards */}
         <div className="features-container">
