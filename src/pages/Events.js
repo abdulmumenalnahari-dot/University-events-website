@@ -1,13 +1,13 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import FilterBar from "../components/FilterBar";
-import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
-import { filterAndSortEvents } from "../utils/filterAndSortEvents";
 import EventCarousel from "../components/EventCarousel";
 import EventDetail from "../components/EventDetail";
+import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
+import { filterAndSortEvents } from "../utils/filterAndSortEvents";
 
 export default function Events() {
-  const [culture, setECulture] = useState([]);
+  const [culture, setCulture] = useState([]);
   const [sports, setSports] = useState([]);
   const [arts, setArts] = useState([]);
   const [search, setSearch] = useState("");
@@ -17,41 +17,19 @@ export default function Events() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const loadCulture = async () => {
+    const load = async () => {
       try {
-        const sortedCulture = await fetchAndSortEvents("/data/culture.json");
-        setECulture(sortedCulture);
+        const all = await fetchAndSortEvents("/data/events.json");
+        setCulture(all.filter(e => e.category === "culture"));
+        setSports(all.filter(e => e.category === "sports"));
+        setArts(all.filter(e => e.category === "arts"));
       } catch {
-        setError("Failed to load the CULTURE list.");
+        setError("Failed to load events.");
       } finally {
         setLoading(false);
       }
     };
-    loadCulture();
-  }, []);
-
-  useEffect(() => {
-    const loadSports = async () => {
-      try {
-        const sortedSports = await fetchAndSortEvents("/data/sports.json");
-        setSports(sortedSports);
-      } catch {
-        setError("Failed to load the SPORTS list.");
-      }
-    };
-    loadSports();
-  }, []);
-
-  useEffect(() => {
-    const loadArts = async () => {
-      try {
-        const sortedArts = await fetchAndSortEvents("/data/arts.json");
-        setArts(sortedArts);
-      } catch {
-        setError("Failed to load the ARTS list.");
-      }
-    };
-    loadArts();
+    load();
   }, []);
 
   const filteredCulture = useMemo(
@@ -70,12 +48,7 @@ export default function Events() {
   const Catalog = (
     <>
       <h1 className="h3">Event Catalog</h1>
-
-      {error && (
-        <div className="alert alert-danger" role="alert">
-          {error}
-        </div>
-      )}
+      {error && <div className="alert alert-danger">{error}</div>}
 
       <FilterBar
         search={search}
@@ -86,15 +59,15 @@ export default function Events() {
         setSort={setSort}
       />
 
-      {filteredCulture.length > 0 && (
+      {loading && <div className="text-muted">Loading…</div>}
+
+      {!loading && filteredCulture.length > 0 && (
         <EventCarousel events={filteredCulture} title="CULTURE" />
       )}
-
-      {filteredSports.length > 0 && (
+      {!loading && filteredSports.length > 0 && (
         <EventCarousel events={filteredSports} title="SPORTS" />
       )}
-
-      {filteredArts.length > 0 && (
+      {!loading && filteredArts.length > 0 && (
         <EventCarousel events={filteredArts} title="ARTS" />
       )}
     </>

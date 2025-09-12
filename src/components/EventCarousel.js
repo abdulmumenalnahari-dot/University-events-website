@@ -8,11 +8,9 @@ const EventCarousel = ({ events = [], title }) => {
 
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
-
   const isDragging = useRef(false);
   const startX = useRef(0);
   const startScrollLeft = useRef(0);
-
   const gap = 16;
 
   function getCardsPerView() {
@@ -21,7 +19,6 @@ const EventCarousel = ({ events = [], title }) => {
     if (w < 768) return 2;
     return 3;
   }
-
   const getCardWidth = () => {
     const w = window.innerWidth;
     if (w < 576) return 280;

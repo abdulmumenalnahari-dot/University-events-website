@@ -1,0 +1,1556 @@
+[
+  {
+    "id": 1,
+    "title": "Chinese Ink Painting Workshop",
+    "image": "https://www.wpunj.edu/ccart/images/courses/demo-bird-flower.jpg",
+    "date": "Feb 10, 2025",
+    "time": "14:00-17:00",
+    "location": "Art Studio",
+    "countdown": "146d 6h 15m 30s",
+    "description": "Learn traditional techniques of Chinese ink painting.",
+    "tags": [
+      "painting",
+      "Asian art",
+      "workshop"
+    ],
+    "likes": 180,
+    "buttonText": "Register now",
+    "category": "culture",
+    "popularity": 180
+  },
+  {
+    "id": 2,
+    "title": "Traditional Music Festival",
+    "image": "https://www.shutterstock.com/image-photo/back-view-girl-raised-arms-600nw-2453471871.jpg",
+    "date": "Mar 8, 2025",
+    "time": "17:00-23:00",
+    "location": "Open-Air Theater",
+    "countdown": "174d 7h 10m 5s",
+    "description": "Live performances of folk music from various regions.",
+    "tags": [
+      "music",
+      "heritage",
+      "festival"
+    ],
+    "likes": 410,
+    "buttonText": "Get your ticket",
+    "category": "culture",
+    "popularity": 410
+  },
+  {
+    "id": 3,
+    "title": "Theatrical Performance: One Thousand and One Nights",
+    "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmiqEUHRoF2IQYltoty5zgvB4pocO2s5-bt303GifQoIVURgnKihrnVtMHq3LjIgT2KgkLoE1XSil4b8mq8yQGyRSklvUC36xqpfgJCuMJLYAFPaGpKw-PUNISDn6lU509cADOC6gMGlHX/s1600/Mary+Tilden+as+Hermia%252C+Josh+Mattingly+as+Lysander%252C+Martel+Manning+as+Demetrius%252CLucy+Carapetyan+as+Helena+and+Tom+Wells+as+Oberon.JPG",
+    "date": "Mar 22, 2025",
+    "time": "20:00-22:30",
+    "location": "City Theater",
+    "countdown": "188d 4h 25m 50s",
+    "description": "A theatrical performance inspired by the tales of One Thousand and One Nights.",
+    "tags": [
+      "theater",
+      "heritage",
+      "drama"
+    ],
+    "likes": 350,
+    "buttonText": "Watch the show",
+    "category": "culture",
+    "popularity": 350
+  },
+  {
+    "id": 4,
+    "title": "Short Story Competition",
+    "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    "date": "Apr 5, 2025",
+    "time": "09:00-15:00",
+    "location": "Book Club",
+    "countdown": "202d 8h 55m 30s",
+    "description": "A competition to write the best short story with valuable prizes.",
+    "tags": [
+      "writing",
+      "competition",
+      "literature"
+    ],
+    "likes": 190,
+    "buttonText": "Participate in the competition",
+    "category": "culture",
+    "popularity": 190
+  },
+  {
+    "id": 5,
+    "title": "Mosaic Making Workshop",
+    "image": "https://images.squarespace-cdn.com/content/v1/505baa22e4b0dfa31206ee62/1724970555618-GBB3UYBND52HZSRVIGY7/Pushing+in.jpeg",
+    "date": "Apr 20, 2025",
+    "time": "11:00-16:00",
+    "location": "Handicrafts Center",
+    "countdown": "217d 3h 10m 15s",
+    "description": "Learn the art of mosaic-making as practiced in ancient times.",
+    "tags": [
+      "mosaic",
+      "handicrafts",
+      "heritage"
+    ],
+    "likes": 240,
+    "buttonText": "Reserve your spot",
+    "category": "culture",
+    "popularity": 240
+  },
+  {
+    "id": 6,
+    "title": "Cultural Trip to Heritage Villages",
+    "image": "https://visitturkey.in/wp-content/uploads/2024/07/top-things-to-do-in-turkey-2024-1200x900.webp",
+    "date": "May 3, 2025",
+    "time": "08:00-16:00",
+    "location": "Heritage Village",
+    "countdown": "230d 6h 45m 40s",
+    "description": "A trip to discover traditional lifestyles in ancient villages.",
+    "tags": [
+      "heritage",
+      "trip",
+      "culture"
+    ],
+    "likes": 310,
+    "buttonText": "Join the trip",
+    "category": "culture",
+    "popularity": 310
+  },
+  {
+    "id": 7,
+    "title": "Evening of Classical Arabic Music",
+    "image": "https://i.ytimg.com/vi/vPDwYaQqX0w/maxresdefault.jpg",
+    "date": "May 18, 2025",
+    "time": "19:30-22:00",
+    "location": "Opera House",
+    "countdown": "245d 5h 20m 25s",
+    "description": "Performance of the most beautiful classical Arabic musical pieces.",
+    "tags": [
+      "music",
+      "opera",
+      "heritage"
+    ],
+    "likes": 290,
+    "buttonText": "Book your ticket",
+    "category": "culture",
+    "popularity": 290
+  },
+  {
+    "id": 8,
+    "title": "Eastern Carpets Exhibition",
+    "image": "https://images.t2online.in/cdn-cgi/image/width=640,quality=70/https://apis.t2online.in/getImageStream/108/1752771727045.jpg",
+    "date": "Jun 1, 2025",
+    "time": "10:00-20:00",
+    "location": "Art Salon",
+    "countdown": "259d 9h 10m 5s",
+    "description": "Exhibition of the most beautiful hand-made Eastern carpets.",
+    "tags": [
+      "carpets",
+      "art",
+      "heritage"
+    ],
+    "likes": 260,
+    "buttonText": "Visit the exhibition",
+    "category": "culture",
+    "popularity": 260
+  },
+  {
+    "id": 9,
+    "title": "Pottery Making Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrOMjSRAzWfG3EQyHseC1CcMesXXAMRDpZqJABMh49AKvCX3T-twrxwES08m11qZOD0dU",
+    "date": "Jun 15, 2025",
+    "time": "13:00-18:00",
+    "location": "Pottery Studio",
+    "countdown": "273d 4h 30m 50s",
+    "description": "Learn pottery using traditional techniques.",
+    "tags": [
+      "pottery",
+      "handicrafts",
+      "art"
+    ],
+    "likes": 220,
+    "buttonText": "Register now",
+    "category": "culture",
+    "popularity": 220
+  },
+  {
+    "id": 10,
+    "title": "Traditional Martial Arts Performance",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7M9z76WDlNrEF7ODktNg1FQjiqGitAIr-Vg&s",
+    "date": "Jul 15, 2025",
+    "time": "16:00-20:00",
+    "location": "Central Square",
+    "countdown": "303d 2h 40m 30s",
+    "description": "Live performances of traditional martial arts from various cultures.",
+    "tags": [
+      "martial arts",
+      "heritage",
+      "performance"
+    ],
+    "likes": 280,
+    "buttonText": "Watch the show",
+    "category": "culture",
+    "popularity": 280
+  },
+  {
+    "id": 11,
+    "title": "Arab Cinema Festival",
+    "image": "https://cdn-s-www.ledauphine.com/images/DA3DD79D-3251-4AA4-8355-92596B5DCB8F/NW_raw/les-membres-du-de-la-categorie-long-metrage-avec-de-gauche-a-droite-jasmila-zbani-ruben-ostlund-charlotte-le-bon-alex-lutz-clemence-poesy-ukas-zal-et-jean-benoit-dunckel-photo-les-arcs-film-festival-romuald-maginot-1545059986.jpg",
+    "date": "Aug 1, 2025",
+    "time": "12:00-23:00",
+    "location": "Stars Cinema",
+    "countdown": "320d 8h 15m 45s",
+    "description": "Screening of the best Arab films across the ages.",
+    "tags": [
+      "cinema",
+      "films",
+      "culture"
+    ],
+    "likes": 420,
+    "buttonText": "Get your ticket",
+    "category": "culture",
+    "popularity": 420
+  },
+  {
+    "id": 12,
+    "title": "Seminar: The Future of the Arabic Language",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNFIIOa54QK5OREWy4t7rBoKHt7BlyIXksbA&s",
+    "date": "Aug 15, 2025",
+    "time": "18:00-21:00",
+    "location": "City University",
+    "countdown": "334d 3h 25m 10s",
+    "description": "A seminar discussing the challenges and future of the Arabic language in the digital age.",
+    "tags": [
+      "Arabic language",
+      "seminar",
+      "culture"
+    ],
+    "likes": 370,
+    "buttonText": "Attend the seminar",
+    "category": "culture",
+    "popularity": 370
+  },
+  {
+    "id": 13,
+    "title": "Watercolor Painting Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNvdXppzBKLq25gZEdsOo4SAncMRkkqDSBKA&s",
+    "date": "Sep 1, 2025",
+    "time": "10:00-14:00",
+    "location": "Art Studio",
+    "countdown": "351d 6h 50m 20s",
+    "description": "Learn the basics of watercolor painting from a professional artist.",
+    "tags": [
+      "painting",
+      "watercolor",
+      "workshop"
+    ],
+    "likes": 200,
+    "buttonText": "Register now",
+    "category": "culture",
+    "popularity": 200
+  },
+  {
+    "id": 14,
+    "title": "Folkloric Dance Performance",
+    "image": "https://www.wikidancesport.com/wp-content/uploads/2025/07/258-1.jpg",
+    "date": "Sep 15, 2025",
+    "time": "19:00-22:00",
+    "location": "Arts Theater",
+    "countdown": "365d 5h 40m 30s",
+    "description": "A dazzling performance of folkloric dances from various Arab countries.",
+    "tags": [
+      "dance",
+      "heritage",
+      "performance"
+    ],
+    "likes": 390,
+    "buttonText": "Reserve your seat",
+    "category": "culture",
+    "popularity": 390
+  },
+  {
+    "id": 15,
+    "title": "Heritage Photography Exhibition",
+    "image": "https://ich.unesco.org/img/photo/thumb/00410-MED.jpg",
+    "date": "Oct 1, 2025",
+    "time": "11:00-19:00",
+    "location": "Light Gallery",
+    "countdown": "381d 9h 10m 5s",
+    "description": "Exhibition of photos documenting architectural and social heritage.",
+    "tags": [
+      "photography",
+      "heritage",
+      "exhibition"
+    ],
+    "likes": 300,
+    "buttonText": "Visit the exhibition",
+    "category": "culture",
+    "popularity": 300
+  },
+  {
+    "id": 16,
+    "title": "Screenwriting Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREskemJkNbtHOmqeogqozSiydP6Rf-HV7yMQ&s",
+    "date": "Oct 15, 2025",
+    "time": "15:00-19:00",
+    "location": "Cinema Club",
+    "countdown": "395d 4h 25m 50s",
+    "description": "Learn screenwriting basics from a professional writer.",
+    "tags": [
+      "screenplay",
+      "writing",
+      "workshop"
+    ],
+    "likes": 230,
+    "buttonText": "Register now",
+    "category": "culture",
+    "popularity": 230
+  },
+  {
+    "id": 17,
+    "title": "Moon Night: Literary Evenings Under the Stars",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVK0FT7r8SvxZIKtYR9znzpVcHp-_K114K6g&s",
+    "date": "Nov 1, 2025",
+    "time": "20:00-23:59",
+    "location": "Stars Garden",
+    "countdown": "412d 7h 30m 15s",
+    "description": "A literary evening under the moonlight featuring readings and discussions.",
+    "tags": [
+      "literature",
+      "poetry",
+      "cultural night"
+    ],
+    "likes": 340,
+    "buttonText": "Join the evening",
+    "category": "culture",
+    "popularity": 340
+  },
+  {
+    "id": 18,
+    "title": "Contemporary Islamic Arts Exhibition",
+    "image": "https://img.turkiyetoday.com/images/2025/01/AA-20250125-36863154-36863145-BIENNIAL_OF_ISLAMIC_ARTS_IN_JEDDAH-1467x1100.jpg",
+    "date": "Nov 15, 2025",
+    "time": "10:00-20:00",
+    "location": "Museum of Contemporary Art",
+    "countdown": "426d 2h 15m 40s",
+    "description": "Exhibition of contemporary artworks inspired by Islamic heritage.",
+    "tags": [
+      "contemporary art",
+      "Islamic",
+      "exhibition"
+    ],
+    "likes": 360,
+    "buttonText": "Visit the exhibition",
+    "category": "culture",
+    "popularity": 360
+  },
+  {
+    "id": 19,
+    "title": "Traditional Doll Making Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSXwlT675FeK64DmEtJLKkLMiewUM_X1mRpQ&s",
+    "date": "Dec 1, 2025",
+    "time": "13:00-17:00",
+    "location": "House of Crafts",
+    "countdown": "442d 8h 5m 25s",
+    "description": "Learn to make dolls using traditional techniques and fabrics.",
+    "tags": [
+      "dolls",
+      "handicrafts",
+      "heritage"
+    ],
+    "likes": 190,
+    "buttonText": "Reserve your spot",
+    "category": "culture",
+    "popularity": 190
+  },
+  {
+    "id": 20,
+    "title": "Experimental Theater Festival",
+    "image": "https://juniortheatrefestival.nz/wp-content/uploads/2023/04/JTFNZ-22-Adjudication-LK-Creative-22-compressed-copy-1024x512.jpg",
+    "date": "Dec 15, 2025",
+    "time": "18:00-23:00",
+    "location": "Experimental Theater",
+    "countdown": "456d 3h 50m 10s",
+    "description": "Non-traditional experimental theater performances by local troupes.",
+    "tags": [
+      "theater",
+      "experimental",
+      "culture"
+    ],
+    "likes": 270,
+    "buttonText": "Get your ticket",
+    "category": "culture",
+    "popularity": 270
+  },
+  {
+    "id": 21,
+    "title": "Lecture: Visual Arts",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3sYvbpAWUAUHxVijLeaUfjmewhc9RDDzqyA&s",
+    "date": "Jan 5, 2026",
+    "time": "17:00-19:00",
+    "location": "Institute of Arts",
+    "countdown": "467d 6h 20m 30s",
+    "description": "Lecture on the evolution of visual arts in the Arab world.",
+    "tags": [
+      "visual arts",
+      "lecture",
+      "culture"
+    ],
+    "likes": 250,
+    "buttonText": "Attend the lecture",
+    "category": "culture",
+    "popularity": 250
+  },
+  {
+    "id": 22,
+    "title": "Scented Candle Making Workshop",
+    "image": "https://kaizenaire.com/wp-content/uploads/2023/11/Candle-Making-Workshop-Learn-to-Make-Beautiful-Candles.jpg",
+    "date": "Jan 20, 2026",
+    "time": "14:00-18:00",
+    "location": "Perfume Studio",
+    "countdown": "482d 1h 45m 5s",
+    "description": "Learn to make candles using natural oils and fragrances.",
+    "tags": [
+      "candles",
+      "crafts",
+      "workshop"
+    ],
+    "likes": 210,
+    "buttonText": "Register now",
+    "category": "culture",
+    "popularity": 210
+  },
+  {
+    "id": 23,
+    "title": "Cultural Photography Competition",
+    "image": "https://www.fws.gov/sites/default/files/styles/scale_width_480/public/2021-08/photographers_bosque_del_apache_michael_hamilton_2018_winner_photo_contest%2C.jpg?itok=8qzaFzdm",
+    "date": "Feb 5, 2026",
+    "time": "09:00-17:00",
+    "location": "Photo Gallery",
+    "countdown": "498d 9h 30m 40s",
+    "description": "Competition to capture the most beautiful shots expressing local culture.",
+    "tags": [
+      "photography",
+      "competition",
+      "culture"
+    ],
+    "likes": 320,
+    "buttonText": "Participate now",
+    "category": "culture",
+    "popularity": 320
+  },
+  {
+    "id": 24,
+    "title": "Arageez Puppet Show and Folk Arts",
+    "image": "https://i0.wp.com/www.al-fanarmedia.org/wp-content/uploads/2021/10/IMG20210808165440-2048x1155-1.jpg?fit=2048%2C1155&ssl=1",
+    "date": "Feb 20, 2026",
+    "time": "16:00-19:00",
+    "location": "Children’s Theater",
+    "countdown": "513d 4h 15m 25s",
+    "description": "An educational and humorous show using Arageez puppets and folk arts.",
+    "tags": ["Arageez","children","heritage"],
+    "likes": 280,
+    "buttonText": "Book your ticket",
+    "category": "culture",
+    "popularity": 280
+  },
+  {
+    "id": 25,
+    "title": "Rare Books Exhibition",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_znf-cFs8zA9Vc4e5G7XXf9_PmwFAdxSGzTBtZkrQiBl8QUYnYJ4NlScbIbjSDwUVZgA",
+    "date": "Mar 5, 2026",
+    "time": "10:00-18:00",
+    "location": "National Library",
+    "countdown": "527d 7h 55m 10s",
+    "description": "Exhibition of rare books and historical manuscripts.",
+    "tags": [
+      "books",
+      "manuscripts",
+      "heritage"
+    ],
+    "likes": 350,
+    "buttonText": "Visit the exhibition",
+    "category": "culture",
+    "popularity": 350
+  },
+  {
+    "id": 26,
+    "title": "Silk Painting Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgFHjjS_MSlPhvLSU3_HPm5Qnqa_doIGckxX_IMMOecQtrQC564z2R8u0SIQ91RZBY4BA",
+    "date": "Mar 20, 2026",
+    "time": "13:00-17:00",
+    "location": "Silk Studio",
+    "countdown": "542d 2h 30m 5s",
+    "description": "Learn the art of painting on silk fabric using special dyes.",
+    "tags": [
+      "silk",
+      "painting",
+      "workshop"
+    ],
+    "likes": 220,
+    "buttonText": "Register now",
+    "category": "culture",
+    "popularity": 220
+  },
+  {
+    "id": 27,
+    "title": "Traditional Jewelry Making Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8d7sCtLvMHIGqodm60vSK-_ZoIrUPe8j1k47KVSgMxeILmdoBcEgKwIdbzwJ020yf4zA",
+    "date": "May 5, 2026",
+    "time": "11:00-16:00",
+    "location": "Jewelry Studio",
+    "countdown": "588d 8h 40m 15s",
+    "description": "Learn to craft jewelry inspired by heritage using ancient techniques.",
+    "tags": [
+      "jewelry",
+      "heritage",
+      "workshop"
+    ],
+    "likes": 260,
+    "buttonText": "Reserve your spot",
+    "category": "culture",
+    "popularity": 260
+  },
+  {
+    "id": 28,
+    "title": "Storytelling Festival",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW6psMLpqRG3M3ju4EnYXfpz95zNbd0DJwy6FE-FQB-drsQ9OX0GXGpGxMAhT-HQq8l9M",
+    "date": "May 20, 2026",
+    "time": "15:00-22:00",
+    "location": "Story Square",
+    "countdown": "603d 3h 55m 5s",
+    "description": "A festival featuring interactive storytelling of folk tales from various cultures.",
+    "tags": [
+      "stories",
+      "heritage",
+      "festival"
+    ],
+    "likes": 400,
+    "buttonText": "Join the event",
+    "category": "culture",
+    "popularity": 400
+  },
+  {
+    "id": 29,
+    "title": "Shadow and Light Art Performance",
+    "image": "https://wolvesart.wordpress.com/wp-content/uploads/2012/03/img_4471.jpg",
+    "date": "Jun 5, 2026",
+    "time": "19:00-21:30",
+    "location": "Shadow Theater",
+    "countdown": "619d 7h 20m 50s",
+    "description": "An artistic performance using shadow art to retell heritage stories.",
+    "tags": [
+      "shadow",
+      "art",
+      "heritage"
+    ],
+    "likes": 330,
+    "buttonText": "Watch the show",
+    "category": "culture",
+    "popularity": 330
+  },
+  {
+    "id": 30,
+    "title": "Memoir Writing Workshop",
+    "image": "https://chass.ncsu.edu/wp-content/uploads/sites/2/2021/03/PoetryReading-1500x844-1.jpg",
+    "date": "Jun 20, 2026",
+    "time": "14:00-18:00",
+    "location": "Writing Club",
+    "countdown": "634d 2h 10m 30s",
+    "description": "Learn how to write your memoirs in an engaging and impactful way.",
+    "tags": [
+      "writing",
+      "memoirs",
+      "workshop"
+    ],
+    "likes": 200,
+    "buttonText": "Register now",
+    "category": "culture",
+    "popularity": 200
+  },
+  {
+    "id": 31,
+    "title": "Digital Arts Exhibition Inspired by Heritage",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQE_621dnvXqBPOcbLSgPUN_rdbqvSZw6zawYp08NPlrzr--Df5JdtuAcOVC7Y7eNM7Jc",
+    "date": "Jul 5, 2026",
+    "time": "12:00-20:00",
+    "location": "Digital Gallery",
+    "countdown": "649d 9h 5m 15s",
+    "description": "Exhibition of digital artworks inspired by elements of Arab heritage.",
+    "tags": [
+      "digital art",
+      "heritage",
+      "exhibition"
+    ],
+    "likes": 370,
+    "buttonText": "Visit the exhibition",
+    "category": "culture",
+    "popularity": 370
+  },
+  {
+    "id": 32,
+    "title": "Storytelling Evening with Master Storytellers",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtXZhxlK3907QtyNWAFwIp6vH4LrhucSJhGFefqOo-mn76Q3kUTLhwckYYRuQpLyV8l4c",
+    "date": "Jul 20, 2026",
+    "time": "20:00-23:00",
+    "location": "Storytellers’ Council",
+    "countdown": "664d 4h 30m 5s",
+    "description": "An evening where folk tales are narrated by professional storytellers.",
+    "tags": [
+      "stories",
+      "heritage",
+      "evening"
+    ],
+    "likes": 340,
+    "buttonText": "Reserve your seat",
+    "category": "culture",
+    "popularity": 340
+  },
+  {
+    "id": 33,
+    "title": "Natural Perfume Making Workshop",
+    "image": "https://res.cloudinary.com/funbooker/image/upload/ar_4:3,c_fill,dpr_auto,f_auto,q_auto,w_900/v1/marketplace-listing/hek3pczuukwnsulcavzt",
+    "date": "Aug 5, 2026",
+    "time": "10:00-15:00",
+    "location": "Perfume Lab",
+    "countdown": "680d 6h 45m 50s",
+    "description": "Learn to extract perfumes from natural oils and flowers.",
+    "tags": [
+      "perfumes",
+      "natural",
+      "workshop"
+    ],
+    "likes": 250,
+    "buttonText": "Register now",
+    "category": "culture",
+    "popularity": 250
+  },
+  {
+    "id": 34,
+    "title": "Best Storyteller Competition",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDwGE_yjuQq20bHRBcUE9fHz-Q8QRHk0c1LQ&s",
+    "date": "Aug 20, 2026",
+    "time": "16:00-21:00",
+    "location": "Storytellers’ Theater",
+    "countdown": "695d 1h 20m 30s",
+    "description": "A competition to discover the best narrator of folk tales.",
+    "tags": [
+      "storytelling",
+      "competition",
+      "heritage"
+    ],
+    "likes": 310,
+    "buttonText": "Participate now",
+    "category": "culture",
+    "popularity": 310
+  },
+  {
+    "id": 35,
+    "title": "Sand Art Performance",
+    "image": "https://tramage.com/IMG/jpg/2012-sand-art_performance_David-Myriam_animalite_96.jpg",
+    "date": "Sep 5, 2026",
+    "time": "18:00-20:30",
+    "location": "Sand Theater",
+    "countdown": "711d 8h 15m 10s",
+    "description": "A mesmerizing performance using sand to narrate cultural stories.",
+    "tags": [
+      "sand",
+      "art",
+      "performance"
+    ],
+    "likes": 390,
+    "buttonText": "Watch the show",
+    "category": "culture",
+    "popularity": 390
+  },
+  {
+    "id": 36,
+    "title": "Contemporary Visual Art Exhibition",
+    "image": "https://media.istockphoto.com/id/1854862359/photo/young-visitor-at-an-art-exhibition-looks-at-the-artists-collection.jpg?s=612x612&w=0&k=20&c=WNUkUACUD7SHBsy_J2JXWy-t0h-wU54nuLD6YYoB_6I=",
+    "date": "Feb 1, 2026",
+    "time": "11:00-20:00",
+    "location": "Modern Art Gallery",
+    "countdown": "560d 5h 20m 30s",
+    "description": "A curated collection of works by contemporary artists redefining visual art.",
+    "tags": [
+      "visual art",
+      "contemporary",
+      "exhibition"
+    ],
+    "likes": 370,
+    "buttonText": "Visit the exhibition",
+    "category": "arts",
+    "popularity": 370
+  },
+  {
+    "id": 37,
+    "title": "Acrylic Painting Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Kl2NG9gk_MaKlvG1ZptvmMnzWhSAQm7-Q5eEAJETPTUyd1OcrHkGBtRe3qt5DYXV0bU&usqp=CAU",
+    "date": "Feb 15, 2026",
+    "time": "14:00-18:00",
+    "location": "Colors Studio",
+    "countdown": "574d 1h 10m 15s",
+    "description": "Learn acrylic painting techniques from a professional artist.",
+    "tags": [
+      "acrylic",
+      "painting",
+      "workshop"
+    ],
+    "likes": 240,
+    "buttonText": "Register now",
+    "category": "arts",
+    "popularity": 240
+  },
+  {
+    "id": 38,
+    "title": "Modern Sculpture Exhibition",
+    "image": "https://c8.alamy.com/comp/G2W8R8/hanover-germany-02nd-june-2016-the-bronze-sculpture-le-matin-le-grand-G2W8R8.jpg",
+    "date": "Mar 1, 2026",
+    "time": "10:00-19:00",
+    "location": "Sculpture Garden",
+    "countdown": "589d 6h 45m 5s",
+    "description": "Display of modern sculptural works made from diverse materials: metal, wood, glass.",
+    "tags": [
+      "sculpture",
+      "modern",
+      "3D art"
+    ],
+    "likes": 320,
+    "buttonText": "See the artworks",
+    "category": "arts",
+    "popularity": 320
+  },
+  {
+    "id": 39,
+    "title": "Best Painting Competition",
+    "image": "https://www.singulart.com/blog/wp-content/uploads/2024/05/15037_artwork_42ca83a0b53575a2bc65d8bfe13c7624-2.jpeg",
+    "date": "Mar 15, 2026",
+    "time": "09:00-17:00",
+    "location": "Exhibition Hall",
+    "countdown": "603d 2h 30m 50s",
+    "description": "Open competition for amateur and professional artists to showcase their best painting.",
+    "tags": [
+      "competition",
+      "painting",
+      "art"
+    ],
+    "likes": 410,
+    "buttonText": "Participate now",
+    "category": "arts",
+    "popularity": 410
+  },
+  {
+    "id": 40,
+    "title": "Interactive Art Show: You Are Part of the Painting",
+    "image": "https://mymodernmet.com/wp/wp-content/uploads/archive/ovHeWSpWkiajXxw8rcGi_island1.jpg",
+    "date": "Apr 1, 2026",
+    "time": "16:00-22:00",
+    "location": "Interactive Art Center",
+    "countdown": "620d 8h 15m 40s",
+    "description": "An interactive art experience where the visitor becomes part of the artwork.",
+    "tags": [
+      "interactive",
+      "experience",
+      "live art"
+    ],
+    "likes": 480,
+    "buttonText": "Book your experience",
+    "category": "arts",
+    "popularity": 480
+  },
+  {
+    "id": 41,
+    "title": "Collage Art Workshop",
+    "image": "https://www.arthouse-atelier.cz/wp-content/uploads/2023/01/ea042b73ca781399d9e23d59d74a9a33fffd49ef983e726619ffd8da115da03a-2_15.jpg",
+    "date": "Apr 15, 2026",
+    "time": "13:00-17:00",
+    "location": "Collage Studio",
+    "countdown": "634d 3h 5m 25s",
+    "description": "Learn the art of assembling materials to create innovative artworks.",
+    "tags": [
+      "collage",
+      "assemblage",
+      "workshop"
+    ],
+    "likes": 210,
+    "buttonText": "Reserve your spot",
+    "category": "arts",
+    "popularity": 210
+  },
+  {
+    "id": 42,
+    "title": "Street Art (Graffiti) Exhibition",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH9F2WoVzEcYIAwfpXkQg0EkRMf7sIRYkIwHkzhTkyKvVqjdZnprlOiAHU1RvaBhR-3QU",
+    "date": "May 1, 2026",
+    "time": "12:00-21:00",
+    "location": "Arts Street",
+    "countdown": "650d 9h 50m 10s",
+    "description": "Display of graffiti and street art by local and international artists.",
+    "tags": [
+      "graffiti",
+      "street",
+      "urban art"
+    ],
+    "likes": 520,
+    "buttonText": "See the walls",
+    "category": "arts",
+    "popularity": 520
+  },
+  {
+    "id": 43,
+    "title": "Art Auction",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGJoVz2KlFYaJbcMxCVtmKTL6TdUdMtKQUw&s",
+    "date": "May 15, 2026",
+    "time": "18:00-22:00",
+    "location": "Auction House",
+    "countdown": "664d 4h 30m 5s",
+    "description": "Public auction of original artworks from private collections.",
+    "tags": [
+      "auction",
+      "original art",
+      "collectibles"
+    ],
+    "likes": 390,
+    "buttonText": "Join the auction",
+    "category": "arts",
+    "popularity": 390
+  },
+  {
+    "id": 44,
+    "title": "Printmaking Art Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBW5fgNg2Ccto0TPh8q3dIYKE6TG_oIzFe0A&s",
+    "date": "Jun 1, 2026",
+    "time": "10:00-15:00",
+    "location": "Print Studio",
+    "countdown": "681d 6h 20m 50s",
+    "description": "Learn manual printing techniques: wood, metal, silk screen.",
+    "tags": [
+      "printmaking",
+      "handmade art",
+      "workshop"
+    ],
+    "likes": 190,
+    "buttonText": "Register now",
+    "category": "arts",
+    "popularity": 190
+  },
+  {
+    "id": 45,
+    "title": "Light Installation Art Exhibition",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjv2y7PGPLufbW4J75Or7tAEHPady5PUwANA&s",
+    "date": "Jun 15, 2026",
+    "time": "20:00-23:59",
+    "location": "Light Basement",
+    "countdown": "695d 1h 5m 35s",
+    "description": "Exhibition of interactive light installations creating enchanting visual worlds.",
+    "tags": [
+      "light",
+      "installation",
+      "abstract art"
+    ],
+    "likes": 450,
+    "buttonText": "Enter the light world",
+    "category": "arts",
+    "popularity": 450
+  },
+  {
+    "id": 46,
+    "title": "Abstract Photography Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP57EzmXYp_wXfEb_4FrVkr_jzJM9nRQ2pr94Ssx8YjP8-MPKJjSiWp6bBXUh2Rvjlg6k",
+    "date": "Jul 1, 2026",
+    "time": "15:00-19:00",
+    "location": "Photography Studio",
+    "countdown": "711d 7h 55m 20s",
+    "description": "Learn how to capture abstract photos that carry an artistic message.",
+    "tags": [
+      "photography",
+      "abstract",
+      "workshop"
+    ],
+    "likes": 260,
+    "buttonText": "Join the workshop",
+    "category": "arts",
+    "popularity": 260
+  },
+  {
+    "id": 47,
+    "title": "Postmodern Art Exhibition",
+    "image": "https://en.sjtu.edu.cn/storage/article/2022/12/b0347a48cacf8f926900d900f9fa1c50.jpg",
+    "date": "Jul 15, 2026",
+    "time": "11:00-20:00",
+    "location": "Postmodern Gallery",
+    "countdown": "725d 2h 40m 10s",
+    "description": "Artworks that challenge traditional concepts and raise existential questions.",
+    "tags": [
+      "postmodern",
+      "philosophy",
+      "art"
+    ],
+    "likes": 340,
+    "buttonText": "Visit the exhibition",
+    "category": "arts",
+    "popularity": 340
+  },
+  {
+    "id": 48,
+    "title": "Live Painting Performance",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVKyjrsHBl_W73uJjoPKjF7U40CxZtyKQ7L9UNr11SyXx2JaDOjMspXf8evE1BDA24F_g",
+    "date": "Aug 1, 2026",
+    "time": "17:00-21:00",
+    "location": "Artists Square",
+    "countdown": "742d 8h 30m 5s",
+    "description": "Artists painting live artworks in front of the audience during show hours.",
+    "tags": [
+      "live painting",
+      "live show",
+      "art"
+    ],
+    "likes": 410,
+    "buttonText": "Watch the creativity",
+    "category": "arts",
+    "popularity": 410
+  },
+  {
+    "id": 49,
+    "title": "Black and White Photography Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNymQ2hbYf5jauQ9rcUaBmawl5SHOTnWCu2rM6BtqxPNW-cGzV-K8F7RegR7VeToLMp6E",
+    "date": "Aug 15, 2026",
+    "time": "10:00-14:00",
+    "location": "Photography Club",
+    "countdown": "756d 3h 15m 50s",
+    "description": "Learn black and white photography and professional image editing.",
+    "tags": [
+      "black and white",
+      "photography",
+      "workshop"
+    ],
+    "likes": 230,
+    "buttonText": "Register now",
+    "category": "arts",
+    "popularity": 230
+  },
+  {
+    "id": 50,
+    "title": "Pop Art Exhibition",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkNGJmGG0jzjd0Zc6UEfGLjjlJ0sEJH_wNWYxIUFRWDodwETum2tyfjqW4FSksqUOA3Fo",
+    "date": "Sep 1, 2026",
+    "time": "12:00-20:00",
+    "location": "Pop Gallery",
+    "countdown": "773d 9h 5m 40s",
+    "description": "Works inspired by pop culture: ads, cartoon characters, consumer symbols.",
+    "tags": [
+      "pop art",
+      "consumer culture",
+      "art"
+    ],
+    "likes": 380,
+    "buttonText": "Visit the exhibition",
+    "category": "arts",
+    "popularity": 380
+  },
+  {
+    "id": 51,
+    "title": "Digital Art Workshop",
+    "image": "https://shop.nas.edu.au/cdn/shop/files/Ceramics-8869.jpg?v=1732754534&width=533",
+    "date": "Sep 15, 2026",
+    "time": "14:00-18:00",
+    "location": "Digital Studio",
+    "countdown": "787d 4h 50m 25s",
+    "description": "Learn to use digital drawing software to create stunning artworks.",
+    "tags": [
+      "digital",
+      "tablet",
+      "workshop"
+    ],
+    "likes": 310,
+    "buttonText": "Reserve your device",
+    "category": "arts",
+    "popularity": 310
+  },
+  {
+    "id": 52,
+    "title": "Surrealism Art Exhibition",
+    "image": "https://static01.nyt.com/images/2021/10/14/arts/14surrealism-met-1/merlin_196175874_d43cf449-217b-4626-ad13-cafeb6c168cc-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+    "date": "Oct 1, 2026",
+    "time": "11:00-19:00",
+    "location": "Surrealism Salon",
+    "countdown": "803d 6h 40m 15s",
+    "description": "Artworks that take you into dream worlds and the subconscious.",
+    "tags": [
+      "surrealism",
+      "dreams",
+      "psychological art"
+    ],
+    "likes": 360,
+    "buttonText": "Enter the dream world",
+    "category": "arts",
+    "popularity": 360
+  },
+  {
+    "id": 53,
+    "title": "Drone Photography Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXoT2_vei8bYcZ8BBN6tIJpA1Rn8U-HSTkkQ&s",
+    "date": "Oct 15, 2026",
+    "time": "09:00-13:00",
+    "location": "Open Site",
+    "countdown": "817d 1h 25m 5s",
+    "description": "Learn to photograph landscapes from above using drones professionally.",
+    "tags": [
+      "drone",
+      "aerial photography",
+      "workshop"
+    ],
+    "likes": 290,
+    "buttonText": "Register now",
+    "category": "arts",
+    "popularity": 290
+  },
+  {
+    "id": 54,
+    "title": "Expressionism Art Exhibition",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ8v5UoU6YnxoglRFRVt3FvlMgtLsCx1m38JCnMFJPdZauZVS1q8_CH0slgv-RCl7XRTw",
+    "date": "Nov 1, 2026",
+    "time": "13:00-21:00",
+    "location": "Expression Gallery",
+    "countdown": "834d 7h 15m 50s",
+    "description": "Artworks expressing inner emotions through a dramatic and bold style.",
+    "tags": [
+      "expressionism",
+      "emotions",
+      "emotional art"
+    ],
+    "likes": 330,
+    "buttonText": "See the expression",
+    "category": "arts",
+    "popularity": 330
+  },
+  {
+    "id": 55,
+    "title": "Macro Photography Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnrRZW0B4ipXaCAZkCJfvYFvvrUjjCmEta4R8U3txQoOM2uSaFwtUyvApP1UD3TA6hVqE",
+    "date": "Nov 15, 2026",
+    "time": "10:00-15:00",
+    "location": "Details Garden",
+    "countdown": "848d 2h 5m 35s",
+    "description": "Learn to photograph fine details in nature and small objects.",
+    "tags": [
+      "macro",
+      "details",
+      "photography"
+    ],
+    "likes": 250,
+    "buttonText": "Reserve the camera",
+    "category": "arts",
+    "popularity": 250
+  },
+  {
+    "id": 56,
+    "title": "Documentary Art Photography Exhibition",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToZW0xu8ZJF3rQVcNju6w7jNBLiVuaTyKxKA&s",
+    "date": "Dec 1, 2026",
+    "time": "12:00-20:00",
+    "location": "Documentary Gallery",
+    "countdown": "864d 8h 55m 20s",
+    "description": "Photographs with a documentary style but high artistic aesthetics.",
+    "tags": [
+      "documentary",
+      "photos",
+      "visual art"
+    ],
+    "likes": 370,
+    "buttonText": "Visit the exhibition",
+    "category": "arts",
+    "popularity": 370
+  },
+  {
+    "id": 57,
+    "title": "Long Exposure Photography Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxogk97CD67oBosOAkCLRMLyth2pLJTlOCjg&s",
+    "date": "Dec 15, 2026",
+    "time": "18:00-22:00",
+    "location": "Waterfront",
+    "countdown": "878d 3h 40m 10s",
+    "description": "Learn to photograph water and light movement using long exposure.",
+    "tags": [
+      "long exposure",
+      "night",
+      "photography"
+    ],
+    "likes": 280,
+    "buttonText": "Join the workshop",
+    "category": "arts",
+    "popularity": 280
+  },
+  {
+    "id": 58,
+    "title": "Conceptual Photography Exhibition",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC0AdFtiVy05vDERsQ953QobfdjAgMDBnE1Q&s",
+    "date": "Jan 1, 2027",
+    "time": "11:00-19:00",
+    "location": "Concepts Salon",
+    "countdown": "895d 6h 30m 5s",
+    "description": "Photographs carrying deep philosophical and intellectual concepts.",
+    "tags": [
+      "conceptual",
+      "philosophy",
+      "photography"
+    ],
+    "likes": 320,
+    "buttonText": "Understand the concept",
+    "category": "arts",
+    "popularity": 320
+  },
+  {
+    "id": 59,
+    "title": "Portrait Photography Workshop",
+    "image": "https://media.istockphoto.com/id/1462034337/photo/photographer-teaching-students-about-camera-equipment-in-his-studio.jpg?s=612x612&w=0&k=20&c=HbSIrrXoSQzrG6fQ8o7P8I3El3ZuDiydASWX_i1UkEg=",
+    "date": "Jan 15, 2027",
+    "time": "14:00-18:00",
+    "location": "Portrait Studio",
+    "countdown": "909d 1h 15m 50s",
+    "description": "Learn to capture portraits that express human personality and soul.",
+    "tags": [
+      "portrait",
+      "faces",
+      "photography"
+    ],
+    "likes": 300,
+    "buttonText": "Book your session",
+    "category": "arts",
+    "popularity": 300
+  },
+  {
+    "id": 60,
+    "title": "Sound Installation Art Exhibition",
+    "image": "https://madmuseum.org/sites/default/files/2017/12/i-NDzbkqJ-4K.jpg",
+    "date": "Feb 1, 2027",
+    "time": "17:00-23:00",
+    "location": "Sound Basement",
+    "countdown": "926d 7h 5m 40s",
+    "description": "An artistic experience combining sound and space to create an immersive environment.",
+    "tags": [
+      "sound",
+      "installation",
+      "sensory art"
+    ],
+    "likes": 390,
+    "buttonText": "Listen and immerse",
+    "category": "arts",
+    "popularity": 390
+  },
+  {
+    "id": 61,
+    "title": "Vintage Film Photography Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnMjgTD3g_PBttiV3FJl8Eeko8ls1jzBujWxy_w5eNmN0usjKfN2rBqZe6sAVbNdCAKtg",
+    "date": "Feb 15, 2027",
+    "time": "10:00-15:00",
+    "location": "Film Club",
+    "countdown": "940d 2h 50m 25s",
+    "description": "Learn to use film cameras and experience the old magic of photography.",
+    "tags": [
+      "film",
+      "classic",
+      "workshop"
+    ],
+    "likes": 220,
+    "buttonText": "Reserve the camera",
+    "category": "arts",
+    "popularity": 220
+  },
+  {
+    "id": 62,
+    "title": "University Football Championship",
+    "image": "https://static.footballcounter.com/wp-content/uploads/2020/01/09014852/82188584_3307322849339340_7547671626989436928_o.jpg",
+    "date": "Mar 10, 2026",
+    "time": "15:00-18:00",
+    "location": "Main University Stadium",
+    "countdown": "600d 4h 30m 20s",
+    "description": "The biggest football championship between university colleges — who will win the cup this year?",
+    "tags": [
+      "football",
+      "championship",
+      "university"
+    ],
+    "likes": 520,
+    "buttonText": "Watch the match",
+    "category": "sports",
+    "popularity": 520
+  },
+  {
+    "id": 63,
+    "title": "University Spring Marathon",
+    "image": "https://www.e-gulfbank.com/media/390262b7664aaddae83a54fd54ede4ec.jpg",
+    "date": "Apr 5, 2026",
+    "time": "07:00-10:00",
+    "location": "Campus Garden",
+    "countdown": "626d 6h 15m 45s",
+    "description": "University marathon with various distances — for professionals and amateurs.",
+    "tags": [
+      "marathon",
+      "running",
+      "fitness"
+    ],
+    "likes": 480,
+    "buttonText": "Register now",
+    "category": "sports",
+    "popularity": 480
+  },
+  {
+    "id": 64,
+    "title": "Student Fitness Workshop",
+    "image": "https://www.shutterstock.com/image-photo/sports-workout-netball-happy-team-260nw-2266912039.jpg",
+    "date": "Apr 20, 2026",
+    "time": "17:00-19:00",
+    "location": "University Fitness Club",
+    "countdown": "641d 1h 50m 30s",
+    "description": "Free workshop teaching students the basics of fitness and nutrition.",
+    "tags": [
+      "fitness",
+      "workshop",
+      "health"
+    ],
+    "likes": 370,
+    "buttonText": "Reserve your spot",
+    "category": "sports",
+    "popularity": 370
+  },
+  {
+    "id": 65,
+    "title": "Inter-College Swimming Competition",
+    "image": "https://res.cloudinary.com/digicomm/image/upload/t_metadata/news-magazine/2015/_assets/swimming-and-diving.jpg",
+    "date": "May 10, 2026",
+    "time": "14:00-17:00",
+    "location": "University Olympic Pool",
+    "countdown": "661d 8h 25m 10s",
+    "description": "Swimming competition in various styles: freestyle, breaststroke, backstroke, butterfly.",
+    "tags": [
+      "swimming",
+      "competition",
+      "university"
+    ],
+    "likes": 410,
+    "buttonText": "Join the race",
+    "category": "sports",
+    "popularity": 410
+  },
+  {
+    "id": 66,
+    "title": "University Basketball League",
+    "image": "https://www.asianuniversitybasketball.com/uploads/1/8/2/0/18203131/75435800-406303513583804-548091810413543424-n_orig.jpg",
+    "date": "May 25, 2026",
+    "time": "16:00-20:00",
+    "location": "Sports Hall",
+    "countdown": "676d 3h 40m 5s",
+    "description": "Weekly matches between college teams — who will reach the final?",
+    "tags": [
+      "basketball",
+      "league",
+      "university"
+    ],
+    "likes": 490,
+    "buttonText": "Support your team",
+    "category": "sports",
+    "popularity": 490
+  },
+  {
+    "id": 67,
+    "title": "Morning Yoga Event",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTFP_KZ2hoHJsXa3MI6_e4hn4BzeA0CVEkiQ&s",
+    "date": "Jun 5, 2026",
+    "time": "06:30-07:30",
+    "location": "University Back Garden",
+    "countdown": "687d 5h 55m 50s",
+    "description": "Group yoga session to start the day with energy and positivity.",
+    "tags": [
+      "yoga",
+      "health",
+      "relaxation"
+    ],
+    "likes": 340,
+    "buttonText": "Join the session",
+    "category": "sports",
+    "popularity": 340
+  },
+  {
+    "id": 68,
+    "title": "Singles Tennis Championship",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKij8uaWUPchI6GaYzLwIm5AidgdObZUz7JY1CH-krcGp0nA57YrPqkONLAqDbwyNW9f8",
+    "date": "Jun 20, 2026",
+    "time": "09:00-16:00",
+    "location": "University Tennis Courts",
+    "countdown": "702d 1h 30m 35s",
+    "description": "Open singles tennis championship for all students — are you ready for the challenge?",
+    "tags": [
+      "tennis",
+      "championship",
+      "singles"
+    ],
+    "likes": 380,
+    "buttonText": "Register your participation",
+    "category": "sports",
+    "popularity": 380
+  },
+  {
+    "id": 69,
+    "title": "Fitness Challenge: 30 Days",
+    "image": "data:image/jpeg;base64,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",
+    "date": "Jul 1, 2026",
+    "time": "08:00-09:00",
+    "location": "Training Square",
+    "countdown": "713d 6h 20m 20s",
+    "description": "30-day group challenge to improve fitness — prizes for the most committed!",
+    "tags": [
+      "challenge",
+      "fitness",
+      "30 days"
+    ],
+    "likes": 510,
+    "buttonText": "Start the challenge",
+    "category": "sports",
+    "popularity": 510
+  },
+  {
+    "id": 70,
+    "title": "Friendly Match: Professors vs Students",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsW4_2tWNli_BXSqI7e1QUD_hAu9DO76ZH9w&s",
+    "date": "Jul 15, 2026",
+    "time": "17:00-19:00",
+    "location": "University Stadium",
+    "countdown": "727d 1h 5m 10s",
+    "description": "Friendly football match between professors’ team and students’ team — who will win?",
+    "tags": [
+      "friendly",
+      "professors",
+      "students"
+    ],
+    "likes": 620,
+    "buttonText": "Come and cheer",
+    "category": "sports",
+    "popularity": 620
+  },
+  {
+    "id": 71,
+    "title": "Running Technique Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8DsGf7IumSIXNIQ1Mj2NK1X9B8tgxczsw4gQpJ9o2CT8hPyh8RIhksV3VgynFY7nMzzc",
+    "date": "Aug 1, 2026",
+    "time": "18:00-20:00",
+    "location": "Running Track",
+    "countdown": "744d 7h 55m 5s",
+    "description": "Workshop with a professional coach to teach proper running techniques to avoid injuries.",
+    "tags": [
+      "running",
+      "workshop",
+      "technique"
+    ],
+    "likes": 320,
+    "buttonText": "Register now",
+    "category": "sports",
+    "popularity": 320
+  },
+  {
+    "id": 72,
+    "title": "Chess Sports Tournament",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVyeiBJrudDNMAsnWHlBlsSbbV7pCsFOvF5g&s",
+    "date": "Aug 15, 2026",
+    "time": "10:00-18:00",
+    "location": "Student Activities Hall",
+    "countdown": "758d 2h 40m 50s",
+    "description": "Chess sports tournament — because chess is the sport of the mind!",
+    "tags": [
+      "chess",
+      "minds",
+      "tournament"
+    ],
+    "likes": 430,
+    "buttonText": "Participate in the tournament",
+    "category": "sports",
+    "popularity": 430
+  },
+  {
+    "id": 73,
+    "title": "Wall Climbing Event",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFV1UO1sq9o0dB8hbzJ0a3Un-Gp8PwUulA_g&s",
+    "date": "Sep 1, 2026",
+    "time": "13:00-17:00",
+    "location": "University Climbing Center",
+    "countdown": "775d 8h 30m 40s",
+    "description": "Wall climbing event for beginners and professionals — test your strength!",
+    "tags": [
+      "climbing",
+      "adventure",
+      "challenge"
+    ],
+    "likes": 390,
+    "buttonText": "Reserve your wall",
+    "category": "sports",
+    "popularity": 390
+  },
+  {
+    "id": 74,
+    "title": "University Sports Day",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDy2qRk8C1FUfCJcK-9qnvv0CU9126kO3OeQ&s",
+    "date": "Sep 15, 2026",
+    "time": "09:00-21:00",
+    "location": "Entire Campus",
+    "countdown": "789d 3h 15m 25s",
+    "description": "A full day of sports activities: competitions, games, shows, and prizes.",
+    "tags": [
+      "sports day",
+      "events",
+      "university"
+    ],
+    "likes": 700,
+    "buttonText": "Participate in the day",
+    "category": "sports",
+    "popularity": 700
+  },
+  {
+    "id": 75,
+    "title": "Inter-Department Volleyball League",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-QzIShDfuN_-TM0Hn6aFTiv8wbusMGDL4NQ&s",
+    "date": "Oct 1, 2026",
+    "time": "16:00-20:00",
+    "location": "Sports Hall",
+    "countdown": "805d 9h 5m 15s",
+    "description": "Volleyball league between university departments — who will win the cup this semester?",
+    "tags": [
+      "volleyball",
+      "league",
+      "university"
+    ],
+    "likes": 460,
+    "buttonText": "Support your department",
+    "category": "sports",
+    "popularity": 460
+  },
+  {
+    "id": 76,
+    "title": "Cardio Exercises Workshop",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJWDuukXt3yWA0ni2hKxDhaXeH7A8AYNHCgQ&s",
+    "date": "Oct 15, 2026",
+    "time": "18:00-19:30",
+    "location": "Fitness Club",
+    "countdown": "819d 4h 50m 5s",
+    "description": "Workshop teaching the best cardio exercises to burn fat and improve endurance.",
+    "tags": [
+      "cardio",
+      "burn",
+      "workshop"
+    ],
+    "likes": 350,
+    "buttonText": "Reserve your spot",
+    "category": "sports",
+    "popularity": 350
+  },
+  {
+    "id": 77,
+    "title": "University Bicycle Race",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl2Runx5QnzPQV9x1POGDQsjYpr17BZbeEhQ&s",
+    "date": "Nov 1, 2026",
+    "time": "08:00-11:00",
+    "location": "University Ring Road",
+    "countdown": "836d 6h 40m 50s",
+    "description": "Bicycle race around the campus — is your bike ready?",
+    "tags": [
+      "bicycles",
+      "race",
+      "university"
+    ],
+    "likes": 420,
+    "buttonText": "Register your bike",
+    "category": "sports",
+    "popularity": 420
+  },
+  {
+    "id": 78,
+    "title": "PlayStation Fitness Challenge",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSneyAfFdEA7YcuewjoZsMPhjX6RktsGM0bsw&s",
+    "date": "Nov 15, 2026",
+    "time": "15:00-18:00",
+    "location": "Interactive Games Hall",
+    "countdown": "850d 1h 25m 35s",
+    "description": "Challenge using PlayStation fitness games — who burns the most calories?",
+    "tags": [
+      "games",
+      "sports",
+      "challenge"
+    ],
+    "likes": 380,
+    "buttonText": "Join the challenge",
+    "category": "sports",
+    "popularity": 380
+  },
+  {
+    "id": 79,
+    "title": "Group Aerobics Event",
+    "image": "https://blog.metrobrazil.com/en/wp-content/uploads/sites/3/2020/10/METRO-BRAZIL64.jpg",
+    "date": "Dec 1, 2026",
+    "time": "17:00-18:30",
+    "location": "Celebrations Square",
+    "countdown": "867d 7h 15m 20s",
+    "description": "Group aerobics session with energetic music — move your body!",
+    "tags": [
+      "aerobics",
+      "dance",
+      "energy"
+    ],
+    "likes": 450,
+    "buttonText": "Join the dance",
+    "category": "sports",
+    "popularity": 450
+  },
+  {
+    "id": 80,
+    "title": "Inter-College Handball Championship",
+    "image": "https://cdn.mihaaru.com/photos/2024/01/16/384223_3_801ac84fefcc90b24316c3af5d45a64de71aaa64_medium.jpg",
+    "date": "Dec 15, 2026",
+    "time": "14:00-18:00",
+    "location": "Indoor Hall",
+    "countdown": "881d 2h 5m 10s",
+    "description": "Strong handball championship between university colleges — who will win the title?",
+    "tags": [
+      "handball",
+      "championship",
+      "university"
+    ],
+    "likes": 410,
+    "buttonText": "Watch the match",
+    "category": "sports",
+    "popularity": 410
+  },
+  {
+    "id": 81,
+    "title": "Weight Training Workshop",
+    "image": "https://images.squarespace-cdn.com/content/v1/52627348e4b0823534b23503/1544297238761-IC580AQ4ABP80OATY5O1/fullsizeoutput_c21c.jpeg",
+    "date": "Jan 5, 2027",
+    "time": "18:00-20:00",
+    "location": "Iron Club",
+    "countdown": "898d 8h 55m 5s",
+    "description": "Workshop with a professional coach to teach proper weight training techniques.",
+    "tags": [
+      "weights",
+      "strength",
+      "workshop"
+    ],
+    "likes": 360,
+    "buttonText": "Register now",
+    "category": "sports",
+    "popularity": 360
+  },
+  {
+    "id": 82,
+    "title": "Evening Healthy Walking Event",
+    "image": "https://media.istockphoto.com/id/473368552/photo/woman-walking-in-breast-cancer-awareness-charity-race-event.jpg?s=612x612&w=0&k=20&c=uyOTX4BU32by9KhA6wpWrS1nu45cSdjPAYqNg8KseHw=",
+    "date": "Jan 20, 2027",
+    "time": "19:00-20:30",
+    "location": "Green Path",
+    "countdown": "913d 3h 40m 50s",
+    "description": "Evening group walking event to promote health and relaxation after the school day.",
+    "tags": [
+      "walking",
+      "health",
+      "evening"
+    ],
+    "likes": 330,
+    "buttonText": "Join the walk",
+    "category": "sports",
+    "popularity": 330
+  }
+]
