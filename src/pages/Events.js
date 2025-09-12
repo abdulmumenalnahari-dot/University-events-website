@@ -1,64 +1,54 @@
-// src/pages/Events.jsx
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import FilterBar from "../components/FilterBar";
+import EventCarousel from "../components/EventCarousel";
+import EventDetail from "../components/EventDetail";
 import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
 import { filterAndSortEvents } from "../utils/filterAndSortEvents";
-import EventCard from "../components/EventCard";
-import EventDetail from "../components/EventDetail";
 
 export default function Events() {
-  const [allEvents, setAllEvents] = useState([]);
+  const [culture, setCulture] = useState([]);
+  const [sports, setSports] = useState([]);
+  const [arts, setArts] = useState([]);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
   const [sort, setSort] = useState("date-desc");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // جلب جميع الأحداث من ملف واحد أو دمجها
   useEffect(() => {
-    const loadAllEvents = async () => {
+    const load = async () => {
       try {
-        // الخيار 1: إذا كانت لديك ملف events.json واحد يحتوي على جميع الأحداث
-        const response = await fetch("/data/arts.json");
-        if (!response.ok) throw new Error("Failed to load events");
-        const events = await response.json();
-        setAllEvents(events);
-        
-        // الخيار 2: إذا كنت تفضل الاحتفاظ بالملفات المنفصلة
-        // const [cultureEvents, sportsEvents, artsEvents] = await Promise.all([
-        //   fetchAndSortEvents("/data/culture.json"),
-        //   fetchAndSortEvents("/data/sports.json"),
-        //   fetchAndSortEvents("/data/arts.json")
-        // ]);
-        // setAllEvents([...cultureEvents, ...sportsEvents, ...artsEvents]);
-        
-      } catch (err) {
-        setError("Failed to load events.");
-        console.error(err);
+        const all = await fetchAndSortEvents("/data/events.json");
+        setCulture(all.filter(e => e.category === "culture"));
+        setSports(all.filter(e => e.category === "sports"));
+        setArts(all.filter(e => e.category === "arts"));
+      } catch {
+        setError("تعذّر تحميل قائمة الفعاليات.");
       } finally {
         setLoading(false);
       }
     };
-
-    loadAllEvents();
+    load();
   }, []);
 
-  // تصفية وترتيب الأحداث
-  const filteredAndSortedEvents = useMemo(
-    () => filterAndSortEvents(allEvents, { search, category, sort }),
-    [allEvents, search, category, sort]
+  const filteredCulture = useMemo(
+    () => filterAndSortEvents(culture, { search, category, sort }),
+    [culture, search, category, sort]
+  );
+  const filteredSports = useMemo(
+    () => filterAndSortEvents(sports, { search, category, sort }),
+    [sports, search, category, sort]
+  );
+  const filteredArts = useMemo(
+    () => filterAndSortEvents(arts, { search, category, sort }),
+    [arts, search, category, sort]
   );
 
-  const EventList = (
-    <div className="container my-4">
-      <h1 className="h3 mb-4">Event Catalog</h1>
-
-      {error && (
-        <div className="alert alert-danger" role="alert">
-          {error}
-        </div>
-      )}
+  const Catalog = (
+    <>
+      <h1 className="h3">Event Catalog</h1>
+      {error && <div className="alert alert-danger">{error}</div>}
 
       <FilterBar
         search={search}
@@ -69,36 +59,26 @@ export default function Events() {
         setSort={setSort}
       />
 
-      {loading ? (
-        <div className="text-center my-5">
-          <div className="spinner-border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-        </div>
-      ) : (
-        <>
-          {filteredAndSortedEvents.length > 0 ? (
-            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-              {filteredAndSortedEvents.map((event) => (
-                <div className="col" key={event.id}>
-                  <EventCard event={event} />
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center my-5">
-              <p className="text-muted">No events found matching your criteria.</p>
-            </div>
-          )}
-        </>
+      {loading && <div className="text-muted">Loading…</div>}
+
+      {!loading && filteredCulture.length > 0 && (
+        <EventCarousel events={filteredCulture} title="CULTURE" />
       )}
-    </div>
+      {!loading && filteredSports.length > 0 && (
+        <EventCarousel events={filteredSports} title="SPORTS" />
+      )}
+      {!loading && filteredArts.length > 0 && (
+        <EventCarousel events={filteredArts} title="ARTS" />
+      )}
+    </>
   );
 
   return (
-    <Routes>
-      <Route index element={EventList} />
-      <Route path=":id" element={<EventDetail />} />
-    </Routes>
+    <div className="container my-4">
+      <Routes>
+        <Route index element={Catalog} />
+        <Route path=":id" element={<EventDetail />} />
+      </Routes>
+    </div>
   );
 }

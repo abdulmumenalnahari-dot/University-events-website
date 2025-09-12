@@ -1,6 +1,7 @@
+// src/routes.js
 import Home from './pages/Home';
 import About from './pages/About';
-import Events from './pages/Events';
+import Events from './pages/Events';      // صفحة الأحداث
 import Gallery from './pages/Gallery';
 import Feedback from './pages/Feedback';
 import Contact from './pages/Contact';
@@ -21,7 +22,7 @@ export const PATHS = {
 const routes = [
   { path: PATHS.HOME, element: <Home /> },
   { path: PATHS.ABOUT, element: <About /> },
-  { path: `${PATHS.EVENTS}/*`, element: <Events /> },
+  { path: `${PATHS.EVENTS}/*`, element: <Events /> }, // مهم: يدعم :id
   { path: PATHS.GALLERY, element: <Gallery /> },
   { path: PATHS.FEEDBACK, element: <Feedback /> },
   { path: PATHS.CONTACT, element: <Contact /> },

@@ -12,7 +12,6 @@ const EventCarousel = ({ events = [], title }) => {
   const isDragging = useRef(false);
   const startX = useRef(0);
   const startScrollLeft = useRef(0);
-
   const gap = 16;
 
   function getCardsPerView() {
@@ -49,13 +48,13 @@ const EventCarousel = ({ events = [], title }) => {
   }, [currentIndex, cardsPerView]);
 
   const handleTouchStart = (e) => (touchStartX.current = e.targetTouches[0].clientX);
-  const handleTouchMove  = (e) => (touchEndX.current   = e.targetTouches[0].clientX);
-  const handleTouchEnd   = () => {
+  const handleTouchMove = (e) => (touchEndX.current = e.targetTouches[0].clientX);
+  const handleTouchEnd = () => {
     if (touchStartX.current == null || touchEndX.current == null) return;
     const diff = touchStartX.current - touchEndX.current;
     const threshold = 50;
     if (diff > threshold && currentIndex < maxIndex) setCurrentIndex((p) => Math.min(p + 1, maxIndex));
-    else if (diff < -threshold && currentIndex > 0)   setCurrentIndex((p) => Math.max(p - 1, 0));
+    else if (diff < -threshold && currentIndex > 0) setCurrentIndex((p) => Math.max(p - 1, 0));
     touchStartX.current = null;
     touchEndX.current = null;
   };
@@ -67,24 +66,28 @@ const EventCarousel = ({ events = [], title }) => {
     startScrollLeft.current = carouselRef.current.scrollLeft;
     carouselRef.current.style.cursor = "grabbing";
   };
+
   const onMouseMove = (e) => {
     if (!isDragging.current || !carouselRef.current) return;
     e.preventDefault();
     const dx = e.clientX - startX.current;
     carouselRef.current.scrollLeft = startScrollLeft.current - dx;
   };
+
   const snapToNearest = () => {
     if (!carouselRef.current) return;
     const step = getCardWidth() + gap;
     const idx = Math.round(carouselRef.current.scrollLeft / step);
     setCurrentIndex(Math.max(0, Math.min(idx, maxIndex)));
   };
+
   const onMouseUp = () => {
     if (!isDragging.current) return;
     isDragging.current = false;
     carouselRef.current.style.cursor = "grab";
     snapToNearest();
   };
+
   const onMouseLeave = () => {
     if (!isDragging.current) return;
     isDragging.current = false;

@@ -1,3 +1,4 @@
+// src/components/EventCard.jsx
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -7,7 +8,7 @@ const EventCard = ({ event }) => {
   const [countdown, setCountdown] = useState("Loading...");
 
   const parseCountdownString = (str) => {
-    const parts = str.match(/(\d+)d\s*(\d+)h\s*(\d+)m\s*(\d+)s/);
+    const parts = str?.match(/(\d+)d\s*(\d+)h\s*(\d+)m\s*(\d+)s/);
     if (!parts) return null;
     return {
       days: parseInt(parts[1], 10),
@@ -25,7 +26,7 @@ const EventCard = ({ event }) => {
     const m = Math.floor((s % 3600) / 60);
     const sec = s % 60;
     return `${d}d ${h}h ${m}m ${sec}s`;
-    };
+  };
 
   useEffect(() => {
     const parsed = parseCountdownString(event.countdown);
@@ -70,11 +71,17 @@ const EventCard = ({ event }) => {
     <div className="card border-0 shadow-sm rounded-4 overflow-hidden h-100 d-flex flex-column"
          style={{ width: "100%", minWidth: "280px", maxWidth: "350px" }}>
       <div className="position-relative">
-        <img src={event.image} alt={event.title} className="card-img-top w-100"
-             style={{ height: "160px", objectFit: "cover", borderRadius: "8px 8px 0 0" }} />
-        <span className="position-absolute top-0 end-0 m-1 p-1 rounded-2 fs-6 fw-bold cursor-pointer"
-              style={{ backgroundColor: isFavorite ? "#FFD700" : "#fff", color: "#000", border: "1px solid #ddd", fontSize: "0.9rem" }}
-              onClick={toggleFavorite}>★</span>
+        <img
+          src={event.image}
+          alt={event.title}
+          className="card-img-top w-100"
+          style={{ height: "160px", objectFit: "cover", borderRadius: "8px 8px 0 0" }}
+        />
+        <span
+          className="position-absolute top-0 end-0 m-1 p-1 rounded-2 fs-6 fw-bold cursor-pointer"
+          style={{ backgroundColor: isFavorite ? "#FFD700" : "#fff", color: "#000", border: "1px solid #ddd", fontSize: "0.9rem" }}
+          onClick={toggleFavorite}
+        >★</span>
       </div>
 
       <div className="card-body p-2 p-md-3 d-flex flex-column" style={{ flexGrow: 1 }}>

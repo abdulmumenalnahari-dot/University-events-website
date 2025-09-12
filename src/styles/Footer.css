@@ -1,3 +1,5 @@
+/* src/components/Footer.css */
+
 .footer-container {
   background-color: #0f172a;
   color: white;
@@ -66,6 +68,7 @@
   margin: 0;
 }
 
+/* تحسينات للهواتف */
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;
