@@ -1,11 +1,9 @@
-// src/components/BannerSlider.jsx
 import React, { useState, useEffect } from 'react';
 import '../styles/BannerSlider.css';
 
 const BannerSlider = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // ✅ ضع useEffect هنا دائمًا، حتى لو كانت items فارغة
   useEffect(() => {
     if (items && items.length > 0) {
       const timer = setInterval(() => {
@@ -32,7 +30,6 @@ const BannerSlider = ({ items }) => {
     }
   };
 
-  // ✅ لا تُرجع null إلا بعد التحقق الداخلي
   if (!items || items.length === 0) {
     return <div className="no-banners">No banners available</div>;
   }

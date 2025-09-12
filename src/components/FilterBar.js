@@ -1,8 +1,9 @@
-// src/components/FilterBar.jsx
+
 
 import React from "react";
 
 const FilterBar = ({
+
   search,
   setSearch,
   category,
@@ -10,34 +11,31 @@ const FilterBar = ({
   sort,
   setSort,
 }) => {
-  // ✅ جمع جميع الفئات من(events + sports)
-  const allCategories = ["All Categories", "culture", "sports", "arts"];
+  const allCategories = ["culture", "sports", "arts"];
 
   return (
     <div className="row g-3 mb-4">
-      {/* بحث */}
       <div className="col-md-6 col-lg-4">
         <input
           type="text"
           placeholder="Search in events..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="form-control p-3"
-          style={{ borderRadius: "50px", fontSize: "1rem" }}
+          className="form-control p-2-5"
+          style={{ borderRadius: "50px" }}
         />
       </div>
 
-      {/* تصنيف */}
       <div className="col-md-6 col-lg-4">
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="form-select p-3"
+          className="form-select p-2"
           style={{ borderRadius: "50px" }}
         >
+          <option value="">All Categories </option>
           {allCategories.map((cat) => (
             <option key={cat} value={cat}>
-              {cat === "All Categories" && "All Categories"}
               {cat === "culture" && "CULTURE"}
               {cat === "sports" && "SPORTS"}
               {cat === "arts" && "ARTS"}
@@ -46,12 +44,11 @@ const FilterBar = ({
         </select>
       </div>
 
-      {/* ترتيب */}
       <div className="col-md-6 col-lg-4">
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value)}
-          className="form-select p-3"
+          className="form-select p-2"
           style={{ borderRadius: "50px" }}
         >
           <option value="date-desc"> Newest First</option>

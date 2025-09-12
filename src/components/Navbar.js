@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   BsPerson,
-  BsCalendarEvent,
   BsEnvelope,
   BsList,
   BsHouseDoor,
@@ -46,7 +45,7 @@ const Navbar = ({ navbarScrolled }) => {
       path: PATHS.FEEDBACK,
       label: "feedback",
       icon: <BsPerson size={16} />,
-      activeKey: "register",
+      activeKey: "feedback",
     },
     {
       path: PATHS.GALLERY,
@@ -63,7 +62,10 @@ const Navbar = ({ navbarScrolled }) => {
   ];
 
   const getActiveClass = (item) => {
-    return location.pathname === item.path ? "active" : "";
+    if (location.pathname === item.path) {
+      return `active-${item.activeKey}`;
+    }
+    return "";
   };
 
   const toggleMobileMenu = () => {
@@ -74,20 +76,15 @@ const Navbar = ({ navbarScrolled }) => {
     setIsMobileMenuOpen(false);
   };
 
-  const handleSpinButtonClick = () => {
-    // يمكنك إضافة منطق خاص هنا إن أردت
-  };
+  const handleSpinButtonClick = () => {};
 
   return (
     <nav className={`navbar ${navbarScrolled ? "scrolled" : ""}`}>
-      {/* قسم اليسار: زر القائمة والشعار وزر الدوران */}
       <div className="left-section">
-        {/* Mobile Menu Button */}
         <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
           <BsList size={24} />
         </button>
 
-        {/* Logo — مع الحفاظ على كل التفاعلات الأصلية */}
         <div
           className="logo-container"
           onClick={() => (window.location.href = "/")}
@@ -107,7 +104,6 @@ const Navbar = ({ navbarScrolled }) => {
         </div>
       </div>
 
-      {/* Desktop Navigation Links */}
       <ul className="nav-links">
         {navItems.map((item) => (
           <li key={item.path} className="nav-item">
@@ -123,7 +119,6 @@ const Navbar = ({ navbarScrolled }) => {
         ))}
       </ul>
 
-      {/* Mobile Menu */}
       <div className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
         <ul className="mobile-nav-links">
           {navItems.map((item) => (

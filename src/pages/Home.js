@@ -8,13 +8,18 @@ const BASE_URL = process.env.PUBLIC_URL || '';
 
 export default function Home() {
    
-  const [events, setEvents] = useState([]);
   const [sports, setSports] = useState([]);
 
 
  const [banners, setBanners] = useState([]);
  
-   
+  useEffect(() => {
+    fetch('/data/banners.json')
+      .then(res => res.json())
+      .then(data => setBanners(data))
+      .catch(err => console.error("Error loading banners: - Home.js:23", err));
+      
+  }, []);
     
 
  
@@ -31,7 +36,6 @@ export default function Home() {
 }, []);
 
 
-  // ✅ تحميل البيانات من ملف الرياضة
   useEffect(() => {
     const loadSports = async () => {
       const sortedSports = await fetchAndSortEvents("/data/sports.json");
@@ -49,9 +53,7 @@ export default function Home() {
     
       
 <BannerSlider items={banners} />      
-
-<HomeBegin />
-      {/* Purpose */}
+     <HomeBegin />
      
       <Quick />
        

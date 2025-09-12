@@ -4,8 +4,8 @@ const BASE_URL = process.env.PUBLIC_URL || "";
 
 export default function Gallery() {
   const [list, setList] = useState([]);
-  const [year, setYear] = useState("");        // Academic Year
-  const [category, setCategory] = useState(""); // Category
+  const [year, setYear] = useState("");
+  const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -75,7 +75,6 @@ export default function Gallery() {
 
   return (
     <div className="container my-4">
-      {/* Header */}
       <div className="text-center mb-3">
         <h1 className="display-6 fw-bold">Event Gallery</h1>
         <p className="text-muted mb-0">
@@ -90,7 +89,6 @@ export default function Gallery() {
         </div>
       )}
 
-      {/* Filter bar */}
       <div className="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
         <div className="d-flex flex-wrap gap-2">
           <div>
@@ -126,7 +124,6 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* Cards grid */}
       {filtered.length === 0 ? (
         <div className="text-muted">No items to display.</div>
       ) : (
