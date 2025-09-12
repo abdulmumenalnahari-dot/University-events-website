@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Dr. Aditi Sharma",
+    "role": "Faculty Coordinator",
+    "department": "CSE",
+    "phone": "+91 98765 00001",
+    "email": "aditi.sharma@example.edu"
+  },
+  {
+    "name": "Rahul Verma",
+    "role": "Student Coordinator",
+    "department": "Cultural Club",
+    "phone": "+91 98765 00002",
+    "email": "rahul.verma@example.edu"
+  },
+  {
+    "name": "Meera Iyer",
+    "role": "Sports Coordinator",
+    "department": "PE",
+    "phone": "+91 98765 00003",
+    "email": "meera.iyer@example.edu"
+  }
+]
