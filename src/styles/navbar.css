@@ -45,10 +45,7 @@ body {
   align-items: center;
   width: 100%;
 }
-
-/* ========================
-   LOGO + BRAND SECTION — مع المحاذاة الدقيقة
-======================== */
+ 
 .left-section {
   display: flex;
   align-items: center;

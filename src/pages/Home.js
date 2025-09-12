@@ -3,6 +3,7 @@ import BannerSlider from '../components/BannerSlider';
 import { fetchAndSortEvents } from "../utils/fetchAndSortEvents";
 import '../styles/HomeBegin.css'
 import Quick from '../components/Quick';
+import HomeBegin from '../components/HomeBegin';
 const BASE_URL = process.env.PUBLIC_URL || '';
 
 export default function Home() {
@@ -13,13 +14,7 @@ export default function Home() {
 
  const [banners, setBanners] = useState([]);
  
-  useEffect(() => {
-    fetch('/data/banners.json')
-      .then(res => res.json())
-      .then(data => setBanners(data))
-      .catch(err => console.error("Error loading banners: - Home.js:23", err));
-      
-  }, []);
+   
     
 
  
@@ -55,7 +50,7 @@ export default function Home() {
       
 <BannerSlider items={banners} />      
 
-
+<HomeBegin />
       {/* Purpose */}
      
       <Quick />
