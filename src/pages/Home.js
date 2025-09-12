@@ -14,14 +14,18 @@ export default function Home() {
   const [sports, setSports] = useState([]);
 
  const [banners, setBanners] = useState([]);
+ HEAD
 
   useEffect(() => {
     fetch('/data/banners.json')
       .then(res => res.json())
       .then(data => setBanners(data))
-      .catch(err => console.error("Error loading banners: - Home.js:22", err));
+      .catch(err => console.error("Error loading banners: - Home.js:23", err));
   }, []);
     
+
+ 
+ bc4f49c7449d13330fef415ff209919cb703d591
 
   useEffect(() => {
   fetch('/data/banners.json')
@@ -30,7 +34,7 @@ export default function Home() {
       return res.json();
     })
     .then(data => setBanners(data))
-    .catch(err => console.error("Error loading banners: - Home.js:33", err));
+    .catch(err => console.error("Error loading banners: - Home.js:37", err));
 }, []);
 
   // ✅ تحميل البيانات من ملف الرياضة
