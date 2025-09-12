@@ -14,7 +14,7 @@ export default function Gallery() {
     let alive = true;
     (async () => {
       try {
-        const res = await fetch(`${BASE_URL}/data/gallery.json`, {
+        const res = await fetch(`${BASE_URL}/data/events.json`, {
           headers: { "Cache-Control": "no-cache" },
         });
         if (!res.ok) throw new Error(`gallery.json ${res.status}`);
@@ -95,13 +95,13 @@ export default function Gallery() {
           <div>
             <label className="form-label mb-1">Academic Year</label>
             <select className="form-select" value={year} onChange={(e) => setYear(e.target.value)}>
-              <option value="">All Years</option>
-              {years.map((y) => (
-                <option key={y} value={y}>
-                  {y}
-                </option>
-              ))}
-            </select>
+               <option value="">All Years</option>
+        {years.map((y) => (
+          <option key={y} value={y}>
+            {y}
+          </option>
+        ))}
+      </select>
           </div>
           <div>
             <label className="form-label mb-1">Category</label>

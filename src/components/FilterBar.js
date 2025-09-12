@@ -1,4 +1,3 @@
-// src/components/FilterBar.jsx
 import React from "react";
 
 const FilterBar = ({
@@ -9,7 +8,6 @@ const FilterBar = ({
   sort,
   setSort,
 }) => {
-  // التصنيفات المطلوبة في SRS
   const allCategories = ["academic", "cultural", "sports", "departmental"];
 
   return (

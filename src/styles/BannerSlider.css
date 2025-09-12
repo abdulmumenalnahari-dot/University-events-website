@@ -192,7 +192,6 @@
   right: 20px;
 }
 
-/* ✅ نقاط التحكم داخل الصورة */
 .dots-container {
   display: flex;
   justify-content: center;

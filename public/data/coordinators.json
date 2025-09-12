@@ -1,34 +1,34 @@
  [
   {
     "id": 1,
-    "name": "Dr. Sarah Mitchell",
+    "name": "Towheeb Algafari",
     "title": "Dean",
     "department": "College of Engineering & Technology",
-    "phone": "+1 (413) 555-0101",
-    "email": "sarah.mitchell@sfcet.edu"
+    "phone": "+967 778016636",
+    "email": "towheebalgafri@gmail.com"
   },
    {
     "id": 2,
-    "name": "Ahmed Al-Mubarak",
+    "name": "Bashr arif",
     "title": "Student Coordinator",
     "department": "Student Council",
-    "phone": "+1 (413) 555-0201",
+    "phone": "+967 779512874",
     "email": "ahmed.student@sfcet.edu"
   },
   {
     "id": 3,
-    "name": "Dr. Emily Rodriguez",
+    "name": "Anas Ahemd",
     "title": "Faculty Event Coordinator",
     "department": "Student Affairs",
-    "phone": "+1 (413) 555-0103",
-    "email": "emily.rodriguez@sfcet.edu"
+    "phone": "+967 771644308",
+    "email": "@gmail.com"
   },
   {
     "id": 4,
-    "name": "Prof. David Thompson",
+    "name": "ABDULMUMEN ALNAHARI",
     "title": "Cultural Activities Coordinator",
     "department": "Arts & Humanities",
-    "phone": "+1 (413) 555-0104",
+    "phone": "+967 776 423 587",
     "email": "david.thompson@sfcet.edu"
   }
 ]

@@ -243,7 +243,8 @@ body {
 }
 
 .navbar .nav-link.active-about {
-  background: linear-gradient(135deg, #FF512F 0%, #DD2476 50%, #FF512F 100%);
+  background: linear-gradient(135deg, #F093FB 0%, #F5576C 50%, #F093FB 100%);
+
   background-size: 300% 300%;
   animation: gradientShift 3s ease infinite, breathe 2.2s ease-in-out infinite;
   color: white !important;
