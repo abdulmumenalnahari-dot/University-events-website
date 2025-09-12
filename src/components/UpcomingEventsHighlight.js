@@ -11,7 +11,7 @@ const UpcomingEventsHighlight = () => {
  useEffect(() => {
   const loadEvents = async () => {
     try {
-      const response = await fetch("/data/arts.json"); // ملف يحتوي على جميع الأحداث
+      const response = await fetch("/data/events.json"); // ملف يحتوي على جميع الأحداث
       if (!response.ok) throw new Error("Failed to fetch events");
       
       let events = await response.json();

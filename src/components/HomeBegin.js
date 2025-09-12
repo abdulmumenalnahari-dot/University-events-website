@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // ✅ إضافة Link
 import '../styles/HomeBegin.css';
-import UpcomingEventsHighlight from './UpcomingEventsHighlight.js'
+import UpcomingEventsHighlight from './UpcomingEventsHighlight'
 const HomeBegin = () => {
   return (
     <div className="home-begin">

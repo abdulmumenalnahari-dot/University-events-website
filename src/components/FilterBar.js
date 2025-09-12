@@ -1,5 +1,4 @@
 // src/components/FilterBar.jsx
-
 import React from "react";
 
 const FilterBar = ({
@@ -10,51 +9,43 @@ const FilterBar = ({
   sort,
   setSort,
 }) => {
-  // ✅ جمع جميع الفئات من(events + sports)
-  const allCategories = ["All Categories", "culture", "sports", "arts"];
+  // التصنيفات المطلوبة في SRS
+  const allCategories = ["academic", "cultural", "sports", "departmental"];
 
   return (
     <div className="row g-3 mb-4">
-      {/* بحث */}
       <div className="col-md-6 col-lg-4">
         <input
           type="text"
           placeholder="Search in events..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="form-control p-3"
-          style={{ borderRadius: "50px", fontSize: "1rem" }}
+          className="form-control"
         />
       </div>
 
-      {/* تصنيف */}
       <div className="col-md-6 col-lg-4">
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="form-select p-3"
-          style={{ borderRadius: "50px" }}
+          className="form-select"
         >
+          <option value="">All Categories</option>
           {allCategories.map((cat) => (
             <option key={cat} value={cat}>
-              {cat === "All Categories" && "All Categories"}
-              {cat === "culture" && "CULTURE"}
-              {cat === "sports" && "SPORTS"}
-              {cat === "arts" && "ARTS"}
+              {cat.charAt(0).toUpperCase() + cat.slice(1)}
             </option>
           ))}
         </select>
       </div>
 
-      {/* ترتيب */}
       <div className="col-md-6 col-lg-4">
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value)}
-          className="form-select p-3"
-          style={{ borderRadius: "50px" }}
+          className="form-select"
         >
-          <option value="date-desc"> Newest First</option>
+          <option value="date-desc">Newest First</option>
           <option value="date-asc">Oldest First</option>
           <option value="name-asc">Name (A-Z)</option>
           <option value="pop-desc">Most Popular</option>
