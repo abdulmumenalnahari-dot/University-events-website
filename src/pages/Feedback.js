@@ -71,13 +71,7 @@ export default function Feedback() {
       </div>
 
       <div className="feedback-form">
-        <div className="info-box">
-          <div className="info-icon"><FaUsers size={16} color="#1976d2" /></div>
-          <div>
-            <strong>UI Demonstration Form</strong>
-            <p>This feedback form is designed for UI demonstration purposes. Form submissions are not processed or stored.</p>
-          </div>
-        </div>
+         
 
         <form onSubmit={submit} noValidate>
           <div className="form-group">

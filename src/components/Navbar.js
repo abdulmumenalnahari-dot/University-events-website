@@ -39,18 +39,8 @@ const Navbar = ({ navbarScrolled }) => {
       activeKey: "events",
     },
       
-   {
-      path: PATHS.FAVORITES,
-      label: "favorites",
-      icon: <MdStarOutline size={16} />,
-      activeKey: "favorites ",
-    },
-    {
-      path: PATHS.REGISTER,
-      label: "Registration",
-      icon: <BsPerson size={16} />,
-      activeKey: "register",
-    },
+    
+     
      {
       path: PATHS.FEEDBACK,
       label: "feedback",
@@ -116,7 +106,7 @@ const Navbar = ({ navbarScrolled }) => {
               className="spin-button-img"
             />
           </button>
-          <span className="brand">Event Platform</span>
+          <span className="brand">CampusConnect</span>
         </div>
       </div>
 

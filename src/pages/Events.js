@@ -5,6 +5,7 @@ import FilterBar from "../components/FilterBar";
 import EventCard from "../components/EventCard";
 import EventDetail from "../components/EventDetail";
 import { filterAndSortEvents } from "../utils/filterAndSortEvents";
+import FavoritesPage from "./FavoritesPage";
 
 export default function Events() {
   const [allEvents, setAllEvents] = useState([]);
@@ -143,9 +144,15 @@ export default function Events() {
   );
 
   return (
-    <Routes>
+    <>
+     <Routes>
       <Route index element={EventList} />
       <Route path=":id" element={<EventDetail />} />
+     
     </Routes>
+     <FavoritesPage />
+    </>
+
+   
   );
 }
