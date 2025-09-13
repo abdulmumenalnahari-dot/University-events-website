@@ -33,9 +33,9 @@ export default function Home() {
 
   return (
     <div>
-      <BannerSlider items={banners} />
+      <BannerSlider banners={banners} />
       <HomeBegin />
-      <Quick />
+       <Quick />
     </div>
   );
 }

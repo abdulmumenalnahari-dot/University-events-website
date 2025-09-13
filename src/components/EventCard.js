@@ -25,7 +25,7 @@ const EventCard = ({ event, onFavoriteToggle = null }) => {
     const m = Math.floor((s % 3600) / 60);
     const sec = s % 60;
     return `${d}d ${h}h ${m}m ${sec}s`;
-    };
+  };
 
   useEffect(() => {
     const parsed = parseCountdownString(event.countdown);
@@ -51,22 +51,22 @@ const EventCard = ({ event, onFavoriteToggle = null }) => {
     if (liked[event.id] !== undefined) setLikes(liked[event.id]);
   }, [event.id]);
 
-const toggleFavorite = () => {
-  const fav = JSON.parse(localStorage.getItem("favorites")) || [];
-  const eventId = Number(event.id);
-  const updated = isFavorite 
-    ? fav.filter(id => id !== eventId) 
-    : [...fav, eventId];
+  const toggleFavorite = () => {
+    const fav = JSON.parse(localStorage.getItem("favorites")) || [];
+    const eventId = Number(event.id);
+    const updated = isFavorite
+      ? fav.filter((id) => id !== eventId)
+      : [...fav, eventId];
 
-  localStorage.setItem("favorites", JSON.stringify(updated));
-  setIsFavorite(!isFavorite);
+    localStorage.setItem("favorites", JSON.stringify(updated));
+    setIsFavorite(!isFavorite);
 
-  if (typeof onFavoriteToggle === 'function' && isFavorite) {
-    onFavoriteToggle(eventId);
-  }
+    if (typeof onFavoriteToggle === "function" && isFavorite) {
+      onFavoriteToggle(eventId);
+    }
 
-  console.log("⭐ favorites updated:", updated);
-};
+    console.log("⭐ favorites updated:", updated);
+  };
 
   const handleLike = () => {
     const liked = JSON.parse(localStorage.getItem("likes")) || {};
@@ -77,63 +77,121 @@ const toggleFavorite = () => {
   };
 
   return (
-   <div className="card border-0 shadow-sm rounded-4 overflow-hidden h-100 d-flex flex-column"
-         style={{ width: "100%", minWidth: "280px", maxWidth: "350px" }}>
+    <div
+      className="card border-0 shadow-sm rounded-4 overflow-hidden h-100 d-flex flex-column"
+      style={{ width: "100%", minWidth: "280px", maxWidth: "350px" }}
+    >
       <div className="position-relative">
-        <img 
-          src={event.image} 
-          alt={event.title} 
+        <img
+          src={event.image}
+          alt={event.title}
           className="card-img-top w-100"
-          style={{ 
-            height: "160px", 
+          style={{
+            height: "160px",
             objectFit: "cover",
-            borderRadius: "8px 8px 0 0" 
-          }} 
+            borderRadius: "8px 8px 0 0",
+          }}
         />
-        <span className="position-absolute top-0 end-0 m-1 p-1 rounded-2 fs-6 fw-bold cursor-pointer"
-              style={{ backgroundColor: isFavorite ? "#FFD700" : "#fff", color: "#000", border: "1px solid #ddd", fontSize: "0.9rem" }}
-              onClick={toggleFavorite}>★</span>
+        <span
+          className="position-absolute top-0 end-0 m-1 p-1 rounded-2 fs-6 fw-bold cursor-pointer"
+          style={{
+            backgroundColor: isFavorite ? "#FFD700" : "#fff",
+            color: "#000",
+            border: "1px solid #ddd",
+            fontSize: "0.9rem",
+          }}
+          onClick={toggleFavorite}
+        >
+          ★
+        </span>
       </div>
 
-      <div className="card-body p-2 p-md-3 d-flex flex-column" style={{ flexGrow: 1 }}>
-        <h5 className="card-title mb-1 fw-bold text-truncate" style={{ fontSize: "0.95rem", lineHeight: "1.3" }}>
+      <div
+        className="card-body p-2 p-md-3 d-flex flex-column"
+        style={{ flexGrow: 1 }}
+      >
+        <h5
+          className="card-title mb-1 fw-bold text-truncate"
+          style={{ fontSize: "0.95rem", lineHeight: "1.3" }}
+        >
           {event.title}
         </h5>
 
-        <div className="d-flex align-items-center mb-2 text-muted small" style={{ fontSize: "0.75rem" }}>
+        <div
+          className="d-flex align-items-center mb-2 text-muted small"
+          style={{ fontSize: "0.75rem" }}
+        >
           <i className="bi bi-calendar me-1"></i>
-          <span className="text-truncate" style={{ maxWidth: "70px" }}>{event.date}</span>
+          <span className="text-truncate" style={{ maxWidth: "70px" }}>
+            {event.date}
+          </span>
           <i className="bi bi-clock ms-2 me-1"></i>
-          <span className="text-truncate" style={{ maxWidth: "50px" }}>{event.time}</span>
+          <span className="text-truncate" style={{ maxWidth: "50px" }}>
+            {event.time}
+          </span>
           <i className="bi bi-geo-alt ms-2 me-1"></i>
-          <span className="text-truncate d-none d-sm-inline" style={{ maxWidth: "60px" }}>{event.location}</span>
+          <span
+            className="text-truncate d-none d-sm-inline"
+            style={{ maxWidth: "60px" }}
+          >
+            {event.location}
+          </span>
         </div>
 
         <div className="mb-2">
-          <span className="badge bg-primary rounded-pill px-2 py-1 text-white text-truncate"
-                style={{ fontSize: "0.7rem", maxWidth: "100%" }}>{countdown}</span>
+          <span
+            className="badge bg-primary rounded-pill px-2 py-1 text-white text-truncate"
+            style={{ fontSize: "0.7rem", maxWidth: "100%" }}
+          >
+            {countdown}
+          </span>
         </div>
 
-        <p className="card-text text-muted small mb-2 text-truncate"
-           style={{ display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
-                    fontSize: "0.75rem", lineHeight: "1.3", flexGrow: 1 }}>
+        <p
+          className="card-text text-muted small mb-2 text-truncate"
+          style={{
+            display: "-webkit-box",
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+            fontSize: "0.75rem",
+            lineHeight: "1.3",
+            flexGrow: 1,
+          }}
+        >
           {event.description}
         </p>
 
         <div className="d-flex flex-wrap gap-1 mb-2">
           {event.tags?.map((tag, i) => (
-            <span key={i} className="badge bg-secondary text-white rounded-pill px-2 py-1 text-truncate"
-                  style={{ fontSize: "0.65rem", maxWidth: "55px" }}>{tag}</span>
+            <span
+              key={i}
+              className="badge bg-secondary text-white rounded-pill px-2 py-1 text-truncate"
+              style={{ fontSize: "0.65rem", maxWidth: "55px" }}
+            >
+              {tag}
+            </span>
           ))}
-          <span className="badge bg-light text-dark rounded-pill px-2 py-1 d-flex align-items-center cursor-pointer"
-                style={{ fontSize: "0.65rem" }} onClick={handleLike}>
-            <i className={`bi bi-hand-thumbs-up me-1 ${likes > 0 ? "text-primary" : "text-muted"}`}
-               style={{ fontSize: "0.7rem" }}></i>{likes}
+          <span
+            className="badge bg-light text-dark rounded-pill px-2 py-1  align-items-center cursor-pointer"
+            style={{ fontSize: "0.65rem" }}
+            onClick={handleLike}
+          >
+            <i
+              className={`bi bi-hand-thumbs-up me-1 ${
+                likes > 0 ? "text-primary" : "text-muted"
+              }`}
+              style={{ fontSize: "0.7rem" }}
+            ></i>
+            {likes}
           </span>
         </div>
 
-        <Link to={`/events/${event.id}`} className="btn btn-outline-primary w-100 rounded-3 mt-auto"
-              style={{ minHeight: "34px", fontSize: "0.85rem" }}>
+        <Link
+          to={`/events/${event.id}`}
+          className="btn btn-outline-primary w-100 rounded-3 mt-auto"
+          style={{ minHeight: "34px", fontSize: "0.85rem" }}
+        >
           {(event.buttonText || "View Details") + " →"}
         </Link>
       </div>

@@ -1,3 +1,4 @@
+// src/components/BannerSlider.jsx
 import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight, FaDownload, FaCalendarAlt } from 'react-icons/fa';
 import '../styles/BannerSlider.css';
@@ -6,6 +7,7 @@ const BannerSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [bannerItems, setBannerItems] = useState([]);
 
+  // جلب البيانات مباشرة من arts.json
   useEffect(() => {
     const fetchBannerData = async () => {
       try {
@@ -13,9 +15,11 @@ const BannerSlider = () => {
         if (!response.ok) throw new Error('Failed to fetch banner data');
         
         const data = await response.json();
+        // أخذ أول 3 أحداث من ملف arts.json
         setBannerItems(data.slice(0, 3));
       } catch (error) {
-        console.error('Error loading banner data:', error);
+        console.error('Error loading banner data: - BannerSlider.js:21', error);
+        // بيانات افتراضية في حالة الخطأ
         setBannerItems([
           {
             id: 1,
@@ -32,6 +36,7 @@ const BannerSlider = () => {
     fetchBannerData();
   }, []);
 
+  // التحكم التلقائي في التمرير
   useEffect(() => {
     if (bannerItems.length > 0) {
       const timer = setInterval(() => {
@@ -66,10 +71,12 @@ const BannerSlider = () => {
 
   return (
     <div className="banner-slider-container">
-      <h2 className="banner-title">Featured Events</h2>
-      <p className="banner-subtitle">
-        Stay updated with the latest happenings on campus. From academic events to social gatherings, discover what's coming up.
-      </p>
+       <h1>Welcome to Malmö University Event Hub</h1>
+        <p className="subtitle">Stay Updated, Stay Involved!</p>
+        <p className="description">
+          Your gateway to campus life, events, and community engagement. Discover upcoming events, join student organizations, 
+          and stay connected with everything happening at SpringField University.
+        </p>
 
       <div className="banner-slider">
         <button className="slider-btn prev-btn" onClick={prevSlide}>

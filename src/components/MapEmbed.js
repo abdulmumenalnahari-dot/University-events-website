@@ -13,7 +13,7 @@ const MapEmbed = () => {
       "Sunday: Closed"
     ],
     // تحديث رابط الخريطة لجامعة Malmö
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2220.098291517993!2d13.000160377544966!3d55.60037099209096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653a52e8451c7d7%3A0x4019078290e7c40!2sMalm%C3%B6%20University!5e0!3m2!1sen!2sse!4v1718574820277!5m2!1sen!2sse"
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39292.03941324358!2d13.086280315863755!3d55.582223439613024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653a1559b147d81%3A0xa2379237f618d968!2z2KzYp9mF2LnYqSDZhdin2YTZhdmI!5e0!3m2!1sar!2s!4v1757716190445!5m2!1sar!2s"
   };
 
   return (
@@ -44,7 +44,7 @@ const MapEmbed = () => {
           </div>
           <div className="map-link">
             {/* استخدام أيقونة react-icons */}
-            <a href={`https://www.google.com/maps?q=${encodeURIComponent(campusInfo.address)}`} target="_blank" rel="noopener noreferrer">
+            <a href='https://maps.app.goo.gl/cbSxNemCKMksAG3h7' >
               <FaExternalLinkAlt className="link-icon" />
               Open in Google Maps
             </a>
@@ -68,3 +68,5 @@ const MapEmbed = () => {
 };
 
 export default MapEmbed;
+  
+ 
