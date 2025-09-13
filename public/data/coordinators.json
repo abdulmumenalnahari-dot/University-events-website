@@ -9,7 +9,7 @@
   },
    {
     "id": 2,
-    "name": "Bashr arif",
+    "name": "Bashar Arife",
     "title": "Student Coordinator",
     "department": "Student Council",
     "phone": "+967 779512874",
@@ -17,11 +17,11 @@
   },
   {
     "id": 3,
-    "name": "Anas Ahemd",
+    "name": "Anas Ahmed Mohammed",
     "title": "Faculty Event Coordinator",
     "department": "Student Affairs",
     "phone": "+967 771644308",
-    "email": "@gmail.com"
+    "email": "anasahmedmohammedkasem@gmail.com"
   },
   {
     "id": 4,
@@ -29,6 +29,6 @@
     "title": "Cultural Activities Coordinator",
     "department": "Arts & Humanities",
     "phone": "+967 776 423 587",
-    "email": "david.thompson@sfcet.edu"
+    "email": "abdulmumedal_nahary@gmail.com"
   }
 ]
