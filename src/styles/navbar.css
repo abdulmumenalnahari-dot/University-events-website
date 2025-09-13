@@ -62,6 +62,7 @@ body {
 .navbar .nav-link.active-home,
 .navbar .nav-link.active-about,
 .navbar .nav-link.active-events,
+.navbar .nav-link.active-favorites,
 .navbar .nav-link.active-register,
 .navbar .nav-link.active-feedback,
 .navbar .nav-link.active-exhibition,
@@ -72,6 +73,7 @@ body {
 .navbar .nav-link.active-home:hover,
 .navbar .nav-link.active-about:hover,
 .navbar .nav-link.active-events:hover,
+.navbar .nav-link.active-favorites:hover,
 .navbar .nav-link.active-register:hover,
 .navbar .nav-link.active-feedback:hover,
 .navbar .nav-link.active-exhibition:hover,
@@ -283,6 +285,26 @@ body {
   animation: gradientShift 2s ease-in-out infinite, glowPulse 1.6s ease-in-out infinite;
 }
 
+.navbar .nav-link.active-favorites {
+background: linear-gradient(135deg, #FC466B 0%, #3F5EFB 50%, #FC466B 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 3.2s ease infinite, breathe 2.1s ease-in-out infinite;
+  color: white !important;
+  font-weight: 700;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(255, 95, 109, 0.4);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navbar .nav-link.active-favorites:hover {
+  transform: scale(1.08);
+box-shadow: 
+  0 0 20px rgba(255, 0, 255, 0.5),
+  0 0 30px rgba(0, 255, 255, 0.4),
+  0 0 40px rgba(255, 255, 0, 0.3);  animation: gradientShift 2s ease-in-out infinite, glowPulse 1.6s ease-in-out infinite;
+}
 
 .navbar .nav-link.active-register {
   background: linear-gradient(135deg, #834D9B 0%, #D04ED6 50%, #834D9B 100%);

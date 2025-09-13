@@ -13,7 +13,7 @@ export default function Gallery() {
     let alive = true;
     (async () => {
       try {
-        const res = await fetch(`${BASE_URL}/data/events.json`, {
+        const res = await fetch(`${BASE_URL}/data/gallery.json`, {
           headers: { "Cache-Control": "no-cache" },
         });
         if (!res.ok) throw new Error(`gallery.json ${res.status}`);
@@ -33,10 +33,23 @@ export default function Gallery() {
   }, []);
 
   const years = useMemo(() => {
-    return Array.from(new Set(list.map((x) => x.year).filter(Boolean))).sort(
+     return Array.from(new Set(list.map((x) => x.year).filter(Boolean))).sort(
       (a, b) => String(b).localeCompare(String(a))
     );
-  }, [list]);
+ 
+    return Array.from(
+      new Set(
+        list
+          .map((x) => x.academicYear)
+          .filter(Boolean)
+      )
+    ).sort((a, b) => {
+      const startYearA = parseInt(a.split('–')[0]) || 0;
+      const startYearB = parseInt(b.split('–')[0]) || 0;
+      return startYearB - startYearA;
+    });
+
+   }, [list]);
 
   const categories = useMemo(() => {
     return Array.from(new Set(list.map((x) => x.category).filter(Boolean))).sort(
@@ -45,10 +58,14 @@ export default function Gallery() {
   }, [list]);
 
   const filtered = useMemo(() => {
-    return list.filter(
+     return list.filter(
       (x) => (!year || x.year === year) && (!category || x.category === category)
     );
-  }, [list, year, category]);
+     return list.filter((x) => {
+      return (!year || x.academicYear === year) && (!category || x.category === category);
+    });
+
+   }, [list, year, category]);
 
   if (loading) {
     return (
@@ -94,13 +111,13 @@ export default function Gallery() {
           <div>
             <label className="form-label mb-1">Academic Year</label>
             <select className="form-select" value={year} onChange={(e) => setYear(e.target.value)}>
-               <option value="">All Years</option>
-        {years.map((y) => (
-          <option key={y} value={y}>
-            {y}
-          </option>
-        ))}
-      </select>
+              <option value="">All Years</option>
+              {years.map((y) => (
+                <option key={y} value={y}>
+                  {y}
+                </option>
+              ))}
+            </select>
           </div>
           <div>
             <label className="form-label mb-1">Category</label>

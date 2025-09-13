@@ -6,7 +6,7 @@ import '../styles/MapEmbed.css';
 const MapEmbed = () => {
   const campusInfo = {
     name: "Malmö University",
-    address: "Universitetsgatan 10, 211 19 Malmö, Sweden", // تحديث العنوان
+    address: " alnaser", // تحديث العنوان
     officeHours: [
       "Monday - Friday: 9:00 AM - 5:00 PM",
       "Saturday: 9:00 AM - 1:00 PM",
@@ -43,8 +43,7 @@ const MapEmbed = () => {
             </div>
           </div>
           <div className="map-link">
-            {/* استخدام أيقونة react-icons */}
-            <a href='https://maps.app.goo.gl/cbSxNemCKMksAG3h7' >
+             <a href='https://maps.app.goo.gl/cbSxNemCKMksAG3h7' >
               <FaExternalLinkAlt className="link-icon" />
               Open in Google Maps
             </a>

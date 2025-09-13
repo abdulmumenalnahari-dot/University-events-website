@@ -6,6 +6,7 @@ import Feedback from './pages/Feedback';
 import Contact from './pages/Contact';
 import Calendar from './pages/calendar';
 import Register from './pages/register';
+import FavoritesPage from './pages/FavoritesPage';
 
 export const PATHS = {
   HOME: '/',
@@ -16,6 +17,7 @@ export const PATHS = {
   CONTACT: '/contact',
   CALENDAR: '/calendar',
   REGISTER: '/register',
+  FAVORITES: '/favorites',
 };
 
 const routes = [
@@ -23,6 +25,7 @@ const routes = [
   { path: PATHS.ABOUT, element: <About /> },
   { path: `${PATHS.EVENTS}/*`, element: <Events /> },
   { path: PATHS.GALLERY, element: <Gallery /> },
+  { path: PATHS.FAVORITES, element: <FavoritesPage /> },
   { path: PATHS.FEEDBACK, element: <Feedback /> },
   { path: PATHS.CONTACT, element: <Contact /> },
   { path: PATHS.CALENDAR, element: <Calendar /> },
