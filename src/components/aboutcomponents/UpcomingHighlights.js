@@ -46,16 +46,7 @@ const UpcomingHighlights = ({ highlights }) => {
                 <div className="text-muted small">
                   {ev.date} · {ev.location}
                 </div>
-                {ev.url && (
-                  <a
-                    href={ev.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="small"
-                  >
-                    Details
-                  </a>
-                )}
+                 
               </div>
             </div>
           ))}
