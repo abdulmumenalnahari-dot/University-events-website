@@ -33,7 +33,10 @@ export default function Gallery() {
   }, []);
 
   const years = useMemo(() => {
-
+     return Array.from(new Set(list.map((x) => x.year).filter(Boolean))).sort(
+      (a, b) => String(b).localeCompare(String(a))
+    );
+ 
     return Array.from(
       new Set(
         list
@@ -46,7 +49,7 @@ export default function Gallery() {
       return startYearB - startYearA;
     });
 
-  }, [list]);
+   }, [list]);
 
   const categories = useMemo(() => {
     return Array.from(new Set(list.map((x) => x.category).filter(Boolean))).sort(
@@ -55,11 +58,14 @@ export default function Gallery() {
   }, [list]);
 
   const filtered = useMemo(() => {
-    return list.filter((x) => {
+     return list.filter(
+      (x) => (!year || x.year === year) && (!category || x.category === category)
+    );
+     return list.filter((x) => {
       return (!year || x.academicYear === year) && (!category || x.category === category);
     });
 
-  }, [list, year, category]);
+   }, [list, year, category]);
 
   if (loading) {
     return (

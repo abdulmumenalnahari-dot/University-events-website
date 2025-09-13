@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaCalendarAlt, FaUsers, FaImages, FaEnvelope } from 'react-icons/fa';
 import '../styles/Quick.css';
 import { PATHS } from '../routes';
+import EventTimeline from './aboutcomponents/EventTimeline';
 
 const Quick = () => {
   const quickItems = [
@@ -10,13 +11,13 @@ const Quick = () => {
       title: 'Event Calendar',
       description: 'View all upcoming events and important dates',
       icon: <FaCalendarAlt size={20} color="#1976d2" />,
-      link:  PATHS.EVENTS
+      link:  '/about#event-calendar-section'
     },
     {
       title: 'Registration',
       description: 'Register for events and join activities',
       icon: <FaUsers size={20} color="#7b1fa2" />,
-      link: PATHS.FEEDBACK
+      link: PATHS.REGISTER
     },
     {
       title: 'Gallery',

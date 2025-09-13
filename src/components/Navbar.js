@@ -38,7 +38,8 @@ const Navbar = ({ navbarScrolled }) => {
       icon: <IoIosNotificationsOutline size={16} />,
       activeKey: "events",
     },
-  {
+      
+   {
       path: PATHS.FAVORITES,
       label: "favorites",
       icon: <MdStarOutline size={16} />,
@@ -50,7 +51,7 @@ const Navbar = ({ navbarScrolled }) => {
       icon: <BsPerson size={16} />,
       activeKey: "register",
     },
-    {
+     {
       path: PATHS.FEEDBACK,
       label: "feedback",
       icon: <BsPerson size={16} />,
@@ -67,6 +68,12 @@ const Navbar = ({ navbarScrolled }) => {
       label: "Contact Us",
       icon: <BsEnvelope size={16} />,
       activeKey: "contact",
+    },
+     {
+      path: PATHS.REGISTER,
+      label: "Registration",
+      icon: <BsPerson size={16} />,
+      activeKey: "register",
     },
   ];
 

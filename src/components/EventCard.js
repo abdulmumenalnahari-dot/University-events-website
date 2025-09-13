@@ -92,8 +92,9 @@ const EventCard = ({ event, onFavoriteToggle = null }) => {
             borderRadius: "8px 8px 0 0",
           }}
         />
-        <span
-          className="position-absolute top-0 end-0 m-1 p-1 rounded-2 fs-6 fw-bold cursor-pointer"
+       
+          
+          <boutton className="position-absolute top-0 end-0 m-1 p-1 rounded-2 fs-6 fw-bold cursor-pointer"
           style={{
             backgroundColor: isFavorite ? "#FFD700" : "#fff",
             color: "#000",
@@ -101,9 +102,10 @@ const EventCard = ({ event, onFavoriteToggle = null }) => {
             fontSize: "0.9rem",
           }}
           onClick={toggleFavorite}
+        
         >
-          ★
-        </span>
+         ★
+        </boutton>
       </div>
 
       <div

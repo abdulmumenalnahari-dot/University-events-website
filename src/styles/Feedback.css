@@ -115,6 +115,15 @@
   resize: vertical;
   min-height: 120px;
 }
+/* ==== Star states ==== */
+.star-icon { color: #d1d5db; }          /* default */
+.star-icon.filled { color: #f59e0b; }   /* selected/filled */
+.star-icon.hovered { color: #fbbf24; }  /* on hover */
+
+.submit-btn:disabled { cursor: not-allowed; }
+
+/* Rating text spacing */
+.rating-legend .rating-text { margin-inline-start: 6px; }
 
 .form-note {
   color: #666;
