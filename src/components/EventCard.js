@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const EventCard = ({ event }) => {
+const EventCard = ({ event, onFavoriteToggle = null }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [likes, setLikes] = useState(event.likes || 0);
   const [countdown, setCountdown] = useState("Loading...");
@@ -51,12 +51,22 @@ const EventCard = ({ event }) => {
     if (liked[event.id] !== undefined) setLikes(liked[event.id]);
   }, [event.id]);
 
-  const toggleFavorite = () => {
-    const fav = JSON.parse(localStorage.getItem("favorites")) || [];
-    const updated = isFavorite ? fav.filter((id) => id !== event.id) : [...fav, event.id];
-    localStorage.setItem("favorites", JSON.stringify(updated));
-    setIsFavorite(!isFavorite);
-  };
+const toggleFavorite = () => {
+  const fav = JSON.parse(localStorage.getItem("favorites")) || [];
+  const eventId = Number(event.id);
+  const updated = isFavorite 
+    ? fav.filter(id => id !== eventId) 
+    : [...fav, eventId];
+
+  localStorage.setItem("favorites", JSON.stringify(updated));
+  setIsFavorite(!isFavorite);
+
+  if (typeof onFavoriteToggle === 'function' && isFavorite) {
+    onFavoriteToggle(eventId);
+  }
+
+  console.log("⭐ favorites updated:", updated);
+};
 
   const handleLike = () => {
     const liked = JSON.parse(localStorage.getItem("likes")) || {};
@@ -76,7 +86,7 @@ const EventCard = ({ event }) => {
           className="card-img-top w-100"
           style={{ 
             height: "160px", 
-            objectFit: "cover", // ✅ هذا هو الحل!
+            objectFit: "cover",
             borderRadius: "8px 8px 0 0" 
           }} 
         />

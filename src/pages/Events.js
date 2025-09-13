@@ -1,9 +1,9 @@
 import { useEffect, useState, useMemo } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import FilterBar from "../components/FilterBar";
 import EventCard from "../components/EventCard";
 import EventDetail from "../components/EventDetail";
-import { filterAndSortEvents } from "../utils/filterAndSortEvents"; 
+import { filterAndSortEvents } from "../utils/filterAndSortEvents";
 
 export default function Events() {
   const [allEvents, setAllEvents] = useState([]);
@@ -32,14 +32,17 @@ export default function Events() {
     loadAllEvents();
   }, []);
 
-  const filteredAndSortedEvents = useMemo(
-    () => {
-      console.log("Recalculating filteredAndSortedEvents..."); // Debugging
-      return filterAndSortEvents(allEvents, { search, category, sort });
-    },
-    [allEvents, search, category, sort] 
-  );
+useEffect(() => {
+  if (allEvents.length > 0) {
+    localStorage.setItem("allEvents", JSON.stringify(allEvents));
+    console.log("✅ All events saved to localStorage for FavoritesPage:", allEvents);
+  }
+}, [allEvents]);
 
+  const filteredAndSortedEvents = useMemo(() => {
+    console.log("Recalculating filteredAndSortedEvents...");
+    return filterAndSortEvents(allEvents, { search, category, sort });
+  }, [allEvents, search, category, sort]);
 
   const EventList = (
     <div className="container my-4">
@@ -50,7 +53,7 @@ export default function Events() {
           {error}
         </div>
       )}
-
+      
       <FilterBar
         search={search}
         setSearch={setSearch}
@@ -68,7 +71,7 @@ export default function Events() {
             Showing {filteredAndSortedEvents.length} events
             {category && category !== "" ? ` in category "${category}"` : ""}
             {search ? ` matching "${search}"` : ""}.
-          </p> 
+          </p>
 
           {filteredAndSortedEvents.length > 0 ? (
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">

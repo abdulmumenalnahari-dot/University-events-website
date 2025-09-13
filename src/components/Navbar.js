@@ -6,8 +6,11 @@ import {
   BsHouseDoor,
   BsImages,
   BsInfoCircle,
+
+  
 } from "react-icons/bs";
-import { IoIosNotificationsOutline } from "react-icons/io";
+import { IoIosNotificationsOutline ,IoIosStarOutline} from "react-icons/io";
+import { MdStarOutline } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/navbar.css";
 import { PATHS } from "../routes";
@@ -34,6 +37,12 @@ const Navbar = ({ navbarScrolled }) => {
       label: "Event Details",
       icon: <IoIosNotificationsOutline size={16} />,
       activeKey: "events",
+    },
+  {
+      path: PATHS.FAVORITES,
+      label: "favorites",
+      icon: <MdStarOutline size={16} />,
+      activeKey: "favorites ",
     },
     {
       path: PATHS.REGISTER,
