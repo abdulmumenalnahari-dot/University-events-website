@@ -1,6 +1,6 @@
 import { useRoutes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "./views/components/Navbar";
+import Footer from "./views/components/Footer";
 import routes from "./routes";
 
 export default function App() {

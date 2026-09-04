@@ -1,12 +1,13 @@
-import Home from './pages/Home';
-import About from './pages/About';
-import Events from './pages/Events';  
-import Gallery from './pages/Gallery';
-import Feedback from './pages/Feedback';
-import Contact from './pages/Contact';
-import Calendar from './pages/calendar';
-import Register from './pages/register';
-import FavoritesPage from './pages/FavoritesPage';
+import Home from './views/pages/Home';
+import About from './views/pages/About';
+import Events from './views/pages/Events';
+import Gallery from './views/pages/Gallery';
+import Feedback from './views/pages/Feedback';
+import Contact from './views/pages/Contact';
+import Calendar from './views/pages/calendar';
+import Register from './views/pages/register';
+import FavoritesPage from './views/pages/FavoritesPage';
+import NotFound from './views/pages/NotFound';
 
 export const PATHS = {
   HOME: '/',
@@ -30,6 +31,7 @@ const routes = [
   { path: PATHS.CONTACT, element: <Contact /> },
   { path: PATHS.CALENDAR, element: <Calendar /> },
   { path: PATHS.REGISTER, element: <Register /> },
+  { path: '*', element: <NotFound /> },
 ];
 
 export default routes;

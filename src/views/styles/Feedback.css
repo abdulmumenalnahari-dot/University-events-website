@@ -1,0 +1,60 @@
+.feedback-container {
+  --feedback-ink: #172b3a;
+  --feedback-muted: #667685;
+  --feedback-paper: #f8f6f1;
+  --feedback-coral: #e87852;
+  --feedback-teal: #147d80;
+  min-height: 100vh;
+  padding: 48px 18px 70px;
+  color: var(--feedback-ink);
+  background: #f2f5f2;
+  animation: feedback-rise 450ms ease both;
+}
+
+@keyframes feedback-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.feedback-header { max-width: 780px; margin: 0 auto 38px; text-align: center; }
+.feedback-eyebrow { color: var(--feedback-coral); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.16em; }
+.feedback-header h1 { margin: 13px 0 15px; font-size: clamp(2.5rem, 6vw, 4.4rem); font-weight: 800; letter-spacing: -0.05em; line-height: 0.98; }
+.feedback-header h1::after { display: block; width: 70px; height: 4px; margin: 18px auto 0; background: var(--feedback-teal); content: ""; }
+.feedback-header .subtitle { max-width: 600px; margin: 0 auto; color: var(--feedback-muted); line-height: 1.7; }
+.feedback-layout { display: grid; max-width: 1040px; grid-template-columns: 0.7fr 1.3fr; gap: 16px; margin: 0 auto; }
+.feedback-side { padding: 38px 30px; color: #fff; background: var(--feedback-teal); }
+.feedback-side-number { color: #f4c66d; font-size: 3.5rem; font-weight: 800; line-height: 0.8; }
+.feedback-side h2 { max-width: 230px; margin: 28px 0 14px; color: #fff; font-size: 2rem; line-height: 1.05; }
+.feedback-side p { color: #d7f0e9; line-height: 1.7; }
+.feedback-side small { color: #d7f0e9; font-size: 0.78rem; }
+.feedback-progress { height: 5px; margin: 36px 0 10px; background: rgba(255,255,255,0.24); }
+.feedback-progress span { display: block; height: 100%; background: #f4c66d; transition: width 250ms ease; }
+.feedback-form { padding: clamp(24px, 5vw, 46px); background: #fff; box-shadow: 0 12px 30px rgba(23, 43, 58, 0.08); }
+.feedback-success { display: flex; align-items: center; gap: 9px; margin-bottom: 22px; padding: 12px 14px; color: #27705b; background: #dcefe7; font-size: 0.88rem; }
+.feedback-error { margin-bottom: 22px; padding: 12px 14px; color: #a34d35; background: #f8ddd3; font-size: 0.88rem; }
+.feedback-form form { display: grid; gap: 19px; }
+.form-group { margin: 0; }
+.form-group label { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: var(--feedback-ink); font-size: 0.83rem; font-weight: 700; }
+.form-group label svg { color: var(--feedback-coral); }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 13px; color: var(--feedback-ink); background: #fff; border: 1px solid #cad5d1; border-radius: 0; font: inherit; outline: 0; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--feedback-teal); box-shadow: 0 0 0 3px rgba(20, 125, 128, 0.13); }
+.form-select { height: auto; }
+.form-textarea { min-height: 120px; resize: vertical; }
+.form-note { display: block; margin-top: 7px; color: var(--feedback-muted); font-size: 0.76rem; }
+.rating-stars { display: flex; gap: 5px; margin: 6px 0 8px; }
+.star-icon { padding: 4px; color: #c8d0d0; background: transparent; border: 0; cursor: pointer; transition: color 150ms ease, transform 150ms ease; }
+.star-icon:hover, .star-icon.filled { color: #e2a72f; transform: scale(1.12); }
+.rating-legend { color: var(--feedback-muted); font-size: 0.82rem; }
+.rating-text { color: var(--feedback-teal); font-weight: 700; }
+.submit-btn { display: flex; width: 100%; align-items: center; justify-content: center; gap: 9px; margin-top: 3px; padding: 13px 20px; color: #fff; background: #b7c1bf; border: 0; font-size: 0.95rem; font-weight: 700; cursor: not-allowed; transition: background 160ms ease, transform 160ms ease; }
+.submit-btn.active { background: var(--feedback-ink); cursor: pointer; }
+.submit-btn.active:hover { background: var(--feedback-coral); transform: translateY(-2px); }
+.submit-btn:disabled { opacity: 0.75; }
+
+@media (max-width: 760px) {
+  .feedback-container { padding: 34px 12px 55px; }
+  .feedback-layout { grid-template-columns: 1fr; }
+  .feedback-side { padding: 28px 24px; }
+  .feedback-side h2 { margin-top: 20px; }
+  .feedback-progress { margin-top: 24px; }
+}
